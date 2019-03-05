@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> weapons;
+    [SerializeField] private Transform position;
+    [SerializeField] public List<GameObject> weapons;
     [SerializeField] private float weaponSwitchDelay = .5f;
     private int index = 0;
     private bool isSwitching = false;
@@ -71,5 +72,13 @@ public class WeaponManager : MonoBehaviour
 
         weapons[newIndex].SetActive(true);
         StartCoroutine(SwitchCooldown());
+    }
+
+    public void AddWeapon(GameObject gun)
+    {
+        weapons.Add(gun);
+        gun.transform.SetParent(this.transform,false);
+        gun.transform.position = Vector3.zero;
+        InitializeWeapons();
     }
 }
