@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class gunPickup : MonoBehaviour
 {
- 
+    [SerializeField] private float holdPositionX;
+    [SerializeField] private float holdPositionY;
+    [SerializeField] private float holdPositionZ;
+
     [SerializeField] private GameObject gun;
+
     public WeaponManager weaponManager;
 
     public GameObject Gun { get => gun; set => gun = value; }
@@ -26,7 +30,7 @@ public class gunPickup : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
-            weaponManager.AddWeapon(gun);
+            weaponManager.AddWeapon(gun, new Vector3(holdPositionX,holdPositionY,holdPositionZ));
             Destroy(gameObject);
         } 
     }

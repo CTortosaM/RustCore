@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+
+    private KeyCode[] keyCodes = {
+         KeyCode.Alpha1,
+         KeyCode.Alpha2,
+         KeyCode.Alpha3,
+         KeyCode.Alpha4,
+         KeyCode.Alpha5,           //Teclas numéricas para el cambio de armas
+         KeyCode.Alpha6,
+         KeyCode.Alpha7,
+         KeyCode.Alpha8,
+         KeyCode.Alpha9,
+     };
+
     [SerializeField] private Transform position;
     [SerializeField] public List<GameObject> weapons;
     [SerializeField] private float weaponSwitchDelay = .5f;
@@ -42,6 +55,8 @@ public class WeaponManager : MonoBehaviour
 
             SwitchWeapons(index);
         }
+
+        SwitchWeaponsThroughKeys();
     }
 
     private void InitializeWeapons()
@@ -74,12 +89,28 @@ public class WeaponManager : MonoBehaviour
         StartCoroutine(SwitchCooldown());
     }
 
-    public void AddWeapon(GameObject gun)
+    public void AddWeapon(GameObject gun, Vector3 holdPosition)
     {
         weapons.Add(gun);
         gun.transform.SetParent(position,false);
-        gun.transform.localPosition = Vector3.zero;
+        gun.transform.localPosition = holdPosition;
         gun.transform.localRotation = new Quaternion(0, 0, 0, 0);
         InitializeWeapons();
+    }
+
+    private void SwitchWeaponsThroughKeys()
+    {
+        for(int i = 0; i < keyCodes.Length; i++)
+        {
+            if (Input.GetKeyDown(keyCodes[i]))
+            {
+                
+                if ( i>=0 && i < weapons.Count && !isSwitching)
+                {
+                    isSwitching = true;
+                    SwitchWeapons(i);
+                }
+            }
+        }
     }
 }

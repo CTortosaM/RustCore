@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4440158, g: 0.48713976, b: 0.53906167, a: 1}
+  m_IndirectSpecularColor: {r: 0.4440155, g: 0.48713928, b: 0.53906155, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -492,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 9046071552463393773, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.437
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552463393773, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
@@ -544,5 +544,25 @@ PrefabInstance:
       propertyPath: weaponManager
       value: 
       objectReference: {fileID: 1349602489}
+    - target: {fileID: 9046071552463393775, guid: f826232e022cc9b49a50f88ffb0fb6b2,
+        type: 3}
+      propertyPath: holdPositionZ
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046071552463393775, guid: f826232e022cc9b49a50f88ffb0fb6b2,
+        type: 3}
+      propertyPath: holdPositionX
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046071552463393775, guid: f826232e022cc9b49a50f88ffb0fb6b2,
+        type: 3}
+      propertyPath: holdPositionY
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046071552463393771, guid: f826232e022cc9b49a50f88ffb0fb6b2,
+        type: 3}
+      propertyPath: m_Size
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f826232e022cc9b49a50f88ffb0fb6b2, type: 3}
