@@ -27,7 +27,7 @@ public class gunPickup : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             weaponManager.AddWeapon(gun);
-           // Destroy(this);
+            Destroy(gameObject);
         } 
     }
 }

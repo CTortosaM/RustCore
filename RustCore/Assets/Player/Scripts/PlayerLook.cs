@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    [SerializeField] private string mouseXInputName, mouseYInputName;
-    [SerializeField] private float mouseSensitivity;
+    public string mouseXInputName, mouseYInputName;
+    public float mouseSensitivity;
 
     [SerializeField] private Transform playerBody;
 
@@ -15,6 +15,7 @@ public class PlayerLook : MonoBehaviour
     {
         LockCursor();
         xAxisClamp = 0.0f;
+        
     }
 
 

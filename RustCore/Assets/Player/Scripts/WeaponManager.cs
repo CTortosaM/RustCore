@@ -77,8 +77,9 @@ public class WeaponManager : MonoBehaviour
     public void AddWeapon(GameObject gun)
     {
         weapons.Add(gun);
-        gun.transform.SetParent(this.transform,false);
-        gun.transform.position = Vector3.zero;
+        gun.transform.SetParent(position,false);
+        gun.transform.localPosition = Vector3.zero;
+        gun.transform.localRotation = new Quaternion(0, 0, 0, 0);
         InitializeWeapons();
     }
 }
