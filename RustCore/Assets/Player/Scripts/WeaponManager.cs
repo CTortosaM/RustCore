@@ -105,10 +105,11 @@ public class WeaponManager : MonoBehaviour
             if (Input.GetKeyDown(keyCodes[i]))
             {
                 
-                if ( i>=0 && i < weapons.Count && !isSwitching)
+                if ( i>=0 && i < weapons.Count && !isSwitching && i != index)
                 {
+                    index = i;
                     isSwitching = true;
-                    SwitchWeapons(i);
+                    SwitchWeapons(index);
                 }
             }
         }
