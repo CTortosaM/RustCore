@@ -28,7 +28,7 @@ public class WeaponManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        InitializeWeapons();
+        EquipWeapon(0);
     }
 
     // Update is called once per frame
@@ -59,15 +59,15 @@ public class WeaponManager : MonoBehaviour
         SwitchWeaponsThroughKeys();
     }
 
-    private void InitializeWeapons()
+
+    public void EquipWeapon(int index)
     {
-        for(int i = 0; i < weapons.Count; i++)
+        for (int i = 0; i < weapons.Count; i++)
         {
             weapons[i].SetActive(false);
         }
 
-        weapons[0].SetActive(true);
-
+        weapons[index].SetActive(true);
     }
 
     private IEnumerator SwitchCooldown()
@@ -80,12 +80,7 @@ public class WeaponManager : MonoBehaviour
 
     private void SwitchWeapons(int newIndex)
     {
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            weapons[i].SetActive(false);
-        }
-
-        weapons[newIndex].SetActive(true);
+        EquipWeapon(index);
         StartCoroutine(SwitchCooldown());
     }
 
@@ -95,7 +90,7 @@ public class WeaponManager : MonoBehaviour
         gun.transform.SetParent(position,false);
         gun.transform.localPosition = holdPosition;
         gun.transform.localRotation = new Quaternion(0, 0, 0, 0);
-        InitializeWeapons();
+        EquipWeapon(weapons.IndexOf(gun));
     }
 
     private void SwitchWeaponsThroughKeys()

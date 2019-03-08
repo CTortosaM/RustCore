@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gunPickup : MonoBehaviour
 {
+    public string gunName = "Escopeta";
     [SerializeField] private float holdPositionX;
     [SerializeField] private float holdPositionY;
     [SerializeField] private float holdPositionZ;
@@ -18,6 +19,11 @@ public class gunPickup : MonoBehaviour
     void Start()
     {
         
+    }
+
+    void OnEnable()
+    {
+        Debug.Log("Equipo escopeta");
     }
 
     // Update is called once per frame
