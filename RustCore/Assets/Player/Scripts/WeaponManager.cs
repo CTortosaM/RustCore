@@ -20,14 +20,16 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private Transform position;
     [SerializeField] public List<GameObject> weapons;
     [SerializeField] private float weaponSwitchDelay = .5f;
-    private int index = 0;
-    private bool isSwitching = false;
+    private int index;
+    private bool isSwitching;
 
     public float WeaponSwitchDelay { get => weaponSwitchDelay; set => weaponSwitchDelay = value; }
 
     // Start is called before the first frame update
     private void Start()
     {
+        index = 0;
+        isSwitching = false;
         EquipWeapon(0);
     }
 

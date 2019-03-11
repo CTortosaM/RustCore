@@ -21,11 +21,6 @@ public class gunPickup : MonoBehaviour
         
     }
 
-    void OnEnable()
-    {
-        Debug.Log("Equipo escopeta");
-    }
-
     // Update is called once per frame
     void Update()
     {
