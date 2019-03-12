@@ -63,7 +63,7 @@ public class LevelBuilder : MonoBehaviour
         //Level generation finished
         Debug.Log("Level generation finished");
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         //Place player
         player = Instantiate(playerprefab);
         player.transform.position = startRoom.playerSpawn.gameObject.transform.position;
