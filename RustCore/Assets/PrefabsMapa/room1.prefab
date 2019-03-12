@@ -1744,7 +1744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5652387688056138018}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.28, y: 0.38, z: 2.33}
+  m_LocalPosition: {x: 0.28, y: -0.142, z: 2.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 23065345283665511}
@@ -1800,5 +1800,6 @@ MonoBehaviour:
   - {fileID: 2224797751209603002}
   - {fileID: 1874668947737091125}
   boxCollider: {fileID: 23065345283665510}
+  enemySpawns: []
   playerSpawn: {fileID: 2933132648720864457}
   pickupSpawn: {fileID: 4887741733287274299}

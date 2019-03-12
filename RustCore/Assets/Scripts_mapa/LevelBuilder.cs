@@ -63,11 +63,14 @@ public class LevelBuilder : MonoBehaviour
         //Level generation finished
         Debug.Log("Level generation finished");
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         //Place player
         player = Instantiate(playerprefab);
-        player.transform.position = startRoom.playerSpawn.position;
+        player.transform.position = startRoom.playerSpawn.gameObject.transform.position;
+        Debug.Log("Jugador en:" + player.transform.position);
+        Debug.Log("Coordenadas en: " + startRoom.playerSpawn.position);
         player.transform.rotation = startRoom.playerSpawn.rotation;
+
 
         //Place gun pickup
         shotgunPickup = Instantiate(pickupPrefab);
@@ -295,7 +298,7 @@ public class LevelBuilder : MonoBehaviour
 
                 avaliableDoorway.gameObject.SetActive(false);
                 avaliableDoorways.Remove(avaliableDoorway);
-
+                
                 //Exit loop if room has been placed
                 break;
             }

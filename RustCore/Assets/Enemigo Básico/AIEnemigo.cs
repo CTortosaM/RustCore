@@ -54,6 +54,7 @@ public class AIEnemigo : MonoBehaviour
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         //agente.destination = punto.position;
         //SiguientePunto();
     }
@@ -63,23 +64,26 @@ public class AIEnemigo : MonoBehaviour
     {
         //agente.destination = player.position;
 
-
-        switch (Estado)
+        if(player != null)
         {
-            case EstadosPatrulla.Calma:
-                if (Vector3.Distance(transform.position, player.position) <= radio)
-                {
-                    Estado = EstadosPatrulla.Ataque;
-                }
-                break;
-            case EstadosPatrulla.Ataque:
-                agente.destination = player.position;
-                if (Vector3.Distance(transform.position, player.position) > radio)
-                {
-                    Estado = EstadosPatrulla.Calma;
-                }
-                break;
+            switch (Estado)
+            {
+                case EstadosPatrulla.Calma:
+                    if (Vector3.Distance(transform.position, player.position) <= radio)
+                    {
+                        Estado = EstadosPatrulla.Ataque;
+                    }
+                    break;
+                case EstadosPatrulla.Ataque:
+                    agente.SetDestination(player.position);
+                    if (Vector3.Distance(transform.position, player.position) > radio)
+                    {
+                        Estado = EstadosPatrulla.Calma;
+                    }
+                    break;
+            }
         }
+        
 
     }
 
