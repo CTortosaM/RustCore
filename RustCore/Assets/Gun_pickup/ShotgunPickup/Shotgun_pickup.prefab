@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Escopeta
-  holdPositionX: 0
-  holdPositionY: 0
-  holdPositionZ: 0
+  holdPositionX: 0.05
+  holdPositionY: -0.02
+  holdPositionZ: 0.4
   gun: {fileID: 9046071552065821530}
   weaponManager: {fileID: 0}
 --- !u!122 &9046071552463393771
@@ -135,10 +135,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7763288954896545564}
     m_Modifications:
-    - target: {fileID: 122852, guid: 0e9a83cba33bdf14fba33442a2d51222, type: 3}
-      propertyPath: m_Name
-      value: Shotgun
-      objectReference: {fileID: 0}
     - target: {fileID: 402360, guid: 0e9a83cba33bdf14fba33442a2d51222, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -182,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 402360, guid: 0e9a83cba33bdf14fba33442a2d51222, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122852, guid: 0e9a83cba33bdf14fba33442a2d51222, type: 3}
+      propertyPath: m_Name
+      value: Shotgun
       objectReference: {fileID: 0}
     - target: {fileID: 449570, guid: 0e9a83cba33bdf14fba33442a2d51222, type: 3}
       propertyPath: m_LocalRotation.x

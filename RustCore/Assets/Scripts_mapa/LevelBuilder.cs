@@ -5,8 +5,10 @@ using UnityEngine;
 public class LevelBuilder : MonoBehaviour
 {
     public Room startRoomPrefab, endRoomPrefab;
+    public GameObject pickupPrefab;
     public List<Room> roomPrefabs = new List<Room>();
     public Vector2 iterationRange = new Vector2(3, 20);
+    public GameObject playerprefab;
 
     List<Doorway> avaliableDoorways = new List<Doorway>();
 
@@ -15,6 +17,9 @@ public class LevelBuilder : MonoBehaviour
     List<Room> placedRooms = new List<Room>();
 
     LayerMask roomLayerMask;
+
+    GameObject player;
+    GameObject shotgunPickup;
 
 
     void Start()
@@ -59,7 +64,15 @@ public class LevelBuilder : MonoBehaviour
         Debug.Log("Level generation finished");
 
         yield return new WaitForSeconds(3);
-        ResetLevelGenerator();
+        //Place player
+        player = Instantiate(playerprefab);
+        player.transform.position = startRoom.playerSpawn.position;
+        player.transform.rotation = startRoom.playerSpawn.rotation;
+
+        //Place gun pickup
+        shotgunPickup = Instantiate(pickupPrefab);
+        shotgunPickup.transform.position = startRoom.pickupSpawn.position;
+        //ResetLevelGenerator();
 
     }
     void PlaceStartRoom()
