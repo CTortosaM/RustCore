@@ -18,7 +18,7 @@ public class gunPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        weaponManager = FindObjectOfType<WeaponManager>();
     }
 
     // Update is called once per frame
