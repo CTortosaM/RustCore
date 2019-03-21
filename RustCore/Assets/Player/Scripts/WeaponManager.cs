@@ -36,7 +36,7 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f && !isSwitching)
+        if(Input.GetAxis("Mouse ScrollWheel") > 0f && !isSwitching && weapons.Count > 1)
         {
             isSwitching = true;
 
@@ -48,7 +48,7 @@ public class WeaponManager : MonoBehaviour
             
            
         }
-        else if (Input.GetAxis("Mouse ScrollWheel")<0f && !isSwitching)
+        else if (Input.GetAxis("Mouse ScrollWheel")<0f && !isSwitching && weapons.Count > 1)
         {
             isSwitching = true;
 
