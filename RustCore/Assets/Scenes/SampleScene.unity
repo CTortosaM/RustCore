@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.45056403, g: 0.500548, b: 0.5750704, a: 1}
+  m_IndirectSpecularColor: {r: 0.45056397, g: 0.500548, b: 0.57507026, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -591,6 +591,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3894017517206402206, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894017517206402206, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3894017516589996641, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -844,22 +854,17 @@ PrefabInstance:
     - target: {fileID: 7551293943149628105, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.078
+      value: -0.092
       objectReference: {fileID: 0}
     - target: {fileID: 7551293943149628105, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.006
+      value: -0.012
       objectReference: {fileID: 0}
-    - target: {fileID: 3894017517206402206, guid: 9d4fa58897738d14294921b04de141cd,
+    - target: {fileID: 7551293943149628105, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3894017517206402206, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: orthographic
-      value: 0
+      propertyPath: m_AnchoredPosition.x
+      value: 0.028
       objectReference: {fileID: 0}
     - target: {fileID: 5675502171270066981, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
@@ -875,6 +880,26 @@ PrefabInstance:
         type: 3}
       propertyPath: SwayAmmount
       value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428179240026191855, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.0019442721
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428179240026191855, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428179240026191855, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5283019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428179240026191855, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.26666668
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3894017515920249463, guid: 9d4fa58897738d14294921b04de141cd, type: 3}

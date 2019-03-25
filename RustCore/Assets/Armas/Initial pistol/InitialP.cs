@@ -69,10 +69,11 @@ public class InitialP : MonoBehaviour
     {
         isReloading = true;
         animator.SetBool("isReloading", true);
-        bulletsLeft = maxAmmoPerMagazine;
-        text.text = bulletsLeft.ToString();
+        
         yield return new WaitForSeconds(1);
         isReloading = false;
+        bulletsLeft = maxAmmoPerMagazine;
+        text.text = bulletsLeft.ToString();
         animator.SetBool("isReloading", false);
     }
 
