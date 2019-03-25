@@ -17,7 +17,7 @@ public class InitialP : MonoBehaviour
 
     [SerializeField] private Camera camera;
 
-    [SerializeField] private float range = 50f;
+    [SerializeField] private float range = 100f;
     [SerializeField] private ParticleSystem muzzleFlash;
 
     private bool isReloading = false;
@@ -56,8 +56,7 @@ public class InitialP : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(reload());
-            bulletsLeft = maxAmmoPerMagazine;
-            text.text = bulletsLeft.ToString();
+            
         }
     }
 
@@ -70,6 +69,8 @@ public class InitialP : MonoBehaviour
     {
         isReloading = true;
         animator.SetBool("isReloading", true);
+        bulletsLeft = maxAmmoPerMagazine;
+        text.text = bulletsLeft.ToString();
         yield return new WaitForSeconds(1);
         isReloading = false;
         animator.SetBool("isReloading", false);
