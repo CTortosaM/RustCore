@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private int health = 100;
+    [SerializeField] private int shield = 100;
+
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
     [SerializeField] private float movementSpeed;
@@ -31,6 +34,8 @@ public class PlayerController : MonoBehaviour
     //Propiedades
     public float DashCoolDown { get => dashCoolDown; set => dashCoolDown = value; }
     public float DashDuration { get => dashDuration; set => dashDuration = value; }
+    public int Health { get => health; set => health = value; }
+    public int Shield { get => shield; set => shield = value; }
 
     private void Awake()
     {
@@ -121,6 +126,19 @@ public class PlayerController : MonoBehaviour
         charController.Move(new Vector3(0, 0, 0));
         isDashing = false;
         canDash = true;
+    }
+
+
+    public void CauseDamage(int damageDone)
+    {
+        if ((health - damageDone) < 0)
+        {
+            health = 0;
+        } else
+        {
+            health -= damageDone;
+        }
+
     }
 
 
