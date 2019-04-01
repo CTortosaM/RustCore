@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -224,37 +224,37 @@ PrefabInstance:
         type: 3}
       propertyPath: startRoomPrefab
       value: 
-      objectReference: {fileID: 1868261106944133924, guid: 997f247f28e9e88468c08cdf652e94b8,
+      objectReference: {fileID: 2391182617629326990, guid: 4915ebca7154b8e43805a152abc87a56,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: endRoomPrefab
       value: 
-      objectReference: {fileID: 1231730902, guid: 6cc937bcfe6fa7443b0a63302b8cdec6,
+      objectReference: {fileID: 7642201380471170659, guid: 331cda63cb82c484eb549839144b7bb1,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1977949331, guid: f8a76554efca80149add73c1cc565f6b,
+      objectReference: {fileID: 876472296976215495, guid: e14e16d4c74a24e47b7eb65ca666a6df,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 1761817970, guid: 2daa0a6d32d6c8d43a96cfaba4a9d36e,
+      objectReference: {fileID: 7249396500792510001, guid: c7911e528d57236458bb8e4c3015dffe,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 403478754, guid: 0eaec83a5fe85b8409a7ca04595b15be,
+      objectReference: {fileID: 6287583577646844273, guid: 4ab4b007b09e1844d9fa66aec0b0be97,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 8567718852657637196, guid: 7e1c3ba3627e07042a2df1d87d6ade90,
+      objectReference: {fileID: 5847467139502667455, guid: 5759ad0a7ae1aae438cd677d2ca25a93,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
@@ -487,6 +487,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
+        type: 3}
+      propertyPath: mensajeFinal
+      value: 
+      objectReference: {fileID: 641536431}
     - target: {fileID: 2001682374206935076, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_Name
@@ -547,10 +552,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
-        type: 3}
-      propertyPath: mensajeFinal
-      value: 
-      objectReference: {fileID: 641536431}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520b4211fcecdb3428970f9a1d9b7c57, type: 3}

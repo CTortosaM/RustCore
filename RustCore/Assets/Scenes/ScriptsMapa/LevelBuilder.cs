@@ -5,11 +5,10 @@ using UnityEngine;
 public class LevelBuilder : MonoBehaviour
 {
     public Room startRoomPrefab, endRoomPrefab;
-    public GameObject pickupPrefab;
     public List<Room> roomPrefabs = new List<Room>();
     public Vector2 iterationRange = new Vector2(3, 20);
     public GameObject playerprefab;
-
+    public GameObject pickupPrefab;
     List<Doorway> avaliableDoorways = new List<Doorway>();
 
     StartRoom startRoom;
@@ -17,10 +16,8 @@ public class LevelBuilder : MonoBehaviour
     List<Room> placedRooms = new List<Room>();
 
     LayerMask roomLayerMask;
-
     GameObject player;
     GameObject shotgunPickup;
-
 
     void Start()
     {
@@ -31,7 +28,7 @@ public class LevelBuilder : MonoBehaviour
     {
         WaitForSeconds startup = new WaitForSeconds(1);
         WaitForFixedUpdate interval = new WaitForFixedUpdate();
-
+        
         yield return startup;
 
         //Place start room
@@ -47,16 +44,7 @@ public class LevelBuilder : MonoBehaviour
             PlaceRoom();
             yield return interval;
         }
-        //Place action room
-        PlaceInclined();
-        PlaceActionRoom();
-       // PlaceInclined();
-        for (int i = 0; i < iterations; i++)
-        {
-            // Place random room from list
-            PlaceRoom();
-            yield return interval;
-        }
+    
         //Place end room
         PlaceEndRoom();
         yield return interval;
@@ -105,7 +93,7 @@ public class LevelBuilder : MonoBehaviour
     void PlaceRoom()
     {
         //Instatntiate room
-        Room currentRoom = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Count-1)]) as Room;
+        Room currentRoom = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Count)]) as Room;
         currentRoom.transform.parent = this.transform;
 
         //Crete doorway lists to loop over
@@ -183,7 +171,7 @@ public class LevelBuilder : MonoBehaviour
 
     bool CheckRoomOverlap(Room room) {
         Bounds bounds = room.RoomBounds;
-       // bounds.Expand(-0.1f);
+        bounds.Expand(-0.5f);
 
        // roomLayerMask = 9;
        Collider[] colliders = Physics.OverlapBox(bounds.center, bounds.size / 2, room.transform.rotation, roomLayerMask);
@@ -191,11 +179,13 @@ public class LevelBuilder : MonoBehaviour
         if (colliders.Length > 0)
         {
             Debug.Log("Collider length: "+colliders.Length);
-            Debug.Log("Collider 1: "+colliders[0]);
+            Debug.Log("Collider 1: " + colliders[0]);
+            Debug.Log("Collider 1: "+colliders[colliders.Length-1]);
             //Ignore collisions with current room
             foreach (Collider c in colliders)
             {
-                if ((c.transform.parent.gameObject.Equals(room.gameObject)))
+                //c.transform.parent.gameObject.Equals(room.gameObject) ||
+                if (c.transform.parent.gameObject.Equals(room.gameObject) || c.transform.gameObject.Equals(room.gameObject))
                 {
 
                     continue;
@@ -216,7 +206,7 @@ public class LevelBuilder : MonoBehaviour
 
     void PlaceEndRoom()
     {
-        //Instatntiate room
+        //Instantiate room
         endRoom= Instantiate(endRoomPrefab) as EndRoom;
        endRoom.transform.parent = this.transform;
 
@@ -257,125 +247,9 @@ public class LevelBuilder : MonoBehaviour
         }
 
     }
-   void PlaceActionRoom()
-    {
-        //Instatntiate room
-        Room currentRoom = Instantiate(roomPrefabs[3]) as Room;
-        currentRoom.transform.parent = this.transform;
+ 
 
-        //Crete doorway lists to loop over
-        List<Doorway> allAvaliableDoorways = new List<Doorway>(avaliableDoorways);
-        List<Doorway> currentRoomDoorways = new List<Doorway>();
-        AddDoorwaysToList(currentRoom, ref currentRoomDoorways);
-
-        //Get doorways from current room and add then randomly to the list of avaliable doorways
-        AddDoorwaysToList(currentRoom, ref avaliableDoorways);
-
-        bool roomPlaced = false;
-
-        //Try all avaliable doorways
-        foreach (Doorway avaliableDoorway in allAvaliableDoorways)
-        {
-            //Try all avaliable doorways in current room
-            foreach (Doorway currentDoorway in currentRoomDoorways)
-            {
-                //Position room
-                PositionRoomAtDoorway(ref currentRoom, currentDoorway, avaliableDoorway);
-
-                //Check room overlaps
-                if (CheckRoomOverlap(currentRoom))
-                {
-                    continue;
-                }
-                roomPlaced = true;
-
-                //Add room to list
-                placedRooms.Add(currentRoom);
-
-                //Remove occupied doorways
-                currentDoorway.gameObject.SetActive(false);
-                avaliableDoorways.Remove(currentDoorway);
-
-                avaliableDoorway.gameObject.SetActive(false);
-                avaliableDoorways.Remove(avaliableDoorway);
-                
-                //Exit loop if room has been placed
-                break;
-            }
-            //Exit loop if room has been placed
-            if (roomPlaced)
-            {
-                break;
-            }
-
-        }
-        //Room couldn't be placed. Restart generator and try again
-        if (!roomPlaced)
-        {
-            Destroy(currentRoom.gameObject);
-            ResetLevelGenerator();
-        }
-    }
-
-    void PlaceInclined()
-    {
-        //Instatntiate room
-        Room currentRoom = Instantiate(roomPrefabs[1]) as Room;
-        currentRoom.transform.parent = this.transform;
-
-        //Crete doorway lists to loop over
-        List<Doorway> allAvaliableDoorways = new List<Doorway>(avaliableDoorways);
-        List<Doorway> currentRoomDoorways = new List<Doorway>();
-        AddDoorwaysToList(currentRoom, ref currentRoomDoorways);
-
-        //Get doorways from current room and add then randomly to the list of avaliable doorways
-        AddDoorwaysToList(currentRoom, ref avaliableDoorways);
-
-        bool roomPlaced = false;
-
-        //Try all avaliable doorways
-        foreach (Doorway avaliableDoorway in allAvaliableDoorways)
-        {
-            //Try all avaliable doorways in current room
-            foreach (Doorway currentDoorway in currentRoomDoorways)
-            {
-                //Position room
-                PositionRoomAtDoorway(ref currentRoom, currentDoorway, avaliableDoorway);
-
-                //Check room overlaps
-                if (CheckRoomOverlap(currentRoom))
-                {
-                    continue;
-                }
-                roomPlaced = true;
-
-                //Add room to list
-                placedRooms.Add(currentRoom);
-
-                //Remove occupied doorways
-                currentDoorway.gameObject.SetActive(false);
-                avaliableDoorways.Remove(currentDoorway);
-
-                avaliableDoorway.gameObject.SetActive(false);
-                avaliableDoorways.Remove(avaliableDoorway);
-
-                //Exit loop if room has been placed
-                break;
-            }
-            //Exit loop if room has been placed
-            if (roomPlaced)
-            {
-                break;
-            }
-
-        }
-        //Room couldn't be placed. Restart generator and try again
-        if (!roomPlaced)
-        {
-            Destroy(currentRoom.gameObject);
-            ResetLevelGenerator();
-        }
-    }
+    
 
     void ResetLevelGenerator()
     {
