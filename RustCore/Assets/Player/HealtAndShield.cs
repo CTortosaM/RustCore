@@ -102,4 +102,18 @@ public class HealtAndShield : MonoBehaviour
          }
          UpdateShieldAndHealtText();
     }
+
+
+    public void Heal(int ammount)
+    {
+        if(health + ammount > maxHealth)
+        {
+            health = maxHealth;
+            UpdateShieldAndHealtText();
+        } else
+        {
+            health += ammount;
+            UpdateShieldAndHealtText();
+        }
+    }
 }
