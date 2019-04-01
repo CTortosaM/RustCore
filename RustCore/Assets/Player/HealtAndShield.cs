@@ -42,7 +42,7 @@ public class HealtAndShield : MonoBehaviour
         if (Time.time > nextPossibleRegen && shield < maxShield && !shieldRegenerating)
         {
             shieldRegenerating = true;
-            InvokeRepeating("regenerateShield", 0, 3f);
+            InvokeRepeating("regenerateShield", 0, shieldRegenSpeed);
         }
     }
 
@@ -99,7 +99,6 @@ public class HealtAndShield : MonoBehaviour
          } else
          {
              shield += step;
-             Debug.Log("Regenero: " + step + " de armadura " + Time.time);
          }
          UpdateShieldAndHealtText();
     }
