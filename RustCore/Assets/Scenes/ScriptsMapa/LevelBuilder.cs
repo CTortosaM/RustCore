@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class LevelBuilder : MonoBehaviour
 {
     public Room startRoomPrefab, endRoomPrefab;
+    public AIEnemigo enemyPrefab;
     public List<Room> roomPrefabs = new List<Room>();
     public Vector2 iterationRange = new Vector2(3, 20);
     public GameObject playerprefab;
@@ -68,6 +69,13 @@ public class LevelBuilder : MonoBehaviour
         //Level generation finished
         Debug.Log("Level generation finished");
         surface.BuildNavMesh();
+        foreach(Room room in placedRooms)
+        {
+            foreach(Transform enemySpawn in room.enemySpawns)
+            {
+                Instantiate(enemyPrefab,enemySpawn.transform.position, new Quaternion(0,0,0,0),this.transform);
+            }
+        }
         yield return new WaitForSeconds(2);
    
 
@@ -138,6 +146,8 @@ public class LevelBuilder : MonoBehaviour
 
                 avaliableDoorway.gameObject.SetActive(false);
                 avaliableDoorways.Remove(avaliableDoorway);
+
+               
 
                 //Exit loop if room has been placed
                 break;
