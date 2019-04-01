@@ -548,11 +548,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf1b0a4f54cee2408434595abec452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldRegenInterval: 5
+  shieldRegenStep: 100
+  shieldRegenSpeed: 0.1
   healthText: {fileID: 7828128897548130753}
   shieldText: {fileID: 2507408247507803022}
   isDead: 0
   health: 100
   shield: 100
+  maxShield: 100
+  maxHealth: 100
 --- !u!1 &3894017517206402176
 GameObject:
   m_ObjectHideFlags: 0
