@@ -161,7 +161,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 605.3226
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -515,14 +515,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6589072858459749567}
     m_Modifications:
-    - target: {fileID: 100000, guid: 725d84bcfb847de4ca4aca7d7faab4b7, type: 3}
-      propertyPath: m_Name
-      value: L-corridor
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 725d84bcfb847de4ca4aca7d7faab4b7, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 725d84bcfb847de4ca4aca7d7faab4b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1034
@@ -578,6 +570,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 725d84bcfb847de4ca4aca7d7faab4b7, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 725d84bcfb847de4ca4aca7d7faab4b7, type: 3}
+      propertyPath: m_Name
+      value: L-corridor
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 725d84bcfb847de4ca4aca7d7faab4b7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2300004, guid: 725d84bcfb847de4ca4aca7d7faab4b7, type: 3}
       propertyPath: m_Materials.Array.data[0]
