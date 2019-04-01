@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LevelBuilder : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class LevelBuilder : MonoBehaviour
     public GameObject playerprefab;
     public GameObject pickupPrefab;
     List<Doorway> avaliableDoorways = new List<Doorway>();
+
+    [SerializeField] private NavMeshSurface surface;
 
     StartRoom startRoom;
     EndRoom endRoom;
@@ -27,15 +30,16 @@ public class LevelBuilder : MonoBehaviour
         //Place player
         player = Instantiate(playerprefab);
         player.transform.position = startRoom.playerSpawn.gameObject.transform.position;
-        Debug.Log("Jugador en:" + player.transform.position);
-        Debug.Log("Coordenadas en: " + startRoom.playerSpawn.position);
         player.transform.rotation = startRoom.playerSpawn.rotation;
 
-       // player.active = false;
+        // player.active = false;
         //Place gun pickup
+
+        
         shotgunPickup = Instantiate(pickupPrefab);
         shotgunPickup.transform.position = startRoom.pickupSpawn.position;
         //ResetLevelGenerator();
+
         StartCoroutine("GenerateLevel");
     }
     IEnumerator GenerateLevel()
@@ -63,8 +67,9 @@ public class LevelBuilder : MonoBehaviour
         yield return interval;
         //Level generation finished
         Debug.Log("Level generation finished");
-
+        surface.BuildNavMesh();
         yield return new WaitForSeconds(2);
+   
 
         //player.active = true;
     }

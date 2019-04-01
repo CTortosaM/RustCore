@@ -39,7 +39,7 @@ public class HealtAndShield : MonoBehaviour
     void Update()
     {
         if (health == 0) killPlayer();
-        if (Time.time > nextPossibleRegen && shield < maxShield && !shieldRegenerating)
+        if (Time.time > nextPossibleRegen && shield < maxShield && !shieldRegenerating && !isDead)
         {
             shieldRegenerating = true;
             InvokeRepeating("regenerateShield", 0, shieldRegenSpeed);
