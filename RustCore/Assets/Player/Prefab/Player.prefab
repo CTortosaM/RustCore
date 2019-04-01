@@ -756,21 +756,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8477258385034902422, guid: c4ee013635700964d9e5ba66ca6f5d91,
-        type: 3}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 8381067509510682825}
-    - target: {fileID: 8477258385034902422, guid: c4ee013635700964d9e5ba66ca6f5d91,
-        type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 3894017517206402206}
-    - target: {fileID: 8477258385034902422, guid: c4ee013635700964d9e5ba66ca6f5d91,
-        type: 3}
-      propertyPath: muzzleFlash
-      value: 
-      objectReference: {fileID: 4459495334264766623}
     - target: {fileID: 6029685914992132730, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -786,6 +771,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.012
       objectReference: {fileID: 0}
+    - target: {fileID: 8477258385034902422, guid: c4ee013635700964d9e5ba66ca6f5d91,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 8381067509510682825}
+    - target: {fileID: 8477258385034902422, guid: c4ee013635700964d9e5ba66ca6f5d91,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 3894017517206402206}
+    - target: {fileID: 8477258385034902422, guid: c4ee013635700964d9e5ba66ca6f5d91,
+        type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 4459495334264766623}
     - target: {fileID: 469893682874239020, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
       propertyPath: LightsModule.light

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -103,7 +103,7 @@ NavMeshSettings:
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    minRegionArea: 2
+    minRegionArea: 0.1
     manualCellSize: 0
     cellSize: 0.16666667
     manualTileSize: 0
@@ -259,12 +259,12 @@ PrefabInstance:
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: iterationRange.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: iterationRange.x
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &983129551
 Light:
   m_ObjectHideFlags: 0
@@ -487,16 +487,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
-        type: 3}
-      propertyPath: mensajeFinal
-      value: 
-      objectReference: {fileID: 641536431}
     - target: {fileID: 2001682374206935076, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_Name
       value: gameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
+        type: 3}
+      propertyPath: mensajeFinal
+      value: 
+      objectReference: {fileID: 641536431}
     - target: {fileID: 2001682374206935074, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_LocalPosition.x

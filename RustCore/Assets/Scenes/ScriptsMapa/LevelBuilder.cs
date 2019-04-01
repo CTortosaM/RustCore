@@ -22,36 +22,8 @@ public class LevelBuilder : MonoBehaviour
     void Start()
     {
         roomLayerMask = LayerMask.GetMask("Room");
-        StartCoroutine("GenerateLevel");
-    }
-    IEnumerator GenerateLevel()
-    {
-        WaitForSeconds startup = new WaitForSeconds(1);
-        WaitForFixedUpdate interval = new WaitForFixedUpdate();
-        
-        yield return startup;
-
         //Place start room
         PlaceStartRoom();
-        yield return interval;
-
-        //Random iterations
-
-        int iterations = Random.Range((int)iterationRange.x, (int)iterationRange.y);
-        for(int i=0; i< iterations; i++)
-        {
-            // Place random room from list
-            PlaceRoom();
-            yield return interval;
-        }
-    
-        //Place end room
-        PlaceEndRoom();
-        yield return interval;
-        //Level generation finished
-        Debug.Log("Level generation finished");
-
-        yield return new WaitForSeconds(2);
         //Place player
         player = Instantiate(playerprefab);
         player.transform.position = startRoom.playerSpawn.gameObject.transform.position;
@@ -59,12 +31,42 @@ public class LevelBuilder : MonoBehaviour
         Debug.Log("Coordenadas en: " + startRoom.playerSpawn.position);
         player.transform.rotation = startRoom.playerSpawn.rotation;
 
-
+       // player.active = false;
         //Place gun pickup
         shotgunPickup = Instantiate(pickupPrefab);
         shotgunPickup.transform.position = startRoom.pickupSpawn.position;
         //ResetLevelGenerator();
+        StartCoroutine("GenerateLevel");
+    }
+    IEnumerator GenerateLevel()
+    {
+        WaitForSeconds startup = new WaitForSeconds(1);
+        WaitForFixedUpdate interval = new WaitForFixedUpdate();
 
+        yield return startup;
+        AddDoorwaysToList(startRoom, ref avaliableDoorways);
+
+        yield return interval;
+
+        //Random iterations
+
+        int iterations = Random.Range((int)iterationRange.x, (int)iterationRange.y);
+        for (int i = 0; i < iterations; i++)
+        {
+            // Place random room from list
+            PlaceRoom();
+            yield return interval;
+        }
+
+        //Place end room
+        PlaceEndRoom();
+        yield return interval;
+        //Level generation finished
+        Debug.Log("Level generation finished");
+
+        yield return new WaitForSeconds(2);
+
+        //player.active = true;
     }
     void PlaceStartRoom()
     {
@@ -72,17 +74,17 @@ public class LevelBuilder : MonoBehaviour
         startRoom = Instantiate(startRoomPrefab) as StartRoom;
         startRoom.transform.parent = this.transform;
         //Get doorways from current room and add then randomly to the list of doorways
-        AddDoorwaysToList(startRoom, ref avaliableDoorways);
+      
 
         //Position room
         startRoom.transform.position = Vector3.zero;
         startRoom.transform.rotation = Quaternion.identity;
-        
+
     }
-    
+
     void AddDoorwaysToList(Room room, ref List<Doorway> list)
     {
-        foreach(Doorway doorway in room.doorways)
+        foreach (Doorway doorway in room.doorways)
         {
             int r = Random.Range(0, list.Count);
             list.Insert(r, doorway);
@@ -107,10 +109,10 @@ public class LevelBuilder : MonoBehaviour
         bool roomPlaced = false;
 
         //Try all avaliable doorways
-        foreach(Doorway avaliableDoorway in allAvaliableDoorways)
+        foreach (Doorway avaliableDoorway in allAvaliableDoorways)
         {
             //Try all avaliable doorways in current room
-            foreach(Doorway currentDoorway in currentRoomDoorways)
+            foreach (Doorway currentDoorway in currentRoomDoorways)
             {
                 //Position room
                 PositionRoomAtDoorway(ref currentRoom, currentDoorway, avaliableDoorway);
@@ -118,7 +120,7 @@ public class LevelBuilder : MonoBehaviour
                 //Check room overlaps
                 if (CheckRoomOverlap(currentRoom))
                 {
-                   continue;
+                    continue;
                 }
                 roomPlaced = true;
 
@@ -151,7 +153,8 @@ public class LevelBuilder : MonoBehaviour
 
     }
 
-    void PositionRoomAtDoorway(ref Room room, Doorway roomDoorway, Doorway targetDoorway) {
+    void PositionRoomAtDoorway(ref Room room, Doorway roomDoorway, Doorway targetDoorway)
+    {
         //Reset room position and rotation
         room.transform.position = Vector3.zero;
         room.transform.rotation = Quaternion.identity;
@@ -169,18 +172,19 @@ public class LevelBuilder : MonoBehaviour
 
     }
 
-    bool CheckRoomOverlap(Room room) {
+    bool CheckRoomOverlap(Room room)
+    {
         Bounds bounds = room.RoomBounds;
         bounds.Expand(-0.5f);
 
-       // roomLayerMask = 9;
-       Collider[] colliders = Physics.OverlapBox(bounds.center, bounds.size / 2, room.transform.rotation, roomLayerMask);
-      
+        // roomLayerMask = 9;
+        Collider[] colliders = Physics.OverlapBox(bounds.center, bounds.size / 2, room.transform.rotation, roomLayerMask);
+
         if (colliders.Length > 0)
         {
-            Debug.Log("Collider length: "+colliders.Length);
+            Debug.Log("Collider length: " + colliders.Length);
             Debug.Log("Collider 1: " + colliders[0]);
-            Debug.Log("Collider 1: "+colliders[colliders.Length-1]);
+            Debug.Log("Collider 1: " + colliders[colliders.Length - 1]);
             //Ignore collisions with current room
             foreach (Collider c in colliders)
             {
@@ -189,15 +193,15 @@ public class LevelBuilder : MonoBehaviour
                 {
 
                     continue;
-                    
+
                 }
                 else
                 {
                     Debug.LogError("Overlap detected");
-                    //  ResetLevelGenerator();
+                     ResetLevelGenerator();
                     Debug.LogError(c);
                     return true;
-                    
+
                 }
             }
         }
@@ -207,8 +211,8 @@ public class LevelBuilder : MonoBehaviour
     void PlaceEndRoom()
     {
         //Instantiate room
-        endRoom= Instantiate(endRoomPrefab) as EndRoom;
-       endRoom.transform.parent = this.transform;
+        endRoom = Instantiate(endRoomPrefab) as EndRoom;
+        endRoom.transform.parent = this.transform;
 
         //Crete doorway lists to loop over
         List<Doorway> allAvaliableDoorways = new List<Doorway>(avaliableDoorways);
@@ -242,14 +246,14 @@ public class LevelBuilder : MonoBehaviour
         //Room couldn't be placed. Restart generator and try again
         if (!roomPlaced)
         {
-         
+
             ResetLevelGenerator();
         }
 
     }
- 
 
-    
+
+
 
     void ResetLevelGenerator()
     {
@@ -259,7 +263,7 @@ public class LevelBuilder : MonoBehaviour
         //Delete all rooms
         if (startRoom)
         {
-            Destroy(startRoom.gameObject);
+          //  Destroy(startRoom.gameObject);
 
         }
         if (endRoom)

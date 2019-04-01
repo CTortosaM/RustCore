@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 583884581465422167}
   - component: {fileID: 6287583577646844273}
   m_Layer: 10
-  m_Name: L-Corridor
+  m_Name: L-corridor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 6589072858459749564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 110}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 6589072859215895618}
   - {fileID: 6589072857677591241}
@@ -375,8 +375,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 500.21704, y: 73.71777, z: 500.06982}
-  m_Center: {x: -1073.4209, y: 38.745667, z: 2044.9319}
+  m_Size: {x: 500.21713, y: 73.71777, z: 508.86017}
+  m_Center: {x: -1073.4209, y: 38.745667, z: 2046.0164}
 --- !u!65 &9057148190993832174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 582.26733, y: 73.71777, z: 0}
-  m_Center: {x: -1032.3959, y: 38.745667, z: 1713.6179}
+  m_Center: {x: -1032.3959, y: 38.745667, z: 1713.618}
 --- !u!65 &6242922903293645665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -427,8 +427,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 586.312, y: 0, z: 589.4055}
-  m_Center: {x: -1035.8973, y: 1.8867798, z: 2007.747}
+  m_Size: {x: 586.31226, y: 0, z: 593.07556}
+  m_Center: {x: -1035.8973, y: 1.8867798, z: 2009.5819}
 --- !u!114 &6287583577646844273
 MonoBehaviour:
   m_ObjectHideFlags: 0
