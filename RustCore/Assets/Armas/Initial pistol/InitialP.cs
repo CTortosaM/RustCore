@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations;
 
+[RequireComponent(typeof(AmmoCount))]
 public class InitialP : MonoBehaviour
 {
+
+    private AmmoCount ammo;
     [SerializeField] private float shootInterval = 0.2f;
     private float nextPossibleShootTime;
-    public int maxAmmoPerMagazine = 12;
+
     [SerializeField] private int damage = 50; 
-    public int bulletsLeft;
+  
     public Text text;
     private bool canShoot;
     private Animator animator;
@@ -28,13 +31,14 @@ public class InitialP : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        bulletsLeft = maxAmmoPerMagazine;
-        text.text = maxAmmoPerMagazine.ToString();
+        ammo = GetComponent<AmmoCount>();
+        text.text = ammo.AmmoLeftInMagazine.ToString();
         animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
+        ammo.updateAmmoText();
     }
 
     // Update is called once per frame
@@ -42,28 +46,25 @@ public class InitialP : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
         {
-            if(bulletsLeft > 0)
+            if(ammo.AmmoLeftInMagazine > 0)
             {
                 nextPossibleShootTime = Time.time + ShootInterval;
-                bulletsLeft--;
+                ammo.AmmoLeftInMagazine--;
+                ammo.updateAmmoText();
                 Shoot();
             } 
 
-            text.text = bulletsLeft.ToString();
+            text.text = ammo.AmmoLeftInMagazine.ToString();
         }
 
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
         {
             StartCoroutine(reload());
             
         }
     }
 
-    private void OnEnable()
-    {
-       
-    }
 
     private IEnumerator reload()
     {
@@ -71,9 +72,12 @@ public class InitialP : MonoBehaviour
         animator.SetBool("isReloading", true);
         
         yield return new WaitForSeconds(1);
+
+        ammo.reload();
+
         isReloading = false;
-        bulletsLeft = maxAmmoPerMagazine;
-        text.text = bulletsLeft.ToString();
+        //ammo.AmmoLeftInMagazine = 12;
+        text.text = ammo.AmmoLeftInMagazine.ToString();
         animator.SetBool("isReloading", false);
     }
 
@@ -92,5 +96,10 @@ public class InitialP : MonoBehaviour
             }
         }
 
+    }
+
+    void OnEnable()
+    {
+        ammo.updateAmmoText();
     }
 }
