@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8906586112743424896}
   - component: {fileID: 7220927370381549170}
   - component: {fileID: 6996054822176135957}
+  - component: {fileID: 4035775667767463587}
   m_Layer: 0
   m_Name: ShotgunPrefab
   m_TagString: Untagged
@@ -69,6 +70,25 @@ MonoBehaviour:
   ammoLeftInMagazine: 200
   maxAmmoPerMagazine: 200
   ammoText: {fileID: 0}
+--- !u!95 &4035775667767463587
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469126575249509879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 49aaf09d3886caa4da402cbc8a17fa0d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 74d622d6647ad6b4f8e668008b6d1e91, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9117284837575353141
 GameObject:
   m_ObjectHideFlags: 0
