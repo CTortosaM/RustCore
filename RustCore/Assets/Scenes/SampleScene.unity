@@ -606,12 +606,12 @@ PrefabInstance:
     - target: {fileID: 7584601622811326369, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: shieldRegenSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7584601622811326369, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: shieldRegenStep
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4fa58897738d14294921b04de141cd, type: 3}
