@@ -32,7 +32,7 @@ public class HealtAndShield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        UpdateShieldAndHealtText();
     }
 
     // Update is called once per frame

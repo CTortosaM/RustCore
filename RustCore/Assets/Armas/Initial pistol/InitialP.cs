@@ -31,13 +31,14 @@ public class InitialP : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         ammo = GetComponent<AmmoCount>();
         text.text = ammo.AmmoLeftInMagazine.ToString();
         animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
+        ammo.updateAmmoText();
     }
 
     // Update is called once per frame
@@ -49,6 +50,7 @@ public class InitialP : MonoBehaviour
             {
                 nextPossibleShootTime = Time.time + ShootInterval;
                 ammo.AmmoLeftInMagazine--;
+                ammo.updateAmmoText();
                 Shoot();
             } 
 
@@ -96,4 +98,8 @@ public class InitialP : MonoBehaviour
 
     }
 
+    void onEnable()
+    {
+        ammo.updateAmmoText();
+    }
 }

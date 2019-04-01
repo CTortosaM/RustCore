@@ -257,7 +257,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 2125330665}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d3e2dea1eb4cf4c9dd4ccc560c22e4, type: 3}
 --- !u!1 &1252257778
@@ -537,12 +537,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2125330665 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3894017516589996641, guid: 9d4fa58897738d14294921b04de141cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 3894017517267590862}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2134189106 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7828128897548130753, guid: 9d4fa58897738d14294921b04de141cd,
@@ -813,22 +807,22 @@ PrefabInstance:
     - target: {fileID: 9046071552065821530, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552065783170, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552065820486, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552065750442, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2753733533007583624, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}

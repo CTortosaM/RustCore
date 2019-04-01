@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AmmoCount : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class AmmoCount : MonoBehaviour
     [SerializeField] private int totalAmmo = 200;
     [SerializeField] private int ammoLeftInMagazine = 12;
     [SerializeField] private int maxAmmoPerMagazine = 12;
+    [SerializeField] private Text ammoText;
 
     public int TotalAmmo { get => totalAmmo; set => totalAmmo = value; }
     public int AmmoLeftInMagazine { get => ammoLeftInMagazine; set => ammoLeftInMagazine = value; }
@@ -17,7 +19,7 @@ public class AmmoCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        updateAmmoText();
     }
 
     // Update is called once per frame
@@ -48,5 +50,11 @@ public class AmmoCount : MonoBehaviour
             AmmoLeftInMagazine = MaxAmmoPerMagazine;
 
         }
+        updateAmmoText();
+    }
+
+    public void updateAmmoText()
+    {
+        ammoText.text = ammoLeftInMagazine.ToString() + "/" + totalAmmo.ToString();
     }
 }
