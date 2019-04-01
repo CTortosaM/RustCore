@@ -98,7 +98,7 @@ public class InitialP : MonoBehaviour
 
     }
 
-    void onEnable()
+    void OnEnable()
     {
         ammo.updateAmmoText();
     }
