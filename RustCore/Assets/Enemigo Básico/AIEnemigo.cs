@@ -92,7 +92,7 @@ public class AIEnemigo : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("El enemigo te hace " + dañoHacido + " de daño.");
-            other.gameObject.GetComponent<PlayerController>().CauseDamage(dañoHacido);
+            other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
             //gameManager.Daño = dañoHacido;
             //gameManager.ComprobarVictoria();
         }

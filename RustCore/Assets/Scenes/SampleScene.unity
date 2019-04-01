@@ -598,6 +598,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7584601622811326369, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: shieldRegenInterval
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584601622811326369, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: shieldRegenSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4fa58897738d14294921b04de141cd, type: 3}
 --- !u!1001 &9046071554110893159

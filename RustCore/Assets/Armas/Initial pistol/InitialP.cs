@@ -56,7 +56,7 @@ public class InitialP : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.R) && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine)
+        if (Input.GetKeyDown(KeyCode.R) && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
         {
             StartCoroutine(reload());
             
@@ -71,17 +71,10 @@ public class InitialP : MonoBehaviour
         
         yield return new WaitForSeconds(1);
 
-        if(ammo.MaxAmmoPerMagazine > ammo.TotalAmmo)
-        {
-
-        } else
-        {
-            ammo.AmmoLeftInMagazine = ammo.MaxAmmoPerMagazine;
-            ammo.TotalAmmo -= ammo.MaxAmmoPerMagazine;
-        }
+        ammo.reload();
 
         isReloading = false;
-        ammo.AmmoLeftInMagazine = 12;
+        //ammo.AmmoLeftInMagazine = 12;
         text.text = ammo.AmmoLeftInMagazine.ToString();
         animator.SetBool("isReloading", false);
     }

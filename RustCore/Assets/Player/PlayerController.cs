@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HealtAndShield))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private bool isDead = false;
     [SerializeField] private int health = 100;
     [SerializeField] private int shield = 100;
 
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slopeForceRayLength;
 
     private CharacterController charController;
+    private HealtAndShield healtAndShield;
 
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpMultiplier;
@@ -40,12 +43,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+        healtAndShield = GetComponent<HealtAndShield>();
         canDash = true;
     }
 
     private void Update()
     {
-        PlayerMovement();
+        if(!healtAndShield.IsDead) PlayerMovement();
     }
 
     private void PlayerMovement()
@@ -129,17 +133,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void CauseDamage(int damageDone)
-    {
-        if ((health - damageDone) < 0)
-        {
-            health = 0;
-        } else
-        {
-            health -= damageDone;
-        }
-
-    }
+  
 
 
 }
