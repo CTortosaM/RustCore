@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(HealtAndShield))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private bool isDead = false;
+    [SerializeField] private bool isDead;
     [SerializeField] private int health = 100;
     [SerializeField] private int shield = 100;
     public Camera[] cameras;
@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        isDead = false;
         charController = GetComponent<CharacterController>();
         healtAndShield = GetComponent<HealtAndShield>();
         canDash = true;
