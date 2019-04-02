@@ -50,7 +50,7 @@ MonoBehaviour:
   shootInterval: 1
   damage: 60
   text: {fileID: 0}
-  camera: {fileID: 0}
+  camera: {fileID: 1187377620524518979, guid: a08af3fb54bf0744eb1e7307d79dc490, type: 3}
   range: 20
   muzzleFlash: {fileID: 4829545603973455677}
 --- !u!114 &6996054822176135957
@@ -69,7 +69,8 @@ MonoBehaviour:
   totalAmmo: 200
   ammoLeftInMagazine: 200
   maxAmmoPerMagazine: 200
-  ammoText: {fileID: 0}
+  ammoText: {fileID: 2380632344027577721, guid: c1866d1f50134c048b446ad42577b3aa,
+    type: 3}
 --- !u!95 &4035775667767463587
 Animator:
   serializedVersion: 3

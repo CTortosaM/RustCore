@@ -34,7 +34,7 @@ public class Shotgun : MonoBehaviour
     void Awake()
     {
         ammo = GetComponent<AmmoCount>();
-        text.text = ammo.AmmoLeftInMagazine.ToString();
+        //text.text = ammo.AmmoLeftInMagazine.ToString();
       //  animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
@@ -54,7 +54,8 @@ public class Shotgun : MonoBehaviour
                 Shoot();
             }
 
-            text.text = ammo.AmmoLeftInMagazine.ToString();
+    //        text.text = ammo.AmmoLeftInMagazine.ToString();
+    
         }
 
 
