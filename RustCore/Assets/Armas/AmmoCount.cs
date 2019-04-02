@@ -57,4 +57,10 @@ public class AmmoCount : MonoBehaviour
     {
         ammoText.text = ammoLeftInMagazine.ToString() + "/" + totalAmmo.ToString();
     }
+
+    public void rechargeAllAmmo()
+    {
+        totalAmmo = MaxTotalAmmo + (maxAmmoPerMagazine - ammoLeftInMagazine);
+        updateAmmoText();
+    }
 }
