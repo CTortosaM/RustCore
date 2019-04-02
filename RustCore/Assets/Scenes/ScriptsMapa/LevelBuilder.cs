@@ -12,7 +12,8 @@ public class LevelBuilder : MonoBehaviour
     public GameObject playerprefab;
     public GameObject pickupPrefab;
     List<Doorway> avaliableDoorways = new List<Doorway>();
-
+    public delegate void LevelGeneration();
+    public static event LevelGeneration onLevelFinished;
     [SerializeField] private NavMeshSurface surface;
 
     StartRoom startRoom;
@@ -28,19 +29,17 @@ public class LevelBuilder : MonoBehaviour
         roomLayerMask = LayerMask.GetMask("Room");
         //Place start room
         PlaceStartRoom();
+
         //Place player
         player = Instantiate(playerprefab);
-        /*foreach(GameObject game in GameObject.FindGameObjectsWithTag("MainCamera"))
-        {
-            game.SetActive(false);
-        }*/
-        player.transform.position = startRoom.playerSpawn.gameObject.transform.position;
-        player.transform.rotation = startRoom.playerSpawn.rotation;
+        player.transform.position = startRoom.playerSpawn.transform.position;
+        player.transform.rotation = startRoom.playerSpawn.transform.rotation;
+        
 
         // player.active = false;
         //Place gun pickup
 
-        
+
         shotgunPickup = Instantiate(pickupPrefab);
         shotgunPickup.transform.position = startRoom.pickupSpawn.position;
         //ResetLevelGenerator();
@@ -73,21 +72,19 @@ public class LevelBuilder : MonoBehaviour
         //Level generation finished
         Debug.Log("Level generation finished");
         surface.BuildNavMesh();
-        foreach(Room room in placedRooms)
+       
+        foreach (Room room in placedRooms)
         {
             foreach(Transform enemySpawn in room.enemySpawns)
             {
                 Instantiate(enemyPrefab,enemySpawn.transform.position, new Quaternion(0,0,0,0),this.transform);
             }
         }
+        onLevelFinished();
 
-        foreach (GameObject game in GameObject.FindGameObjectsWithTag("MainCamera"))
-        {
-            game.SetActive(true);
-        }
         yield return new WaitForSeconds(1);
 
-        
+       
 
 
 

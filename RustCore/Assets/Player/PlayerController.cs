@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isDead = false;
     [SerializeField] private int health = 100;
     [SerializeField] private int shield = 100;
-
+    public Camera[] cameras;
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
     [SerializeField] private float movementSpeed;
@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
         charController = GetComponent<CharacterController>();
         healtAndShield = GetComponent<HealtAndShield>();
         canDash = true;
+        foreach(Camera cam in cameras)
+        {
+           if(cam) cam.gameObject.SetActive(false);
+        }
+        LevelBuilder.onLevelFinished += TurnOnCameras;
     }
 
     private void Update()
@@ -133,7 +138,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
-  
+    private void TurnOnCameras()
+    {
+        foreach(Camera cam in cameras)
+        {
+            if(cam) cam.gameObject.SetActive(true);
+
+
+            Debug.Log("Se supone que se han encendido las cámaras pero a saber");
+        }
+    }
 
 
 }

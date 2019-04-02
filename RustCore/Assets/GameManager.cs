@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SceneManager.LoadScene("Mapa");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

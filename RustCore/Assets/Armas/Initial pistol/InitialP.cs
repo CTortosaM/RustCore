@@ -39,6 +39,7 @@ public class InitialP : MonoBehaviour
         canShoot = true;
         nextPossibleShootTime = Time.time;
         ammo.updateAmmoText();
+        LevelBuilder.onLevelFinished += ResetAnimation;
     }
 
     // Update is called once per frame
@@ -101,5 +102,10 @@ public class InitialP : MonoBehaviour
     void OnEnable()
     {
         ammo.updateAmmoText();
+    }
+
+    private void ResetAnimation()
+    {
+        if(animator)animator.Rebind();
     }
 }

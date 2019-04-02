@@ -622,6 +622,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5622979353304275201}
     m_Modifications:
+    - target: {fileID: 100004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
+      propertyPath: m_Name
+      value: T-Corridor
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1033.2
@@ -678,18 +702,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
-      propertyPath: m_Name
-      value: T-Corridor
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -701,19 +713,7 @@ PrefabInstance:
     - target: {fileID: 2300004, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 57ea425a60b649b46ae2c38c5c51cbfe, type: 2}
-    - target: {fileID: 100000, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 6c60f806c71af9746b8a17ad952975c3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf322aecfbf6d3f418746ecee3882115, type: 3}
 --- !u!1 &6838097444876415054 stripped
