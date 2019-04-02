@@ -25,7 +25,7 @@ public class HealtAndShield : MonoBehaviour
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     public delegate void PlayerDeath();
-    public PlayerDeath onPlayerDeath;
+    public static event PlayerDeath onPlayerDeath;
 
     private bool shieldRegenerating = false;
 
@@ -80,6 +80,7 @@ public class HealtAndShield : MonoBehaviour
     public void killPlayer()
     {
         IsDead = true;
+        onPlayerDeath();
     }
 
     public void UpdateShieldAndHealtText()

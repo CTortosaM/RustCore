@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int daño;
     private IndicadorSalud indicadorSalud;
     public GameObject mensajeFinal; 
+    
 
     public int Daño
     {
@@ -30,9 +31,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HealtAndShield.onPlayerDeath += death;
         mensajeFinal.SetActive(false);
-        indicadorSalud = FindObjectOfType<IndicadorSalud>();
-        MostrarSalud();
+        //indicadorSalud = FindObjectOfType<IndicadorSalud>();
+        //MostrarSalud();
     }
 
     // Update is called once per frame
@@ -55,5 +57,10 @@ public class GameManager : MonoBehaviour
         {
             mensajeFinal.SetActive(true);
         }
+    }
+
+    public void death()
+    {
+        mensajeFinal.SetActive(true);
     }
 }

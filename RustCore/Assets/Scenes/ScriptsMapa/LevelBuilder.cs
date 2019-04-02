@@ -30,6 +30,10 @@ public class LevelBuilder : MonoBehaviour
         PlaceStartRoom();
         //Place player
         player = Instantiate(playerprefab);
+        /*foreach(GameObject game in GameObject.FindGameObjectsWithTag("MainCamera"))
+        {
+            game.SetActive(false);
+        }*/
         player.transform.position = startRoom.playerSpawn.gameObject.transform.position;
         player.transform.rotation = startRoom.playerSpawn.rotation;
 
@@ -76,8 +80,16 @@ public class LevelBuilder : MonoBehaviour
                 Instantiate(enemyPrefab,enemySpawn.transform.position, new Quaternion(0,0,0,0),this.transform);
             }
         }
-        yield return new WaitForSeconds(2);
-   
+
+        foreach (GameObject game in GameObject.FindGameObjectsWithTag("MainCamera"))
+        {
+            game.SetActive(true);
+        }
+        yield return new WaitForSeconds(1);
+
+        
+
+
 
         //player.active = true;
     }

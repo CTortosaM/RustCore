@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3894017516589996641, guid: 9d4fa58897738d14294921b04de141cd, type: 3}
-  radio: 20
+  radio: 23
   "da\xF1oHacido": 20
   gameManager: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
     type: 3}

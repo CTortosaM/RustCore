@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootInterval: 0.2
-  damage: 50
+  damage: 33
   text: {fileID: 5704269413306724474}
   camera: {fileID: 0}
   range: 100
@@ -85,9 +85,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f22b8172205c9149b1ac9f438f2aeca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTotalAmmo: 200
   totalAmmo: 200
   ammoLeftInMagazine: 12
   maxAmmoPerMagazine: 12
+  ammoText: {fileID: 0}
 --- !u!1 &4416888077526728540
 GameObject:
   m_ObjectHideFlags: 0
