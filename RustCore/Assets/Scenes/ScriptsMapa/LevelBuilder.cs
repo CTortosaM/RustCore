@@ -40,8 +40,7 @@ public class LevelBuilder : MonoBehaviour
         //Place gun pickup
 
 
-        shotgunPickup = Instantiate(pickupPrefab);
-        shotgunPickup.transform.position = startRoom.pickupSpawn.position;
+        
         //ResetLevelGenerator();
 
         StartCoroutine("GenerateLevel");
@@ -80,6 +79,8 @@ public class LevelBuilder : MonoBehaviour
                 Instantiate(enemyPrefab,enemySpawn.transform.position, new Quaternion(0,0,0,0),this.transform);
             }
         }
+        shotgunPickup = Instantiate(pickupPrefab);
+        shotgunPickup.transform.position = startRoom.pickupSpawn.position;
         onLevelFinished();
 
         yield return new WaitForSeconds(1);

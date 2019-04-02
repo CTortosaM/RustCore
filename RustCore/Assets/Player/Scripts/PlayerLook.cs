@@ -14,6 +14,7 @@ public class PlayerLook : MonoBehaviour
     private void Awake()
     {
         LockCursor();
+        Cursor.visible = false;
         xAxisClamp = 0.0f;
         
     }
