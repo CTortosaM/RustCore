@@ -153,6 +153,7 @@ MonoBehaviour:
   jumpKey: 32
   dashKey: 304
   dashSpeedMultiplier: 3
+  totalJumps: 0
   dashCoolDown: 1
   dashDuration: 0.17
 --- !u!114 &7584601622811326369
@@ -254,6 +255,18 @@ PrefabInstance:
 --- !u!4 &3894017517206402207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1187377620524518978, guid: a08af3fb54bf0744eb1e7307d79dc490,
+    type: 3}
+  m_PrefabInstance: {fileID: 2769781851628288733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &3894017517206402206 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1187377620524518979, guid: a08af3fb54bf0744eb1e7307d79dc490,
+    type: 3}
+  m_PrefabInstance: {fileID: 2769781851628288733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &286542446037030341 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2705041860249480984, guid: a08af3fb54bf0744eb1e7307d79dc490,
     type: 3}
   m_PrefabInstance: {fileID: 2769781851628288733}
   m_PrefabAsset: {fileID: 0}
