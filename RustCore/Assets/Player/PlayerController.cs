@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode jumpKey;
     [SerializeField] private KeyCode dashKey;
     [SerializeField] private float dashSpeedMultiplier;
+    [SerializeField] private int totalJumps;
 
     [SerializeField] private float dashCoolDown;
     [SerializeField] private float dashDuration;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if(!healtAndShield.IsDead) PlayerMovement();
+        if (!isJumping && !healtAndShield.IsDead) totalJumps = 2;
     }
 
     private void PlayerMovement()
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void JumpInput()
     {
-        if (Input.GetKeyDown(jumpKey) && !isJumping)
+        if (Input.GetKeyDown(jumpKey) && totalJumps > 0)
         {
             isJumping = true;
             StartCoroutine(JumpEvent());
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator JumpEvent()
     {
         charController.slopeLimit = 90.0f;
+        totalJumps -= 1;
         float timeInAir = 0.0f;
         do
         {
