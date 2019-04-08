@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
         foreach(Camera cam in cameras)
         {
-           if(cam) cam.gameObject.SetActive(false);
+           //if(cam) cam.gameObject.SetActive(false);
         }
         LevelBuilder.onLevelFinished += TurnOnCameras;
     }
@@ -107,7 +107,13 @@ public class PlayerController : MonoBehaviour
         float timeInAir = 0.0f;
         do
         {
+            if (totalJumps == 0)
+            {
+                //charController.Move(charController.);
+            }
             float jumpForce = jumpFallOff.Evaluate(timeInAir);
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
             charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
             timeInAir += Time.deltaTime;
             yield return null;
@@ -147,9 +153,6 @@ public class PlayerController : MonoBehaviour
         foreach(Camera cam in cameras)
         {
             if(cam) cam.gameObject.SetActive(true);
-
-
-            Debug.Log("Se supone que se han encendido las cámaras pero a saber");
         }
     }
 
