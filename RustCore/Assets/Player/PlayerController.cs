@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void JumpInput()
     {
-        if (Input.GetKeyDown(jumpKey) && totalJumps > 0)
+        if (Input.GetButtonDown("Jump") && totalJumps > 0)
         {
             isJumping = true;
             StartCoroutine(JumpEvent());
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
     private void DashInput()
     {
 
-        if (Input.GetKeyDown(dashKey) && canDash && Time.time >= nextPossibleDashTime)
+        if (Input.GetButtonDown("Dash") && canDash && Time.time >= nextPossibleDashTime)
         {
             nextPossibleDashTime = Time.time + DashCoolDown;
             canDash = false;
