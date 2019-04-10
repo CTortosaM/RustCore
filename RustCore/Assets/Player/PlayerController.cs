@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
     private void DashInput()
     {
 
-        if (Input.GetButtonDown("Dash") && canDash && Time.time >= nextPossibleDashTime)
+        if (Input.GetButtonDown("Dash") || Input.GetAxis("Dash") > 0 && canDash && Time.time >= nextPossibleDashTime)
         {
             nextPossibleDashTime = Time.time + DashCoolDown;
             canDash = false;
