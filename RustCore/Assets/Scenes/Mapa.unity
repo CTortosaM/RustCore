@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040114913, g: 0.00021890833, b: 0.000000052703133,
+  m_IndirectSpecularColor: {r: 0.0040114946, g: 0.00021890855, b: 0.000000052703133,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -384,6 +384,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3092396374207891030, guid: b1b49952408a699479cde5a39d448ec1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3092396373476678400, guid: b1b49952408a699479cde5a39d448ec1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,11 +494,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3092396374207891030, guid: b1b49952408a699479cde5a39d448ec1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3092396374888456219, guid: b1b49952408a699479cde5a39d448ec1,
         type: 3}
       propertyPath: m_IsActive
@@ -508,16 +508,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
-        type: 3}
-      propertyPath: mensajeFinal
-      value: 
-      objectReference: {fileID: 641536431}
     - target: {fileID: 2001682374206935076, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_Name
       value: gameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
+        type: 3}
+      propertyPath: mensajeFinal
+      value: 
+      objectReference: {fileID: 641536431}
     - target: {fileID: 2001682374206935074, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_LocalPosition.x
