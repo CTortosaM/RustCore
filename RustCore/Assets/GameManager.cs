@@ -42,12 +42,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            //Application.Quit();
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            ReloadLevel();
         }
     }
 
@@ -62,5 +62,10 @@ public class GameManager : MonoBehaviour
     public void death()
     {
         mensajeFinal.SetActive(true);
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
