@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PauseManager.HasRestarted += ReloadLevel;
         HealtAndShield.onPlayerDeath += death;
         mensajeFinal.SetActive(false);
         //indicadorSalud = FindObjectOfType<IndicadorSalud>();

@@ -10,16 +10,21 @@ public class PauseManager : MonoBehaviour
     public static bool isPaused = false;
     public bool CanPause { get => canPause; set => canPause = value; }
 
+    public GameObject menu;
+
+    public delegate void restartLevel();
+    public static event restartLevel HasRestarted;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Pause") && canPause)
+        if (Input.GetButtonDown("Pause") && canPause && !HealtAndShield.IsDead)
         {
             if (isPaused)
             {
@@ -37,9 +42,15 @@ public class PauseManager : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.UnloadSceneAsync("PauseMenu");
+        //menu.SetActive(false);
+        if (GameObject.Find("PauseMenu"))
+        {
+            SceneManager.UnloadScene("PauseMenu");
+        }
+        
         Time.timeScale = 1f;
         isPaused = false;
+        
     }
 
 
@@ -50,5 +61,17 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Time.timeScale = 0f;
         SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        //menu.SetActive(true);
     }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Restart()
+    {
+        HasRestarted();
+    }
+
 }

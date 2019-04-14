@@ -56,8 +56,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(!healtAndShield.IsDead) PlayerMovement();
-        if (!isJumping && !healtAndShield.IsDead) totalJumps = 2;
+        if(!HealtAndShield.IsDead) PlayerMovement();
+        if (!isJumping && !HealtAndShield.IsDead) totalJumps = 2;
     }
 
     private void PlayerMovement()

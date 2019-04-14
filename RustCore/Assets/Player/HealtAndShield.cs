@@ -11,7 +11,7 @@ public class HealtAndShield : MonoBehaviour
     [SerializeField] private float shieldRegenSpeed = .5f;
     [SerializeField] private Text healthText;
     [SerializeField] private Text shieldText;
-    [SerializeField] private bool isDead = false;
+    [SerializeField] public static bool IsDead = false;
     [SerializeField] private int health = 100;
     [SerializeField] private int shield = 100;
     [SerializeField] private int maxShield = 100;
@@ -19,7 +19,6 @@ public class HealtAndShield : MonoBehaviour
 
     public int Health { get => health; set => health = value; }
     public int Shield { get => shield; set => shield = value; }
-    public bool IsDead { get => isDead; set => isDead = value; }
     public float ShieldRegenInterval { get => shieldRegenInterval; set => shieldRegenInterval = value; }
     public int MaxShield { get => maxShield; set => maxShield = value; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
@@ -39,7 +38,7 @@ public class HealtAndShield : MonoBehaviour
     void Update()
     {
         if (health == 0) killPlayer();
-        if (Time.time > nextPossibleRegen && shield < maxShield && !shieldRegenerating && !isDead)
+        if (Time.time > nextPossibleRegen && shield < maxShield && !shieldRegenerating && !IsDead)
         {
             shieldRegenerating = true;
             InvokeRepeating("regenerateShield", 0, shieldRegenSpeed);
