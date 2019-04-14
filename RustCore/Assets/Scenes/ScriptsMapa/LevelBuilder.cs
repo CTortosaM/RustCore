@@ -29,7 +29,8 @@ public class LevelBuilder : MonoBehaviour
         roomLayerMask = LayerMask.GetMask("Room");
         //Place start room
         PlaceStartRoom();
-
+       
+       
         //Place player
         player = Instantiate(playerprefab);
         player.transform.position = startRoom.playerSpawn.transform.position;
@@ -52,16 +53,16 @@ public class LevelBuilder : MonoBehaviour
 
         yield return startup;
         AddDoorwaysToList(startRoom, ref avaliableDoorways);
-
+        
         yield return interval;
-
+        PlaceRoom(true);
         //Random iterations
 
         int iterations = Random.Range((int)iterationRange.x, (int)iterationRange.y);
         for (int i = 0; i < iterations; i++)
         {
             // Place random room from list
-            PlaceRoom();
+            PlaceRoom(false);
             yield return interval;
         }
 
@@ -115,10 +116,19 @@ public class LevelBuilder : MonoBehaviour
         }
     }
 
-    void PlaceRoom()
+    void PlaceRoom(bool isMainCorridor)
     {
-        //Instatntiate room
-        Room currentRoom = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Count)]) as Room;
+        int num;
+        //Instantiate room
+        if (isMainCorridor)
+        {
+             num = 0;
+        }
+        else
+        {
+             num = Random.Range(0, roomPrefabs.Count);
+        }
+        Room currentRoom = Instantiate(roomPrefabs[num]) as Room;
         currentRoom.transform.parent = this.transform;
 
         //Crete doorway lists to loop over
