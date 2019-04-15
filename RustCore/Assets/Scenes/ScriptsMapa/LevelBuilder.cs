@@ -126,7 +126,7 @@ public class LevelBuilder : MonoBehaviour
         }
         else
         {
-             num = Random.Range(0, roomPrefabs.Count);
+             num = Random.Range(1, roomPrefabs.Count);
         }
         Room currentRoom = Instantiate(roomPrefabs[num]) as Room;
         currentRoom.transform.parent = this.transform;
@@ -210,7 +210,7 @@ public class LevelBuilder : MonoBehaviour
     bool CheckRoomOverlap(Room room)
     {
         Bounds bounds = room.RoomBounds;
-        bounds.Expand(-0.5f);
+        bounds.Expand(-1f);
 
         // roomLayerMask = 9;
         Collider[] colliders = Physics.OverlapBox(bounds.center, bounds.size / 2, room.transform.rotation, roomLayerMask);

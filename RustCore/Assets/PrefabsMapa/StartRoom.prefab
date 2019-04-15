@@ -372,6 +372,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882572, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1643123234362882573, guid: f274ed5cf1fc698408eb324c704843de,
         type: 3}
       propertyPath: m_Mesh
@@ -385,17 +390,17 @@ PrefabInstance:
     - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
         type: 3}
       propertyPath: m_SelectedFaces.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
         type: 3}
       propertyPath: m_SelectedEdges.Array.size
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
         type: 3}
       propertyPath: m_SelectedVertices.Array.size
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
         type: 3}
@@ -531,6 +536,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectedVertices.Array.data[7]
       value: 419
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedFaces.Array.data[2]
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[8].a
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[8].b
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[9].a
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[9].b
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[10].a
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[10].b
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[11].a
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedEdges.Array.data[11].b
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedVertices.Array.data[8]
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedVertices.Array.data[9]
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedVertices.Array.data[10]
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643123234362882570, guid: f274ed5cf1fc698408eb324c704843de,
+        type: 3}
+      propertyPath: m_SelectedVertices.Array.data[11]
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 1643123234362882569, guid: f274ed5cf1fc698408eb324c704843de,
         type: 3}
