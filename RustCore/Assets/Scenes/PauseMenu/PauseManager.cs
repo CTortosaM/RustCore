@@ -9,9 +9,6 @@ public class PauseManager : MonoBehaviour
     private bool canPause = true;
     public static bool isPaused = false;
     public bool CanPause { get => canPause; set => canPause = value; }
-
-    public GameObject menu;
-
     public delegate void restartLevel();
     public static event restartLevel HasRestarted;
 
@@ -24,7 +21,7 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Pause") && canPause && !HealtAndShield.IsDead)
+        if (Input.GetButtonDown("Pause") && canPause)
         {
             if (isPaused)
             {
@@ -43,11 +40,7 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         //menu.SetActive(false);
-        if (GameObject.Find("PauseMenu"))
-        {
-            SceneManager.UnloadScene("PauseMenu");
-        }
-        
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu"));
         Time.timeScale = 1f;
         isPaused = false;
         
@@ -71,7 +64,8 @@ public class PauseManager : MonoBehaviour
 
     public void Restart()
     {
-        HasRestarted();
+        SceneManager.UnloadSceneAsync("PauseMenu");
+        SceneManager.LoadScene("Mapa");
     }
 
 }

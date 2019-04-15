@@ -561,6 +561,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2373346541155626516, guid: c5139ce589da41948b4b4ad404e79104,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2122627059402369368, guid: 6116e5791b5a78d45b640727d75e16b3,
+        type: 3}
+    - target: {fileID: 2373346541155626516, guid: c5139ce589da41948b4b4ad404e79104,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5139ce589da41948b4b4ad404e79104, type: 3}
 --- !u!1001 &8906456863942054817
@@ -570,11 +581,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1383304969}
     m_Modifications:
-    - target: {fileID: 8906456863962328770, guid: 6eacefb0a55f5dc43b3aa75477a7a27f,
-        type: 3}
-      propertyPath: m_Name
-      value: Pause
-      objectReference: {fileID: 0}
     - target: {fileID: 8906456863962328773, guid: 6eacefb0a55f5dc43b3aa75477a7a27f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -679,6 +685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906456863962328770, guid: 6eacefb0a55f5dc43b3aa75477a7a27f,
+        type: 3}
+      propertyPath: m_Name
+      value: Pause
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eacefb0a55f5dc43b3aa75477a7a27f, type: 3}

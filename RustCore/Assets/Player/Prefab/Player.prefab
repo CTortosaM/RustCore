@@ -149,7 +149,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  jumpMultiplier: 5
+  jumpMultiplier: 10
   jumpKey: 32
   dashKey: 304
   dashSpeedMultiplier: 3
@@ -173,7 +173,6 @@ MonoBehaviour:
   shieldRegenSpeed: 0.1
   healthText: {fileID: 7828128897548130753}
   shieldText: {fileID: 2507408247507803022}
-  isDead: 0
   health: 100
   shield: 100
   maxShield: 100

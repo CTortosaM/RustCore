@@ -67,6 +67,6 @@ public class GameManager : MonoBehaviour
 
     public void ReloadLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Mapa");
     }
 }
