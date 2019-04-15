@@ -34,7 +34,7 @@ public class menuManager: MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene("Mapa");
+        SceneManager.LoadScene("Tutorial");
     }
 
 

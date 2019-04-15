@@ -32,6 +32,11 @@ public class PauseManager : MonoBehaviour
                Pause();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Restart();
+        }
     }
 
 
@@ -64,8 +69,8 @@ public class PauseManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.UnloadSceneAsync("PauseMenu");
-        SceneManager.LoadScene("Mapa");
+       // SceneManager.UnloadSceneAsync("PauseMenu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
