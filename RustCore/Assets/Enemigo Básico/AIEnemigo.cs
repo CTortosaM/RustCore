@@ -9,10 +9,10 @@ public class AIEnemigo : MonoBehaviour
     public float radio = 6f;
     private int destino = 0;
     [SerializeField] private int dañoHacido = 30;
+    [SerializeField] private float saludRestante = 100;
     public GameManager gameManager;
     private NavMeshAgent agente;
 
-    private float saludRestante = 100;
 
     public float SaludRestante
     {
