@@ -47,11 +47,12 @@ public class PlayerController : MonoBehaviour
         charController = GetComponent<CharacterController>();
         healtAndShield = GetComponent<HealtAndShield>();
         canDash = true;
-        foreach(Camera cam in cameras)
+        /*foreach(Camera cam in cameras)
         {
            //if(cam) cam.gameObject.SetActive(false);
         }
         LevelBuilder.onLevelFinished += TurnOnCameras;
+        */
     }
 
     private void Update()
