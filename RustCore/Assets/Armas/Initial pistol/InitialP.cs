@@ -45,7 +45,7 @@ public class InitialP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0 && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
+        if (Input.GetMouseButtonDown(0) && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
         {
             if(ammo.AmmoLeftInMagazine > 0)
             {
@@ -59,7 +59,7 @@ public class InitialP : MonoBehaviour
         }
 
 
-        if (Input.GetButtonDown("Reload") && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
+        if (Input.GetKeyDown(KeyCode.R) && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
         {
             StartCoroutine(reload());
             

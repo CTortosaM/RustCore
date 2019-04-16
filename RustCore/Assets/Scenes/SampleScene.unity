@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.45056397, g: 0.500548, b: 0.57507026, a: 1}
+  m_IndirectSpecularColor: {r: 0.45056403, g: 0.500548, b: 0.5750704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,18 +260,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d3e2dea1eb4cf4c9dd4ccc560c22e4, type: 3}
---- !u!114 &808159612 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3174560274878351489, guid: 9d4fa58897738d14294921b04de141cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 3894017517267590862}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca350213eb914a4ca97b4453639e4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1252257778
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,41 +685,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 88790269244888656, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: jumpMultiplier
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 88790269244888656, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: jumpFallOff.m_Curve.Array.data[1].inSlope
-      value: 0.20801033
-      objectReference: {fileID: 0}
-    - target: {fileID: 88790269244888656, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: jumpFallOff.m_Curve.Array.data[1].outSlope
-      value: 0.20801033
-      objectReference: {fileID: 0}
-    - target: {fileID: 88790269244888656, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: jumpFallOff.m_Curve.Array.data[1].inWeight
-      value: 0.11869769
-      objectReference: {fileID: 0}
-    - target: {fileID: 88790269244888656, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: jumpFallOff.m_Curve.Array.data[0].inSlope
-      value: -4.790445
-      objectReference: {fileID: 0}
-    - target: {fileID: 88790269244888656, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: jumpFallOff.m_Curve.Array.data[0].outSlope
-      value: -4.790445
-      objectReference: {fileID: 0}
-    - target: {fileID: 88790269244888656, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: jumpFallOff.m_Curve.Array.data[0].outWeight
-      value: 0.062686004
-      objectReference: {fileID: 0}
     - target: {fileID: 7584601622811326369, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: shieldRegenInterval
@@ -770,11 +723,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shotgun_pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 9046071552463393771, guid: f826232e022cc9b49a50f88ffb0fb6b2,
-        type: 3}
-      propertyPath: m_Size
-      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552463393773, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
@@ -835,21 +783,26 @@ PrefabInstance:
         type: 3}
       propertyPath: weaponManager
       value: 
-      objectReference: {fileID: 808159612}
+      objectReference: {fileID: 0}
     - target: {fileID: 9046071552463393775, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: holdPositionZ
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552463393775, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: holdPositionX
-      value: 0
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552463393775, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}
       propertyPath: holdPositionY
-      value: 0
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046071552463393771, guid: f826232e022cc9b49a50f88ffb0fb6b2,
+        type: 3}
+      propertyPath: m_Size
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 9046071552065821530, guid: f826232e022cc9b49a50f88ffb0fb6b2,
         type: 3}

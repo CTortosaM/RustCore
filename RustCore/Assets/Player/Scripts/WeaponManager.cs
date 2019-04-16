@@ -43,7 +43,7 @@ public class WeaponManager : MonoBehaviour
         
 
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f  || Input.GetAxis("ArrowAxis") > 0 && !isSwitching && weapons.Count > 1)
+        if(Input.GetAxis("Mouse ScrollWheel") > 0f && !isSwitching && weapons.Count > 1)
         {
             isSwitching = true;
 
@@ -55,7 +55,7 @@ public class WeaponManager : MonoBehaviour
             
            
         }
-        else if (Input.GetAxis("Mouse ScrollWheel")<0f || Input.GetAxis("ArrowAxis")<0f && !isSwitching && weapons.Count > 1)
+        else if (Input.GetAxis("Mouse ScrollWheel")<0f && !isSwitching && weapons.Count > 1)
         {
             isSwitching = true;
 
