@@ -71,22 +71,22 @@ public class LevelBuilder : MonoBehaviour
         //Level generation finished
         Debug.Log("Level generation finished");
         surface.BuildNavMesh();
-       
+
         foreach (Room room in placedRooms)
         {
-            foreach(Transform enemySpawn in room.enemySpawns)
+            foreach (Transform enemySpawn in room.enemySpawns)
             {
-                Instantiate(enemyPrefab,enemySpawn.transform.position, new Quaternion(0,0,0,0),this.transform);
+                Instantiate(enemyPrefab, enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
             }
         }
         shotgunPickup = Instantiate(pickupPrefab);
         shotgunPickup.transform.position = startRoom.pickupSpawn.position;
-        
+
         onLevelFinished();
 
         yield return new WaitForSeconds(1);
 
-       
+
 
 
 
@@ -98,7 +98,7 @@ public class LevelBuilder : MonoBehaviour
         startRoom = Instantiate(startRoomPrefab) as StartRoom;
         startRoom.transform.parent = this.transform;
         //Get doorways from current room and add then randomly to the list of doorways
-      
+
 
         //Position room
         startRoom.transform.position = Vector3.zero;
@@ -158,7 +158,7 @@ public class LevelBuilder : MonoBehaviour
                 avaliableDoorway.gameObject.SetActive(false);
                 avaliableDoorways.Remove(avaliableDoorway);
 
-               
+
 
                 //Exit loop if room has been placed
                 break;
@@ -224,7 +224,7 @@ public class LevelBuilder : MonoBehaviour
                 else
                 {
                     Debug.LogError("Overlap detected");
-                     ResetLevelGenerator();
+                    ResetLevelGenerator();
                     Debug.LogError(c);
                     return true;
 
@@ -289,7 +289,7 @@ public class LevelBuilder : MonoBehaviour
         //Delete all rooms
         if (startRoom)
         {
-          //  Destroy(startRoom.gameObject);
+            //  Destroy(startRoom.gameObject);
 
         }
         if (endRoom)
