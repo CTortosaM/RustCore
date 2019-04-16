@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00401149, g: 0.00021890822, b: 0.000000052703133,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0.3378904, g: 0.33336678, b: 0.29306382, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -183,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
@@ -231,32 +230,31 @@ PrefabInstance:
         type: 3}
       propertyPath: endRoomPrefab
       value: 
-      objectReference: {fileID: 7642201380471170659, guid: 331cda63cb82c484eb549839144b7bb1,
+      objectReference: {fileID: 4617473499472192408, guid: d374773ab373cd04597541e37e4eb5c6,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 876472296976215495, guid: e14e16d4c74a24e47b7eb65ca666a6df,
+      objectReference: {fileID: 4792353990981004271, guid: 7a9d16d6852566542921eb1254bdc038,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 7249396500792510001, guid: c7911e528d57236458bb8e4c3015dffe,
+      objectReference: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 6287583577646844273, guid: 4ab4b007b09e1844d9fa66aec0b0be97,
+      objectReference: {fileID: 1715401949196659002, guid: 80d60571efa831a498b4c923106c0d2f,
         type: 3}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: roomPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 5847467139502667455, guid: 5759ad0a7ae1aae438cd677d2ca25a93,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 35752174304255319, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb,
         type: 3}
       propertyPath: iterationRange.y
@@ -520,13 +518,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983129550}
-  m_LocalRotation: {x: -0.74337596, y: 0.04635704, z: 0.25463423, w: 0.6167695}
+  m_LocalRotation: {x: -0.4459639, y: -0.3297188, z: 0.6469642, w: 0.5232964}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -70.151, y: -108.816, z: 133.772}
+  m_LocalEulerAnglesHint: {x: -2.299, y: -67.34901, z: 103.59601}
 --- !u!114 &1031601416 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2122627059402369368, guid: 6116e5791b5a78d45b640727d75e16b3,
@@ -832,16 +830,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2122627059402369369, guid: 6116e5791b5a78d45b640727d75e16b3,
-        type: 3}
-      propertyPath: m_Name
-      value: PauseManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122627059402369369, guid: 6116e5791b5a78d45b640727d75e16b3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2122627059402369368, guid: 6116e5791b5a78d45b640727d75e16b3,
         type: 3}
       propertyPath: menu
@@ -851,6 +839,16 @@ PrefabInstance:
         type: 3}
       propertyPath: pauseScene.m_Handle
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122627059402369369, guid: 6116e5791b5a78d45b640727d75e16b3,
+        type: 3}
+      propertyPath: m_Name
+      value: PauseManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122627059402369369, guid: 6116e5791b5a78d45b640727d75e16b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2122627059402369371, guid: 6116e5791b5a78d45b640727d75e16b3,
         type: 3}
