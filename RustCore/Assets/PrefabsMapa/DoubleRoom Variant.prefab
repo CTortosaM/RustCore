@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4928608776033601844}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7143139336807913354
 MeshFilter:
@@ -2225,7 +2225,7 @@ Transform:
   m_LocalScale: {x: 1.0639, y: 1, z: 1.6184016}
   m_Children: []
   m_Father: {fileID: 4928608776033601844}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -22.084002, z: 0}
 --- !u!33 &6787005570392931679
 MeshFilter:
@@ -2832,6 +2832,101 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoubleRoom Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[0]
+      value: 
+      objectReference: {fileID: 5238047690276429805}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[1]
+      value: 
+      objectReference: {fileID: 7003308102989444650}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[2]
+      value: 
+      objectReference: {fileID: 256931162495971074}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[3]
+      value: 
+      objectReference: {fileID: 2606796378508690522}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[4]
+      value: 
+      objectReference: {fileID: 96919402946034827}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[5]
+      value: 
+      objectReference: {fileID: 1613061511903963356}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[6]
+      value: 
+      objectReference: {fileID: 3152904278992454623}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: doorways.Array.data[7]
+      value: 
+      objectReference: {fileID: 5503061519212613806}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: meshCollider
+      value: 
+      objectReference: {fileID: 8359197400036913704}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 3262578613165808481}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[1]
+      value: 
+      objectReference: {fileID: 3921369334609348468}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[2]
+      value: 
+      objectReference: {fileID: 7798096972630055781}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[3]
+      value: 
+      objectReference: {fileID: 5376946946661674524}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6137380782581452244, guid: 3f9513b7da1111c46b83c5f54e379eb3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2887,96 +2982,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+    - target: {fileID: 7298190275155408584, guid: 3f9513b7da1111c46b83c5f54e379eb3,
         type: 3}
-      propertyPath: doorways.Array.data[0]
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 5238047690276429805}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: doorways.Array.data[1]
-      value: 
-      objectReference: {fileID: 7003308102989444650}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: doorways.Array.data[2]
-      value: 
-      objectReference: {fileID: 256931162495971074}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: doorways.Array.data[3]
-      value: 
-      objectReference: {fileID: 2606796378508690522}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: doorways.Array.data[4]
-      value: 
-      objectReference: {fileID: 96919402946034827}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: doorways.Array.data[5]
-      value: 
-      objectReference: {fileID: 1613061511903963356}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: doorways.Array.data[6]
-      value: 
-      objectReference: {fileID: 3152904278992454623}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: doorways.Array.data[7]
-      value: 
-      objectReference: {fileID: 5503061519212613806}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: meshCollider
-      value: 
-      objectReference: {fileID: 8359197400036913704}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[0]
-      value: 
-      objectReference: {fileID: 4928608776033601844}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[1]
-      value: 
-      objectReference: {fileID: 3262578613165808481}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[2]
-      value: 
-      objectReference: {fileID: 8988306311768400309}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[3]
-      value: 
-      objectReference: {fileID: 3921369334609348468}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[4]
-      value: 
-      objectReference: {fileID: 4133262076766477930}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[5]
-      value: 
-      objectReference: {fileID: 7798096972630055781}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[6]
-      value: 
-      objectReference: {fileID: 8517029953100583082}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[7]
-      value: 
-      objectReference: {fileID: 5376946946661674524}
-    - target: {fileID: 470591146971213274, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: enemySpawns.Array.data[8]
-      value: 
-      objectReference: {fileID: 6588964850121849988}
+      objectReference: {fileID: 0}
     - target: {fileID: 3933493949124406265, guid: 3f9513b7da1111c46b83c5f54e379eb3,
         type: 3}
       propertyPath: m_Layer
@@ -3307,11 +3317,6 @@ PrefabInstance:
       propertyPath: m_Tangents.Array.data[2255].z
       value: NaN
       objectReference: {fileID: 0}
-    - target: {fileID: 7298190275155408584, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f9513b7da1111c46b83c5f54e379eb3, type: 3}
 --- !u!4 &4928608776033601844 stripped
@@ -3422,21 +3427,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1245725630294164704}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8988306311768400309 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7923331666244003157, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1245725630294164704}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3921369334609348468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2819874034601722772, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1245725630294164704}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4133262076766477930 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2888495291479808650, guid: 3f9513b7da1111c46b83c5f54e379eb3,
     type: 3}
   m_PrefabInstance: {fileID: 1245725630294164704}
   m_PrefabAsset: {fileID: 0}
@@ -3446,21 +3439,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1245725630294164704}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8517029953100583082 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7456594572075111498, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1245725630294164704}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5376946946661674524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6617885850357951228, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1245725630294164704}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6588964850121849988 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5348306321320228964, guid: 3f9513b7da1111c46b83c5f54e379eb3,
     type: 3}
   m_PrefabInstance: {fileID: 1245725630294164704}
   m_PrefabAsset: {fileID: 0}

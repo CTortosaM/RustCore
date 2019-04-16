@@ -65,7 +65,7 @@ public class LevelBuilder : MonoBehaviour
             PlaceRoom(false);
             yield return interval;
         }
-
+        
         //Place end room
         PlaceEndRoom();
         yield return interval;
@@ -210,7 +210,7 @@ public class LevelBuilder : MonoBehaviour
     bool CheckRoomOverlap(Room room)
     {
         Bounds bounds = room.RoomBounds;
-        bounds.Expand(-1f);
+        bounds.Expand(-0.1f);
 
         // roomLayerMask = 9;
         Collider[] colliders = Physics.OverlapBox(bounds.center, bounds.size / 2, room.transform.rotation, roomLayerMask);
@@ -221,24 +221,25 @@ public class LevelBuilder : MonoBehaviour
             Debug.Log("Collider 1: " + colliders[0]);
             Debug.Log("Collider 1: " + colliders[colliders.Length - 1]);
             //Ignore collisions with current room
-            foreach (Collider c in colliders)
-            {
-                //c.transform.parent.gameObject.Equals(room.gameObject) ||
-                if (c.transform.parent.gameObject.Equals(room.gameObject) || c.transform.gameObject.Equals(room.gameObject))
-                {
+           
+             foreach (Collider c in colliders)
+             {
+                 //c.transform.parent.gameObject.Equals(room.gameObject) ||
+                 if (c.transform.parent.gameObject.Equals(room.gameObject) || c.transform.gameObject.Equals(room.gameObject))
+                 {
 
-                    continue;
+                     continue;
 
-                }
-                else
-                {
-                    Debug.LogError("Overlap detected");
-                     ResetLevelGenerator();
-                    Debug.LogError(c);
-                    return true;
+                 }
+                 else
+                 {
+                     Debug.LogError("Overlap detected");
+                      //ResetLevelGenerator();
+                     Debug.LogError(c);
+                     return true;
 
-                }
-            }
+                 }
+             }
         }
         return false;
     }
@@ -261,7 +262,7 @@ public class LevelBuilder : MonoBehaviour
             //Position room
             Room room = (Room)endRoom;
             PositionRoomAtDoorway(ref room, doorway, avaliableDoorway);
-
+           
             //Check room overlaps
             if (CheckRoomOverlap(endRoom))
             {
@@ -275,6 +276,24 @@ public class LevelBuilder : MonoBehaviour
             avaliableDoorway.gameObject.SetActive(false);
             avaliableDoorways.Remove(avaliableDoorway);
 
+           /* for (int i = 0; i < avaliableDoorways.Count; i++)
+            {
+                for (int j = 0; j < avaliableDoorways.Count; j++)
+                {
+                    if (avaliableDoorways[i] != avaliableDoorways[j])
+                    {
+                        if (Mathf.Abs(avaliableDoorways[j].transform.position.x - avaliableDoorways[i].transform.position.x) > 0.1 || Mathf.Abs(avaliableDoorways[j].transform.position.y - avaliableDoorways[i].transform.position.y) > 0.1 || Mathf.Abs(avaliableDoorways[j].transform.position.z - avaliableDoorways[i].transform.position.z) > 0.1)
+                        {
+                            avaliableDoorways[i].gameObject.SetActive(false);
+                            avaliableDoorways.Remove(avaliableDoorways[i]);
+
+                            avaliableDoorways[j].gameObject.SetActive(false);
+                            avaliableDoorways.Remove(avaliableDoorways[j]);
+                            break;
+                        }
+                    }
+                }
+            }*/
             //Exit loop if room has been placed
             break;
         }
