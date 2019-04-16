@@ -132,6 +132,7 @@ MonoBehaviour:
   player: {fileID: 3894017516589996641, guid: 9d4fa58897738d14294921b04de141cd, type: 3}
   radio: 23
   "da\xF1oHacido": 20
+  saludRestante: 100
   gameManager: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
     type: 3}
 --- !u!1 &22607309733934418
@@ -145,7 +146,6 @@ GameObject:
   - component: {fileID: 22607309733934419}
   - component: {fileID: 22607309733934446}
   - component: {fileID: 22607309733934445}
-  - component: {fileID: 22607309733934444}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -212,16 +212,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &22607309733934444
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22607309733934418}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
