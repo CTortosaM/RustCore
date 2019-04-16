@@ -14,6 +14,7 @@ public class LevelBuilder : MonoBehaviour
     List<Doorway> avaliableDoorways = new List<Doorway>();
     public delegate void LevelGeneration();
     public static event LevelGeneration onLevelFinished;
+    public static event LevelGeneration startingGeneration;
     [SerializeField] private NavMeshSurface surface;
 
     StartRoom startRoom;
@@ -23,7 +24,10 @@ public class LevelBuilder : MonoBehaviour
     LayerMask roomLayerMask;
     GameObject player;
     GameObject shotgunPickup;
-
+    void Awake()
+    {
+        //startingGeneration();
+    }
     void Start()
     {
         roomLayerMask = LayerMask.GetMask("Room");
@@ -35,6 +39,8 @@ public class LevelBuilder : MonoBehaviour
         player = Instantiate(playerprefab);
         player.transform.position = startRoom.playerSpawn.transform.position;
         player.transform.rotation = startRoom.playerSpawn.transform.rotation;
+
+        startingGeneration();
 
 
         // player.active = false;

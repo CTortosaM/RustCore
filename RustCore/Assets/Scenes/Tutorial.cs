@@ -21,7 +21,8 @@ public class Tutorial : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync("Mapa");
+           SceneManager.LoadSceneAsync("Mapa");
+            
         }
     }
 }
