@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    private bool canPause = true;
+    private bool canPause = false;
     public static bool isPaused = false;
     public bool CanPause { get => canPause; set => canPause = value; }
     public delegate void restartLevel();
@@ -18,6 +18,15 @@ public class PauseManager : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        LevelBuilder.onLevelFinished += enablePause;
+    }
+
+    private void enablePause()
+    {
+        canPause = true;
+    }
     // Update is called once per frame
     void Update()
     {

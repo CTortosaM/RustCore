@@ -43,13 +43,13 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        LevelBuilder.startingGeneration += TurnOffCameras;
+        //LevelBuilder.startingGeneration += TurnOffCameras;
         isDead = false;
         charController = GetComponent<CharacterController>();
         healtAndShield = GetComponent<HealtAndShield>();
         canDash = true;
         
-        LevelBuilder.onLevelFinished += TurnOnCameras;
+        //LevelBuilder.onLevelFinished += TurnOnCameras;
         
     }
 

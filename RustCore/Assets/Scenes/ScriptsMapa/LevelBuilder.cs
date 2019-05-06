@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class LevelBuilder : MonoBehaviour
 {
@@ -34,13 +35,14 @@ public class LevelBuilder : MonoBehaviour
         //Place start room
         PlaceStartRoom();
 
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Additive);
 
         //Place player
         player = Instantiate(playerprefab);
         player.transform.position = startRoom.playerSpawn.transform.position;
         player.transform.rotation = startRoom.playerSpawn.transform.rotation;
 
-        startingGeneration();
+        //startingGeneration();
 
 
         // player.active = false;
@@ -77,6 +79,8 @@ public class LevelBuilder : MonoBehaviour
         yield return interval;
         //Level generation finished
         Debug.Log("Level generation finished");
+
+       
         surface.BuildNavMesh();
 
         foreach (Room room in placedRooms)
@@ -88,6 +92,8 @@ public class LevelBuilder : MonoBehaviour
         }
         shotgunPickup = Instantiate(pickupPrefab);
         shotgunPickup.transform.position = startRoom.pickupSpawn.position;
+
+        SceneManager.UnloadSceneAsync("LoadingScreen");
         onLevelFinished();
 
         yield return new WaitForSeconds(1);
