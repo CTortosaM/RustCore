@@ -43,14 +43,16 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        LevelBuilder.startingGeneration += TurnOffCameras;
         isDead = false;
         charController = GetComponent<CharacterController>();
         healtAndShield = GetComponent<HealtAndShield>();
         canDash = true;
-        
+        /*foreach(Camera cam in cameras)
+        {
+           //if(cam) cam.gameObject.SetActive(false);
+        }
         LevelBuilder.onLevelFinished += TurnOnCameras;
-        
+        */
     }
 
     private void Update()
@@ -155,13 +157,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void TurnOffCameras()
-    {
-        foreach (Camera cam in cameras)
-        {
-            if (cam) cam.gameObject.SetActive(false);
-        }
-    }
 
 }
 
