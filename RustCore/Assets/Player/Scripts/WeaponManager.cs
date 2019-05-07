@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
-
+    public List<int> avalaibleWeapons;
+    [SerializeField] private Text ammoText;
     private KeyCode[] keyCodes = {
          KeyCode.Alpha1,
          KeyCode.Alpha2,
@@ -28,7 +30,8 @@ public class WeaponManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-
+        avalaibleWeapons = new List<int>();
+        avalaibleWeapons.Add(0);
         index = 0;
         isSwitching = false;
         EquipWeapon(0);
@@ -77,6 +80,8 @@ public class WeaponManager : MonoBehaviour
         }
 
         weapons[index].SetActive(true);
+        AmmoCount weaponAmmo = weapons[index].GetComponent<AmmoCount>();
+        ammoText.text = weaponAmmo.AmmoLeftInMagazine + " / " + weaponAmmo.TotalAmmo;
     }
 
     private IEnumerator SwitchCooldown()

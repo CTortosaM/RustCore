@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022243349623438779}
+  - component: {fileID: 3729872241310496277}
+  - component: {fileID: 1834622303841424944}
   m_Layer: 0
   m_Name: PrecisionRifle
   m_TagString: Untagged
@@ -23,14 +25,48 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5264312747989086870}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8591496562968253178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &3729872241310496277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264312747989086870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f22b8172205c9149b1ac9f438f2aeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponId: 1
+  maxTotalAmmo: 200
+  totalAmmo: 200
+  ammoLeftInMagazine: 12
+  maxAmmoPerMagazine: 12
+  ammoText: {fileID: 0}
+--- !u!114 &1834622303841424944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264312747989086870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e687b56a38c669b4f83217b63bdbb55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootInterval: 3
+  damage: 100
+  camera: {fileID: 0}
+  range: 100
 --- !u!1001 &8591496562967857278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,19 +92,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 07d786af6dcdf9b49a205b56a7acff7e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 07d786af6dcdf9b49a205b56a7acff7e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 07d786af6dcdf9b49a205b56a7acff7e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 07d786af6dcdf9b49a205b56a7acff7e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 07d786af6dcdf9b49a205b56a7acff7e, type: 3}
       propertyPath: m_RootOrder
@@ -80,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 07d786af6dcdf9b49a205b56a7acff7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 07d786af6dcdf9b49a205b56a7acff7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
