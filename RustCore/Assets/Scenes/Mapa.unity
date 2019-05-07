@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667632, g: 0.48427063, b: 0.5645242, a: 1}
+  m_IndirectSpecularColor: {r: 0.3378904, g: 0.33336678, b: 0.29306382, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -518,13 +518,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983129550}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: -0.4459639, y: -0.3297188, z: 0.6469642, w: 0.5232964}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.299, y: -67.34901, z: 103.59601}
 --- !u!114 &1031601416 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2122627059402369368, guid: 6116e5791b5a78d45b640727d75e16b3,
@@ -550,6 +550,11 @@ PrefabInstance:
       value: HuD
       objectReference: {fileID: 0}
     - target: {fileID: 3092396373476678404, guid: b1b49952408a699479cde5a39d448ec1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092396374207891030, guid: b1b49952408a699479cde5a39d448ec1,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -659,11 +664,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3092396374207891030, guid: b1b49952408a699479cde5a39d448ec1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3092396374888456219, guid: b1b49952408a699479cde5a39d448ec1,
         type: 3}
       propertyPath: m_IsActive
@@ -696,16 +696,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
-        type: 3}
-      propertyPath: mensajeFinal
-      value: 
-      objectReference: {fileID: 641536431}
     - target: {fileID: 2001682374206935076, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_Name
       value: gameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
+        type: 3}
+      propertyPath: mensajeFinal
+      value: 
+      objectReference: {fileID: 641536431}
     - target: {fileID: 2001682374206935074, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_LocalPosition.x
