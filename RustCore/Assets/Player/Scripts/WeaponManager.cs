@@ -46,7 +46,7 @@ public class WeaponManager : MonoBehaviour
         
 
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f  || Input.GetAxis("ArrowAxis") > 0 && !isSwitching && weapons.Count > 1)
+        if(Input.GetAxis("Mouse ScrollWheel") > 0f  || Input.GetAxis("ArrowAxis") > 0 && !isSwitching && weapons.Count > 1 && avalaibleWeapons.Count > 1)
         {
             isSwitching = true;
 
@@ -58,7 +58,7 @@ public class WeaponManager : MonoBehaviour
             
            
         }
-        else if (Input.GetAxis("Mouse ScrollWheel")<0f || Input.GetAxis("ArrowAxis")<0f && !isSwitching && weapons.Count > 1)
+        else if (Input.GetAxis("Mouse ScrollWheel")<0f || Input.GetAxis("ArrowAxis")<0f && !isSwitching && weapons.Count > 1 && avalaibleWeapons.Count > 1)
         {
             isSwitching = true;
 
@@ -78,7 +78,11 @@ public class WeaponManager : MonoBehaviour
         {
             weapons[i].SetActive(false);
         }
-
+        while (!avalaibleWeapons.Contains(weapons[index].GetComponent<AmmoCount>().weaponId))
+        {
+            index++;
+            if (index >= weapons.Count) index = 0;
+        }
         weapons[index].SetActive(true);
         AmmoCount weaponAmmo = weapons[index].GetComponent<AmmoCount>();
         ammoText.text = weaponAmmo.AmmoLeftInMagazine + " / " + weaponAmmo.TotalAmmo;
@@ -98,13 +102,10 @@ public class WeaponManager : MonoBehaviour
         StartCoroutine(SwitchCooldown());
     }
 
-    public void AddWeapon(GameObject gun, Vector3 holdPosition)
+    public void AddWeapon(int id)
     {
-        weapons.Add(gun);
-        gun.transform.SetParent(position,false);
-        gun.transform.localPosition = holdPosition;
-        gun.transform.localRotation = new Quaternion(0, 0, 0, 0);
-        EquipWeapon(weapons.IndexOf(gun));
+        avalaibleWeapons.Add(id);
+       // EquipWeapon(weapons.IndexOf(gun));
     }
 
     private void SwitchWeaponsThroughKeys()
