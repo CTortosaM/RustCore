@@ -9,7 +9,7 @@ public class Triggered : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             openDoor();
-            this.transform.parent.gameObject.SetActive(false);
+            Destroy(this.transform.parent.gameObject);
         }
     }
     IEnumerator openDoor(){
