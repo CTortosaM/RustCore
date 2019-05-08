@@ -68,8 +68,8 @@ MonoBehaviour:
   weaponId: 2
   maxTotalAmmo: 200
   totalAmmo: 200
-  ammoLeftInMagazine: 200
-  maxAmmoPerMagazine: 200
+  ammoLeftInMagazine: 4
+  maxAmmoPerMagazine: 4
   ammoText: {fileID: 2380632344027577721, guid: c1866d1f50134c048b446ad42577b3aa,
     type: 3}
 --- !u!95 &4035775667767463587
