@@ -156,6 +156,7 @@ MonoBehaviour:
   totalJumps: 0
   dashCoolDown: 1
   dashDuration: 0.17
+  canDash: 0
 --- !u!114 &7584601622811326369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,16 +260,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.22259721
       objectReference: {fileID: 0}
-    - target: {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 3321300801420097057}
     - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: weaponId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 3321300801420097057}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f80b3de41fd56e40817d94f70ba0a8c, type: 3}
 --- !u!1 &8599148731068126520 stripped
@@ -354,6 +355,11 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 3894017516589996641}
+    - target: {fileID: 1187377620524518979, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1335
+      objectReference: {fileID: 0}
     - target: {fileID: 529251756723404262, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: m_IsActive
