@@ -63,7 +63,8 @@ public class AmmoCount : MonoBehaviour
 
     public void rechargeAllAmmo()
     {
-        totalAmmo = MaxTotalAmmo + (maxAmmoPerMagazine - ammoLeftInMagazine);
+        totalAmmo = MaxTotalAmmo;// + (maxAmmoPerMagazine - ammoLeftInMagazine);
+        ammoLeftInMagazine = maxAmmoPerMagazine;
         updateAmmoText();
     }
 }

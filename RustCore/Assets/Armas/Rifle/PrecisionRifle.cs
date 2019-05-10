@@ -60,7 +60,7 @@ public class PrecisionRifle : MonoBehaviour
 
             if (Input.GetButtonDown("Reload") && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
             {
-                //StartCoroutine(reload());
+                StartCoroutine(reload());
 
             }
         }
@@ -86,5 +86,13 @@ public class PrecisionRifle : MonoBehaviour
             ammo.AmmoLeftInMagazine--;
             ammo.updateAmmoText();
         }
+    }
+
+    private IEnumerator reload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(1);
+        ammo.reload();
+        isReloading = false;
     }
 }

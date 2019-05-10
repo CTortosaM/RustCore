@@ -125,5 +125,9 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+    public AmmoCount getCurrentWeapon()
+    {
+        return weapons[index].GetComponent<AmmoCount>();
+    }
   
 }
