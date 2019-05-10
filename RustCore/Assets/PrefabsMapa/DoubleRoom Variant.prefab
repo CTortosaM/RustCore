@@ -2927,6 +2927,16 @@ PrefabInstance:
       propertyPath: enemySpawns.Array.data[8]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7298190275155408584, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933493949124406265, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6137380782581452244, guid: 3f9513b7da1111c46b83c5f54e379eb3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2981,16 +2991,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7298190275155408584, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3933493949124406265, guid: 3f9513b7da1111c46b83c5f54e379eb3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4962908991711960505, guid: 3f9513b7da1111c46b83c5f54e379eb3,
         type: 3}
@@ -3316,6 +3316,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tangents.Array.data[2255].z
       value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772669819560852796, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914659060814642993, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690961249910301109, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023710139237151790, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659975190237335378, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -31.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813925929132691659, guid: 3f9513b7da1111c46b83c5f54e379eb3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -90.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f9513b7da1111c46b83c5f54e379eb3, type: 3}
