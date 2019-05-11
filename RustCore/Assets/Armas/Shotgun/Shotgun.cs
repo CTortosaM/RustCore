@@ -23,7 +23,7 @@ public class Shotgun : MonoBehaviour
     [SerializeField] private float range = 100f;
     [SerializeField] private ParticleSystem muzzleFlash;
 
-    //private bool isReloading = false;
+    private bool isReloading = false;
 
 
     public int Damage { get => damage; set => damage = value; }
@@ -38,7 +38,7 @@ public class Shotgun : MonoBehaviour
       //  animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
-        ammo.updateAmmoText();
+        //ammo.updateAmmoText();
     }
 
     // Update is called once per frame
@@ -54,33 +54,33 @@ public class Shotgun : MonoBehaviour
                 Shoot();
             }
 
-    //        text.text = ammo.AmmoLeftInMagazine.ToString();
+            text.text = ammo.AmmoLeftInMagazine.ToString();
     
         }
 
 
         if (Input.GetKeyDown(KeyCode.R) && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
         {
-           // StartCoroutine(reload());
+            StartCoroutine(reload());
 
         }
     }
 
 
-   /* private IEnumerator reload()
+    private IEnumerator reload()
     {
         isReloading = true;
-        animator.SetBool("isReloading", true);
+        //animator.SetBool("isReloading", true);
 
         yield return new WaitForSeconds(1);
 
         ammo.reload();
 
         isReloading = false;
-        //ammo.AmmoLeftInMagazine = 12;
+        ammo.AmmoLeftInMagazine = 12;
         text.text = ammo.AmmoLeftInMagazine.ToString();
-        animator.SetBool("isReloading", false);
-    }*/
+       // animator.SetBool("isReloading", false);
+    }
 
 
     private void Shoot()
@@ -97,6 +97,8 @@ public class Shotgun : MonoBehaviour
                 hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
             }
         }
+
+        Debug.Log(hit.collider.gameObject.tag);
 
     }
 

@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     //Variables de control de cooldown
     private bool isJumping;
     private bool isDashing;
-    private bool canDash;
+    public bool canDash;
     private float nextPossibleDashTime;
 
     //Propiedades
@@ -124,8 +124,7 @@ public class PlayerController : MonoBehaviour
 
     private void DashInput()
     {
-
-        if (Input.GetButtonDown("Dash") || Input.GetAxis("Dash") > 0 && canDash && Time.time >= nextPossibleDashTime)
+        if (Input.GetButtonDown("Dash") && canDash && Time.time> nextPossibleDashTime  || Input.GetAxis("Dash") > 0 && canDash && Time.time > nextPossibleDashTime)
         {
             nextPossibleDashTime = Time.time + DashCoolDown;
             canDash = false;
@@ -140,9 +139,10 @@ public class PlayerController : MonoBehaviour
         float OGSpeed = movementSpeed;
         movementSpeed *= dashSpeedMultiplier;
         yield return new WaitForSeconds(DashDuration);
-        movementSpeed = OGSpeed;
+        movementSpeed = 16.5f;
         charController.Move(new Vector3(0, 0, 0));
         isDashing = false;
+        yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
     }
 

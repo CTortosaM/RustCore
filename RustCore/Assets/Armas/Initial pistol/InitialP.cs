@@ -38,7 +38,7 @@ public class InitialP : MonoBehaviour
         animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
-        ammo.updateAmmoText();
+        //ammo.updateAmmoText();
         LevelBuilder.onLevelFinished += ResetAnimation;
     }
 
@@ -80,7 +80,7 @@ public class InitialP : MonoBehaviour
         ammo.reload();
 
         isReloading = false;
-        //ammo.AmmoLeftInMagazine = 12;
+        ammo.AmmoLeftInMagazine = 12;
         text.text = ammo.AmmoLeftInMagazine.ToString();
         animator.SetBool("isReloading", false);
     }
@@ -104,7 +104,7 @@ public class InitialP : MonoBehaviour
 
     void OnEnable()
     {
-        ammo.updateAmmoText();
+        //ammo.updateAmmoText();
     }
 
     private void ResetAnimation()

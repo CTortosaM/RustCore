@@ -23,7 +23,7 @@ public class pickup_ammo : MonoBehaviour
     {
         if (other.gameObject.tag == targetTag)
         {
-            other.GetComponentInChildren<AmmoCount>().rechargeAllAmmo();
+            other.GetComponentInChildren<WeaponManager>().getCurrentWeapon().rechargeAllAmmo();
             Destroy(this.gameObject);
         }
     }
