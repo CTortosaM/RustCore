@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    private bool canPause = false;
+   [SerializeField] private bool canPause = false;
     public static bool isPaused = false;
     public bool CanPause { get => canPause; set => canPause = value; }
     public delegate void restartLevel();
