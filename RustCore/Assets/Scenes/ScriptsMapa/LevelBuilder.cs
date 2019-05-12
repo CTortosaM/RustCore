@@ -33,9 +33,10 @@ public class LevelBuilder : MonoBehaviour
     {
         roomLayerMask = LayerMask.GetMask("Room");
         //Place start room
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Additive);
         PlaceStartRoom();
 
-        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Additive);
+       
 
         //Place player
         player = Instantiate(playerprefab);
