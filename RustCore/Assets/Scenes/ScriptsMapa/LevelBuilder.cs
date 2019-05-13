@@ -165,6 +165,7 @@ public class LevelBuilder : MonoBehaviour
                 //Check room overlaps
                 if (CheckRoomOverlap(currentRoom))
                 {
+
                     continue;
                 }
                 roomPlaced = true;
