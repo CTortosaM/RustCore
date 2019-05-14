@@ -11,7 +11,7 @@ public class Shotgun : MonoBehaviour
     private AmmoCount ammo;
     [SerializeField] private float shootInterval = 1f;
     private float nextPossibleShootTime;
-
+    public int perdigones = 8;
     [SerializeField] private int damage = 50;
 
     public Text text;
@@ -34,7 +34,7 @@ public class Shotgun : MonoBehaviour
     void Awake()
     {
         ammo = GetComponent<AmmoCount>();
-        //text.text = ammo.AmmoLeftInMagazine.ToString();
+        text.text = ammo.AmmoLeftInMagazine.ToString();
       //  animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
@@ -44,25 +44,27 @@ public class Shotgun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)  && canShoot && Time.time >= nextPossibleShootTime)
+        if (!PauseManager.isPaused)
         {
-            if (ammo.AmmoLeftInMagazine > 0)
+            if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0 && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
             {
-                nextPossibleShootTime = Time.time + ShootInterval;
-                ammo.AmmoLeftInMagazine--;
-                ammo.updateAmmoText();
-                Shoot();
+                if (ammo.AmmoLeftInMagazine > 0)
+                {
+                    nextPossibleShootTime = Time.time + ShootInterval;
+                    ammo.AmmoLeftInMagazine--;
+                    ammo.updateAmmoText();
+                    Shoot();
+                }
+
+                text.text = ammo.AmmoLeftInMagazine.ToString();
             }
 
-            text.text = ammo.AmmoLeftInMagazine.ToString();
-    
-        }
 
+            if (Input.GetButtonDown("Reload") && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
+            {
+                StartCoroutine(reload());
 
-        if (Input.GetKeyDown(KeyCode.R) && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
-        {
-            StartCoroutine(reload());
-
+            }
         }
     }
 
@@ -77,7 +79,7 @@ public class Shotgun : MonoBehaviour
         ammo.reload();
 
         isReloading = false;
-        ammo.AmmoLeftInMagazine = 12;
+        ammo.AmmoLeftInMagazine = ammo.MaxAmmoPerMagazine;
         text.text = ammo.AmmoLeftInMagazine.ToString();
        // animator.SetBool("isReloading", false);
     }
@@ -85,20 +87,39 @@ public class Shotgun : MonoBehaviour
 
     private void Shoot()
     {
-
+        Vector3 direction = camera.transform.forward;
         RaycastHit hit;
 
         muzzleFlash.Play();
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range))
+        if (Physics.Raycast(camera.transform.position, direction, out hit, range))
         {
+            Debug.DrawRay(camera.transform.position, camera.transform.forward, Color.green, 10.0f, false);
             if (hit.collider.gameObject.tag == "Enemy")
             {
                 hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
             }
         }
+        for(int i=0; i<perdigones; i++)
+        {
+            Vector3 direction2 = direction;
 
-        Debug.Log(hit.collider.gameObject.tag);
+       direction2.x+=Random.value*10;
+            direction2 = Quaternion.AngleAxis(Random.Range(1f,30f), camera.transform.forward) *direction2;
+            RaycastHit hit2;
+           
+            
+            muzzleFlash.Play();
+
+            if (Physics.Raycast(camera.transform.position, direction, out hit2, range))
+            {
+                Debug.DrawRay(camera.transform.position, direction, Color.red,  10.0f,  false);
+                if (hit2.collider.gameObject.tag == "Enemy")
+                {
+                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                }
+            }
+        }
 
     }
 
