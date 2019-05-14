@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class AmmoCount : MonoBehaviour
 {
+    public int weaponId;
+    private bool canEquip = false;
     [SerializeField] private int maxTotalAmmo = 200;
     [SerializeField] private int totalAmmo = 200;
     [SerializeField] private int ammoLeftInMagazine = 12;
@@ -15,6 +17,7 @@ public class AmmoCount : MonoBehaviour
     public int AmmoLeftInMagazine { get => ammoLeftInMagazine; set => ammoLeftInMagazine = value; }
     public int MaxAmmoPerMagazine { get => maxAmmoPerMagazine; set => maxAmmoPerMagazine = value; }
     public int MaxTotalAmmo { get => maxTotalAmmo; set => maxTotalAmmo = value; }
+    public bool CanEquip { get => canEquip; set => canEquip = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +63,8 @@ public class AmmoCount : MonoBehaviour
 
     public void rechargeAllAmmo()
     {
-        totalAmmo = MaxTotalAmmo + (maxAmmoPerMagazine - ammoLeftInMagazine);
+        totalAmmo = MaxTotalAmmo;// + (maxAmmoPerMagazine - ammoLeftInMagazine);
+        ammoLeftInMagazine = maxAmmoPerMagazine;
         updateAmmoText();
     }
 }

@@ -38,31 +38,34 @@ public class InitialP : MonoBehaviour
         animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
-        ammo.updateAmmoText();
+        //ammo.updateAmmoText();
         LevelBuilder.onLevelFinished += ResetAnimation;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0 && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
+        if (!PauseManager.isPaused)
         {
-            if(ammo.AmmoLeftInMagazine > 0)
+            if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0 && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
             {
-                nextPossibleShootTime = Time.time + ShootInterval;
-                ammo.AmmoLeftInMagazine--;
-                ammo.updateAmmoText();
-                Shoot();
-            } 
+                if (ammo.AmmoLeftInMagazine > 0)
+                {
+                    nextPossibleShootTime = Time.time + ShootInterval;
+                    ammo.AmmoLeftInMagazine--;
+                    ammo.updateAmmoText();
+                    Shoot();
+                }
 
-            text.text = ammo.AmmoLeftInMagazine.ToString();
-        }
+                text.text = ammo.AmmoLeftInMagazine.ToString();
+            }
 
 
-        if (Input.GetButtonDown("Reload") && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
-        {
-            StartCoroutine(reload());
-            
+            if (Input.GetButtonDown("Reload") && ammo.AmmoLeftInMagazine < ammo.MaxAmmoPerMagazine && ammo.TotalAmmo != 0)
+            {
+                StartCoroutine(reload());
+
+            }
         }
     }
 
@@ -77,7 +80,7 @@ public class InitialP : MonoBehaviour
         ammo.reload();
 
         isReloading = false;
-        //ammo.AmmoLeftInMagazine = 12;
+        ammo.AmmoLeftInMagazine = 12;
         text.text = ammo.AmmoLeftInMagazine.ToString();
         animator.SetBool("isReloading", false);
     }
@@ -101,7 +104,7 @@ public class InitialP : MonoBehaviour
 
     void OnEnable()
     {
-        ammo.updateAmmoText();
+        //ammo.updateAmmoText();
     }
 
     private void ResetAnimation()
