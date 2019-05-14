@@ -1,19 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+
 public class Triggered : MonoBehaviour
 {
-  
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player"|| other.gameObject.tag=="Enemy")
+        if (other.gameObject.tag == "Player")
         {
             openDoor();
-           // this.transform.parent.gameObject.layer = 12;
             Destroy(this.transform.parent.gameObject);
-            other.transform.position += other.transform.forward*3;
-           //transform.parent.transform.parent.transform.parent.GetComponent<LevelBuilder>().surface.BuildNavMesh();
         }
     }
     IEnumerator openDoor(){
