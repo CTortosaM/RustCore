@@ -24,7 +24,6 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private float weaponSwitchDelay = .5f;
     private int index;
     private bool isSwitching;
- 
 
     public float WeaponSwitchDelay { get => weaponSwitchDelay; set => weaponSwitchDelay = value; }
 
@@ -130,20 +129,5 @@ public class WeaponManager : MonoBehaviour
     {
         return weapons[index].GetComponent<AmmoCount>();
     }
-
-
-    /*public IEnumerator wait()
-    {
-        Debug.Log("Te jodes");
-        yield return new WaitForSeconds(gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().waiting);
-        Debug.Log("Ya puedes seguir");
-        gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().isEquiped = true;
-        transform.SetParent(gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().parentTransform, true);
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
-        gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().hasArrived = false;
-
-        gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().run = false;
-        gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().transform.localPosition = gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().originalPosition;
-        gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().transform.localRotation = gameObject.transform.Find("Boomerbang").GetComponent<Boomerbang>().originalRotation;
-    }*/
+  
 }

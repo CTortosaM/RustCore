@@ -16,7 +16,7 @@ public class LevelBuilder : MonoBehaviour
     public delegate void LevelGeneration();
     public static event LevelGeneration onLevelFinished;
     public static event LevelGeneration startingGeneration;
-    [SerializeField] public NavMeshSurface surface;
+    [SerializeField] private NavMeshSurface surface;
 
     StartRoom startRoom;
     EndRoom endRoom;
@@ -166,7 +166,6 @@ public class LevelBuilder : MonoBehaviour
                 //Check room overlaps
                 if (CheckRoomOverlap(currentRoom))
                 {
-
                     continue;
                 }
                 roomPlaced = true;
