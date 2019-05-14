@@ -31,6 +31,8 @@ GameObject:
   - component: {fileID: 7810146399504507021}
   - component: {fileID: 88790269244888656}
   - component: {fileID: 7584601622811326369}
+  - component: {fileID: 6087837636151980193}
+  - component: {fileID: 5274133107787128617}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -196,6 +198,42 @@ MonoBehaviour:
   shield: 100
   maxShield: 100
   maxHealth: 100
+--- !u!114 &6087837636151980193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894017516589996642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b95b10f711371b4b83f47d92485c8b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootInterval: 1
+  damage: 50
+  text: {fileID: 3321300801420097057}
+  camera: {fileID: 5028874359665819599}
+  range: 100
+  muzzleFlash: {fileID: 744827763117213682}
+--- !u!114 &5274133107787128617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894017516589996642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f22b8172205c9149b1ac9f438f2aeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponId: 0
+  maxTotalAmmo: 200
+  totalAmmo: 200
+  ammoLeftInMagazine: 12
+  maxAmmoPerMagazine: 12
+  ammoText: {fileID: 3321300801420097057}
 --- !u!1001 &2867790835761655215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,11 +443,71 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.22259721
       objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 426.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -776.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665568579291101650, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: weaponId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: ammoLeftInMagazine
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: maxAmmoPerMagazine
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 3321300801420097057}
     - target: {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: text
@@ -420,6 +518,12 @@ PrefabInstance:
 --- !u!1 &8599148731068126520 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4469126575249509879, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5283802929299478735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &744827763117213682 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
     type: 3}
   m_PrefabInstance: {fileID: 5283802929299478735}
   m_PrefabAsset: {fileID: 0}

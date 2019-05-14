@@ -72,8 +72,8 @@ public class Boomerbang : MonoBehaviour
                          }
                      }*/
                     //  transform.position = Vector3.MoveTowards(player.transform.position, longitude * playerForward, (float)1.5);
-                   // Instantiate(gameObject, transform.position, transform.rotation);
-                   // clone.transform.SetParent(null, true);
+
+                    transform.SetParent(null, true);
                     run = true;
                 }
             }
