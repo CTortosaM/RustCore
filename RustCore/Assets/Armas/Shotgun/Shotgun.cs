@@ -79,7 +79,7 @@ public class Shotgun : MonoBehaviour
         ammo.reload();
 
         isReloading = false;
-        ammo.AmmoLeftInMagazine = 12;
+        ammo.AmmoLeftInMagazine = ammo.MaxAmmoPerMagazine;
         text.text = ammo.AmmoLeftInMagazine.ToString();
        // animator.SetBool("isReloading", false);
     }
