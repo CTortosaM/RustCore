@@ -6193,7 +6193,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 73a29e364e99aa8469fb63d4a9bd6fc5, type: 2}
+  - {fileID: 2100000, guid: 4c2e35f61031e504cb7acef2fe4ab2cb, type: 2}
+  - {fileID: 2100000, guid: cd3e8e44e5d58a544b8c0d1e59bfcd1e, type: 2}
+  - {fileID: 2100000, guid: f7cab7b267ebe824d969beebb1063d24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6682,7 +6685,7 @@ MonoBehaviour:
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 1
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -6971,7 +6974,7 @@ MonoBehaviour:
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 1
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -7498,7 +7501,7 @@ MonoBehaviour:
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 1
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -7685,7 +7688,7 @@ MonoBehaviour:
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 3
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -7821,7 +7824,7 @@ MonoBehaviour:
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 2
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -7957,7 +7960,7 @@ MonoBehaviour:
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 1
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -9451,33 +9454,17 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 2b000000650000001a000000
+  m_SelectedFaces: 55000000
   m_SelectedEdges:
-  - a: 180
-    b: 181
-  - a: 182
-    b: 180
-  - a: 181
-    b: 183
-  - a: 183
-    b: 182
-  - a: 416
-    b: 417
-  - a: 418
-    b: 416
-  - a: 417
-    b: 419
-  - a: 419
-    b: 418
-  - a: 112
-    b: 113
-  - a: 114
-    b: 112
-  - a: 113
-    b: 115
-  - a: 115
-    b: 114
-  m_SelectedVertices: b4000000b5000000b6000000b7000000a0010000a1010000a2010000a301000070000000710000007200000073000000
+  - a: 352
+    b: 353
+  - a: 354
+    b: 352
+  - a: 353
+    b: 355
+  - a: 355
+    b: 354
+  m_SelectedVertices: 60010000610100006201000063010000
 --- !u!64 &1412217129769529910
 MeshCollider:
   m_ObjectHideFlags: 0

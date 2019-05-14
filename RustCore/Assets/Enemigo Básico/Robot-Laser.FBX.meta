@@ -14,7 +14,37 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Robot
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carcasaojo
+    second: {fileID: 2100000, guid: 50f4196032d2d0c428e7cfa29ade525d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "cuerpoBot\xE7"
+    second: {fileID: 2100000, guid: 008b9f9f52f7f2249a408f37acb806ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lineascabeza
+    second: {fileID: 2100000, guid: 114cef9f443744d42bc93d3cf7af036b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: luz
+    second: {fileID: 2100000, guid: 69bcf6962f04d14469b883fe10c87996, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ojobot
+    second: {fileID: 2100000, guid: 69bcf6962f04d14469b883fe10c87996, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shield
+    second: {fileID: 2100000, guid: 114cef9f443744d42bc93d3cf7af036b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
