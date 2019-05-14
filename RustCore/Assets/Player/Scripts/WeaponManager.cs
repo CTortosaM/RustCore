@@ -32,6 +32,7 @@ public class WeaponManager : MonoBehaviour
     {
         avalaibleWeapons = new List<int>();
         avalaibleWeapons.Add(0);
+        avalaibleWeapons.Add(3);
         index = 0;
         isSwitching = false;
         EquipWeapon(0);

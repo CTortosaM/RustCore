@@ -269,11 +269,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca350213eb914a4ca97b4453639e4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avalaibleWeapons: 
+  avalaibleWeapons: 0000000003000000
   ammoText: {fileID: 0}
   position: {fileID: 1187377621675272363}
   weapons:
   - {fileID: 529251756723404262}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   weaponSwitchDelay: 0.5
 --- !u!114 &3270819574771106704
 MonoBehaviour:
@@ -1001,6 +1004,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1187377621675272363}
     m_Modifications:
+    - target: {fileID: 1895541492578586504, guid: c4ee013635700964d9e5ba66ca6f5d91,
+        type: 3}
+      propertyPath: m_Name
+      value: Initial-P
+      objectReference: {fileID: 0}
     - target: {fileID: 7152589883604907709, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1055,11 +1063,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1895541492578586504, guid: c4ee013635700964d9e5ba66ca6f5d91,
-        type: 3}
-      propertyPath: m_Name
-      value: Initial-P
       objectReference: {fileID: 0}
     - target: {fileID: 6029685914992132730, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
