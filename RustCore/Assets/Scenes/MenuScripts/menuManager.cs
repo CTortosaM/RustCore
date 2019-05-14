@@ -34,7 +34,7 @@ public class menuManager: MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadSceneAsync("Tutorial");
+        SceneManager.LoadSceneAsync("SalaHub");
     }
 
 

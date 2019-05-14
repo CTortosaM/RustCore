@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Tutorial : MonoBehaviour
+public class TriggerSceneTutorial : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -19,10 +19,9 @@ public class Tutorial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-           SceneManager.LoadSceneAsync("Mapa");
-            
+            SceneManager.LoadSceneAsync("Tutorial");
         }
     }
 }
