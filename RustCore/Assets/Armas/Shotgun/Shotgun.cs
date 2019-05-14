@@ -22,7 +22,8 @@ public class Shotgun : MonoBehaviour
 
     [SerializeField] private float range = 100f;
     [SerializeField] private ParticleSystem muzzleFlash;
-
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
     private bool isReloading = false;
 
 
@@ -33,9 +34,11 @@ public class Shotgun : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        initialPosition = transform.localPosition;
+        initialRotation = transform.localRotation;
         ammo = GetComponent<AmmoCount>();
         text.text = ammo.AmmoLeftInMagazine.ToString();
-      //  animator = GetComponent<Animator>();
+     // animator = GetComponent<Animator>();
         canShoot = true;
         nextPossibleShootTime = Time.time;
         //ammo.updateAmmoText();
@@ -44,6 +47,11 @@ public class Shotgun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isReloading)
+        {
+            transform.localPosition = initialPosition;
+            transform.localRotation = initialRotation;
+        }
         if (!PauseManager.isPaused)
         {
             if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0 && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
@@ -73,7 +81,10 @@ public class Shotgun : MonoBehaviour
     {
         isReloading = true;
         //animator.SetBool("isReloading", true);
-
+        for (int i = 0; i < 10; i++)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, camera.transform.position, (float)1.5);
+        }
         yield return new WaitForSeconds(1);
 
         ammo.reload();
