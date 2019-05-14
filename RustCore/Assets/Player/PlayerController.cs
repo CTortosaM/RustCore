@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string verticalInputName;
     [SerializeField] private float movementSpeed;
 
+    [SerializeField] private Light flashlight;
+
     [SerializeField] private float slopeForce;
     [SerializeField] private float slopeForceRayLength;
 
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!HealtAndShield.IsDead) PlayerMovement();
         if (!isJumping && !HealtAndShield.IsDead) totalJumps = 2;
+        flashlightInput();
     }
 
     private void PlayerMovement()
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
         JumpInput();
         DashInput();
+        
     }
 
     private bool OnSlope()
@@ -160,6 +164,15 @@ public class PlayerController : MonoBehaviour
         foreach (Camera cam in cameras)
         {
             if (cam) cam.gameObject.SetActive(false);
+        }
+    }
+
+    private void flashlightInput()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            flashlight.enabled = !flashlight.enabled;
+            Debug.Log("FUnciona el input");
         }
     }
 
