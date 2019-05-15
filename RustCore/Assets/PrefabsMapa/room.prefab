@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4070123325798735393}
   - component: {fileID: 6265455814603098470}
   - component: {fileID: 5610528120295757416}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 6967767412479837239}
   - component: {fileID: 8672808451388129644}
   - component: {fileID: 8566845377018673260}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 6680130169963620290}
   - component: {fileID: 8700082491048886746}
   - component: {fileID: 1253144814135908369}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 7261250717289728120}
   - component: {fileID: 1765916631585793901}
   - component: {fileID: 3855222168274261986}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 4701492690363694323}
   - component: {fileID: 732297327663494396}
   - component: {fileID: 2065600132715779490}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 3778246012865143606}
   - component: {fileID: 5979597449452970471}
   - component: {fileID: 5396295820716650613}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558345008990469355}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 7727574283332758403}
   - component: {fileID: 1844584216807223242}
   - component: {fileID: 9002950869727508019}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1027,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3573296841949897916}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6573090427136341608}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4145598863402024185}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorways
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 6079009061215983657}
   - component: {fileID: 5679846781219907965}
   - component: {fileID: 1654572502287830252}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7905147005545785425}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
