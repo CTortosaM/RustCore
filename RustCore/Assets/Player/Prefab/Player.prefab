@@ -279,8 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootInterval: 0.5
-  perdigones: 8
-  damage: 25
+  perdigones: 12
+  damage: 20
   text: {fileID: 3321300801420097057}
   camera: {fileID: 5028874359665819599}
   range: 30
@@ -594,11 +594,6 @@ PrefabInstance:
       propertyPath: maxAmmoPerMagazine
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 3321300801420097057}
     - target: {fileID: 9117284837575353141, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: m_Layer
@@ -655,6 +650,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 3321300801420097057}
     m_RemovedComponents:
     - {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5f80b3de41fd56e40817d94f70ba0a8c, type: 3}

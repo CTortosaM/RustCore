@@ -12,7 +12,7 @@ public class Shotgun : MonoBehaviour
     [SerializeField] private float shootInterval = 1f;
     private float nextPossibleShootTime;
     public int perdigones = 8;
-    [SerializeField] private int damage = 50;
+    [SerializeField] private int damage;
 
     public Text text;
     private bool canShoot;
@@ -125,12 +125,12 @@ public class Shotgun : MonoBehaviour
                 hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
             }
         }
-        for(int i=0; i<perdigones; i++)
+        for(int i=0; i<perdigones/2; i++)
         {
             Vector3 direction2 = direction;
             float random = Random.Range(0, 1);
-            direction2.x += Mathf.Sin(i * 2 * Mathf.PI / perdigones)/(perdigones*6);//Random.Range(-1, 0);
-            direction2.y += Mathf.Cos(i * 2 * Mathf.PI / perdigones)/(perdigones*6);//Random.Range(0, 1);
+            direction2.x += Mathf.Sin(i * 4 * Mathf.PI / perdigones)/(perdigones*6);//Random.Range(-1, 0);
+            direction2.y += Mathf.Cos(i * 4 * Mathf.PI / perdigones)/(perdigones*6);//Random.Range(0, 1);
                                                                      // direction2 = Quaternion.AngleAxis(Random.Range(1f,20f), camera.transform.forward) *direction2;
             RaycastHit hit2;
             
@@ -145,27 +145,48 @@ public class Shotgun : MonoBehaviour
                 }
             }
         }
+        for (int i = 0; i < perdigones / 2; i++)
+        {
+            Vector3 direction2 = direction;
+            float random = Random.Range(0, 1);
+            direction2.x += Mathf.Sin(i * 4 * Mathf.PI / perdigones) / (perdigones * 3);//Random.Range(-1, 0);
+            direction2.y += Mathf.Cos(i * 4 * Mathf.PI / perdigones) / (perdigones * 3);//Random.Range(0, 1);
+                                                                                        // direction2 = Quaternion.AngleAxis(Random.Range(1f,20f), camera.transform.forward) *direction2;
+            RaycastHit hit2;
 
-       StartCoroutine(shootAction());
+            //  muzzleFlash.Play();
+
+            if (Physics.Raycast(camera.transform.position, direction2, out hit2, range))
+            {
+                Debug.DrawRay(camera.transform.position, direction2, Color.red, 10.0f, false);
+                if (hit2.collider.gameObject.tag == "Enemy")
+                {
+                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                }
+            }
+        }
+
+        StartCoroutine(shootAction());
     }
   
     private IEnumerator shootAction()
     {
         for (int i = 0; i < 5; i++)
         {
-            transform.Rotate(0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
-            yield return new WaitForSeconds(0.005f);
+            transform.Rotate(0.02f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.001f);
         }
         for (int i = 0; i < 5; i++)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - i/5);
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.001f);
         }
-        for (int i = 0; i < 10; i++)
+        /*for (int i = 0; i < 2; i++)
         {
-            transform.Rotate(-0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
-            yield return new WaitForSeconds(0.005f);
+            transform.Rotate(-0.02f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.001f);
         }
+        yield return new WaitForSeconds(0.1f);
         /*for (int i = 0; i < 5; i++)
         {
             transform.position = Vector3.MoveTowards(transform.position, -camera.transform.position, (float)0.2);
