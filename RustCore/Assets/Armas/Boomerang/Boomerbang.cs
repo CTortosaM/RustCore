@@ -47,7 +47,7 @@ public class Boomerbang : MonoBehaviour
     void FixedUpdate()
     {
         
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetButtonDown("Fire2"))
         {
             if (isEquiped)
             {
@@ -78,7 +78,7 @@ public class Boomerbang : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKey(KeyCode.Mouse0))
+        else if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0)
         {
             if (isEquiped)
             {
