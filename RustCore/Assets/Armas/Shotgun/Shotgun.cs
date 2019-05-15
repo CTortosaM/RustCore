@@ -56,8 +56,9 @@ public class Shotgun : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0 && !isReloading && canShoot && Time.time >= nextPossibleShootTime)
             {
-                if (ammo.AmmoLeftInMagazine > 0)
+                if (ammo.AmmoLeftInMagazine > 0  && canShoot && Time.time >= nextPossibleShootTime)
                 {
+                    StopCoroutine(reload());
                     nextPossibleShootTime = Time.time + ShootInterval;
                     ammo.AmmoLeftInMagazine--;
                     ammo.updateAmmoText();
@@ -83,9 +84,22 @@ public class Shotgun : MonoBehaviour
         //animator.SetBool("isReloading", true);
         for (int i = 0; i < 10; i++)
         {
-            transform.position = Vector3.MoveTowards(transform.position, camera.transform.position, (float)1.5);
+            transform.Rotate(-0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(1);
+        for (int i = ammo.AmmoLeftInMagazine; i <= ammo.MaxAmmoPerMagazine; i++)
+        {
+            ammo.AmmoLeftInMagazine = i;
+            text.text = ammo.AmmoLeftInMagazine.ToString();
+            //transform.position = Vector3.MoveTowards(transform.localPosition, initialPosition, (float)0.5);
+            yield return new WaitForSeconds(0.2f);
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            transform.Rotate(0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.01f);
+        }
+        //yield return new WaitForSeconds(1);
 
         ammo.reload();
 
@@ -114,17 +128,17 @@ public class Shotgun : MonoBehaviour
         for(int i=0; i<perdigones; i++)
         {
             Vector3 direction2 = direction;
-
-       direction2.x+=Random.value*10;
-            direction2 = Quaternion.AngleAxis(Random.Range(1f,30f), camera.transform.forward) *direction2;
+            float random = Random.Range(0, 1);
+            direction2.x += Mathf.Sin(i * 2 * Mathf.PI / perdigones)/(perdigones*6);//Random.Range(-1, 0);
+            direction2.y += Mathf.Cos(i * 2 * Mathf.PI / perdigones)/(perdigones*6);//Random.Range(0, 1);
+                                                                     // direction2 = Quaternion.AngleAxis(Random.Range(1f,20f), camera.transform.forward) *direction2;
             RaycastHit hit2;
-           
             
-            muzzleFlash.Play();
+          //  muzzleFlash.Play();
 
-            if (Physics.Raycast(camera.transform.position, direction, out hit2, range))
+            if (Physics.Raycast(camera.transform.position, direction2, out hit2, range))
             {
-                Debug.DrawRay(camera.transform.position, direction, Color.red,  10.0f,  false);
+                Debug.DrawRay(camera.transform.position, direction2, Color.red,  10.0f,  false);
                 if (hit2.collider.gameObject.tag == "Enemy")
                 {
                     hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
@@ -132,8 +146,32 @@ public class Shotgun : MonoBehaviour
             }
         }
 
+       StartCoroutine(shootAction());
     }
-
+  
+    private IEnumerator shootAction()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            transform.Rotate(0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.005f);
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - i/5);
+            yield return new WaitForSeconds(0.005f);
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            transform.Rotate(-0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.005f);
+        }
+        /*for (int i = 0; i < 5; i++)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, -camera.transform.position, (float)0.2);
+            yield return new WaitForSeconds(0.005f);
+        }*/
+    }
     void OnEnable()
     {
         ammo.updateAmmoText();
