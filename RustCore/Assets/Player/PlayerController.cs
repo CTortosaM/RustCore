@@ -169,10 +169,9 @@ public class PlayerController : MonoBehaviour
 
     private void flashlightInput()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("Flashlight"))
         {
             flashlight.enabled = !flashlight.enabled;
-            Debug.Log("FUnciona el input");
         }
     }
 
