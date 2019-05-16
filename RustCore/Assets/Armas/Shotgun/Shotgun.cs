@@ -165,33 +165,24 @@ public class Shotgun : MonoBehaviour
                 }
             }
         }
-
+      //  transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.5f);
         StartCoroutine(shootAction());
     }
   
     private IEnumerator shootAction()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
-            transform.Rotate(0.02f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
-            yield return new WaitForSeconds(0.001f);
-        }
-        for (int i = 0; i < 5; i++)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - i/5);
-            yield return new WaitForSeconds(0.001f);
-        }
-        /*for (int i = 0; i < 2; i++)
-        {
-            transform.Rotate(-0.02f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
-            yield return new WaitForSeconds(0.001f);
+            transform.Rotate(-0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.007f);
         }
         yield return new WaitForSeconds(0.1f);
-        /*for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
-            transform.position = Vector3.MoveTowards(transform.position, -camera.transform.position, (float)0.2);
-            yield return new WaitForSeconds(0.005f);
-        }*/
+            transform.Rotate(0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
+            yield return new WaitForSeconds(0.007f);
+        }
+       
     }
     void OnEnable()
     {

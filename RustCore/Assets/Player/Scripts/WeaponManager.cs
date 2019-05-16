@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
+    
     public List<int> avalaibleWeapons;
     [SerializeField] private Text ammoText;
     private KeyCode[] keyCodes = {
@@ -19,22 +20,27 @@ public class WeaponManager : MonoBehaviour
          KeyCode.Alpha9,
      };
 
+    
+    
     [SerializeField] private Transform position;
     [SerializeField] public List<GameObject> weapons;
     [SerializeField] private float weaponSwitchDelay = .5f;
     private int index;
-    private bool isSwitching;
-
+    public bool isSwitching;
+    public bool boomerangEquiped;
     public float WeaponSwitchDelay { get => weaponSwitchDelay; set => weaponSwitchDelay = value; }
-
+    bool canHit;
+    public int boomerangIndex = 3;
     // Start is called before the first frame update
     private void Start()
     {
+        canHit = true;
         avalaibleWeapons = new List<int>();
         avalaibleWeapons.Add(0);
-        avalaibleWeapons.Add(3);
+        avalaibleWeapons.Add(2);
         index = 0;
         isSwitching = false;
+        boomerangEquiped = false;
         EquipWeapon(0);
     }
 
@@ -44,10 +50,10 @@ public class WeaponManager : MonoBehaviour
     private void Update()
     {
 
-        
 
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f  || Input.GetAxis("ArrowAxis") > 0 && !isSwitching && weapons.Count > 1 && avalaibleWeapons.Count > 1)
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetAxis("ArrowAxis") > 0 && !isSwitching && weapons.Count > 1 && avalaibleWeapons.Count > 1)
         {
             isSwitching = true;
 
@@ -56,10 +62,10 @@ public class WeaponManager : MonoBehaviour
             if (index > weapons.Count - 1) index = 0;
 
             SwitchWeapons(index);
-            
-           
+
+
         }
-        else if (Input.GetAxis("Mouse ScrollWheel")<0f || Input.GetAxis("ArrowAxis")<0f && !isSwitching && weapons.Count > 1 && avalaibleWeapons.Count > 1)
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetAxis("ArrowAxis") < 0f && !isSwitching && weapons.Count > 1 && avalaibleWeapons.Count > 1)
         {
             isSwitching = true;
 
@@ -67,6 +73,12 @@ public class WeaponManager : MonoBehaviour
             if (index < 0) index = weapons.Count - 1;
 
             SwitchWeapons(index);
+        }
+        else if (Input.GetButtonDown("Fire2") && index != boomerangIndex ) { 
+
+            canHit = false;
+            StartCoroutine(hit(index));
+            
         }
 
         SwitchWeaponsThroughKeys();
@@ -77,16 +89,50 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < weapons.Count; i++)
         {
-            weapons[i].SetActive(false);
+            if (i == boomerangIndex)
+            {
+                weapons[i].GetComponent<Boomerbang>().isActive = false;
+            }
+            else
+            {
+                weapons[i].SetActive(false);
+            }
         }
         while (!avalaibleWeapons.Contains(weapons[index].GetComponent<AmmoCount>().weaponId))
         {
             index++;
             if (index >= weapons.Count) index = 0;
         }
+        if (index == boomerangIndex)
+        {
+           
+            isSwitching = false;
+            boomerangEquiped = true;
+            weapons[index].GetComponent<Boomerbang>().isActive = true;
+            weapons[index].GetComponent<Boomerbang>().isDone = false;
+        }
+        else
+        {
+            boomerangEquiped = false;
+            weapons[boomerangIndex].GetComponent<Boomerbang>().isActive = false;
+            weapons[boomerangIndex].GetComponent<Boomerbang>().isDone = true;
+        }
+       
         weapons[index].SetActive(true);
         AmmoCount weaponAmmo = weapons[index].GetComponent<AmmoCount>();
         ammoText.text = weaponAmmo.AmmoLeftInMagazine + " / " + weaponAmmo.TotalAmmo;
+    }
+
+    private IEnumerator hit(int index)
+    {
+        
+        weapons[index].SetActive(false);
+        weapons[boomerangIndex].GetComponent<Boomerbang>().transform.localPosition = weapons[3].GetComponent<Boomerbang>().originalPosition;
+        weapons[boomerangIndex].GetComponent<Boomerbang>().melee = true;
+        
+        yield return new WaitForSeconds(0.5f);
+        EquipWeapon(index);
+        canHit = true;
     }
 
     private IEnumerator SwitchCooldown()

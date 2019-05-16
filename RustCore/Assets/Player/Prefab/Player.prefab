@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f22b8172205c9149b1ac9f438f2aeca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 3
+  weaponId: 2
   maxTotalAmmo: 0
   totalAmmo: 0
   ammoLeftInMagazine: 0
@@ -582,7 +582,7 @@ PrefabInstance:
     - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: weaponId
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
@@ -842,6 +842,11 @@ PrefabInstance:
       propertyPath: weapons.Array.data[3]
       value: 
       objectReference: {fileID: 759254892818203129}
+    - target: {fileID: 756165118866256476, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: avalaibleWeapons.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6372643194913291675, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: m_Color.a
