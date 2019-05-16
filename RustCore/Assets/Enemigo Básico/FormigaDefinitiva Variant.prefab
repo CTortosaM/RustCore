@@ -185,21 +185,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!111 &2422411851243204232
-Animation:
+--- !u!65 &951736393149085147
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2201199715148368378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 20ba0db8474c1404f8a5b1ebc3273064, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  serializedVersion: 2
+  m_Size: {x: 0.125854, y: 0.114560984, z: 0.30824634}
+  m_Center: {x: -0.0029907317, y: -0.04676261, z: -0.013921261}
 --- !u!195 &5336958441527461971
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -218,7 +216,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.0068383
+  m_Height: 7
   m_BaseOffset: 0.50341916
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -239,6 +237,25 @@ MonoBehaviour:
   "da\xF1oHacido": 20
   saludRestante: 100
   gameManager: {fileID: 0}
+--- !u!95 &7639714351481658748
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201199714131341233}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3589bb965488d44ab1d2969ca791ad0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2449414627036560676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,6 +1192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FormigaDefinitiva Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1576433005, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1576433007, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1455,6 +1476,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.31698608
       objectReference: {fileID: 0}
+    - target: {fileID: 1206401866, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08498204
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206401866, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206401866, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1218764746, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.111163504
@@ -1497,6 +1530,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+--- !u!1 &2201199714131341233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1620513574, guid: 84ea2f01fdd0125409640f52499a5590,
+    type: 3}
+  m_PrefabInstance: {fileID: 2201199713601617047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2201199713162391229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 643174954, guid: 84ea2f01fdd0125409640f52499a5590,
