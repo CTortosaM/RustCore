@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootInterval: 0.2
+  metalCollision: {fileID: 6347032788309237713, guid: e2ca0bfccac8ca841a3645fdfec46a14,
+    type: 3}
   damage: 33
   text: {fileID: 5704269413306724474}
   camera: {fileID: 0}
@@ -85,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f22b8172205c9149b1ac9f438f2aeca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponId: 0
   maxTotalAmmo: 200
   totalAmmo: 200
   ammoLeftInMagazine: 12

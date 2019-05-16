@@ -12,6 +12,8 @@ public class InitialP : MonoBehaviour
     [SerializeField] private float shootInterval = 0.2f;
     private float nextPossibleShootTime;
 
+    [SerializeField] private ParticleSystem metalCollision;
+
     [SerializeField] private int damage = 50; 
   
     public Text text;
@@ -96,7 +98,15 @@ public class InitialP : MonoBehaviour
         {
             if(hit.collider.gameObject.tag == "Enemy")
             {
-                hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                AIEnemigo enemigo = hit.collider.gameObject.GetComponent<AIEnemigo>();
+                if(enemigo.Estado != AIEnemigo.EstadosPatrulla.Muerte)
+                {
+                    enemigo.Actualizar(Damage);
+                    
+                }
+                Instantiate(metalCollision, hit.point, Quaternion.LookRotation(hit.normal));
+
+
             }
         }
 
