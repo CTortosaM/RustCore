@@ -22,8 +22,8 @@ public class Shotgun : MonoBehaviour
 
     [SerializeField] private float range = 100f;
     [SerializeField] private ParticleSystem muzzleFlash;
-    private Vector3 initialPosition;
-    private Quaternion initialRotation;
+    public Vector3 initialPosition;
+    public Quaternion initialRotation;
     private bool isReloading = false;
 
 
