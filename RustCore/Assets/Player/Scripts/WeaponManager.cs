@@ -31,6 +31,7 @@ public class WeaponManager : MonoBehaviour
     public float WeaponSwitchDelay { get => weaponSwitchDelay; set => weaponSwitchDelay = value; }
     bool canHit;
     public int boomerangIndex = 3;
+    public int shotgunIndex = 2;
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,7 +42,7 @@ public class WeaponManager : MonoBehaviour
         index = 0;
         isSwitching = false;
         boomerangEquiped = false;
-        EquipWeapon(0);
+        EquipWeapon(boomerangIndex);
     }
 
    
@@ -74,11 +75,12 @@ public class WeaponManager : MonoBehaviour
 
             SwitchWeapons(index);
         }
-        else if (Input.GetButtonDown("Fire2") && index != boomerangIndex ) { 
-
-            canHit = false;
-            StartCoroutine(hit(index));
-            
+        else if (Input.GetButtonDown("Fire2") && index != boomerangIndex ) {
+            if (weapons[boomerangIndex].GetComponent<Boomerbang>().transform.parent!=null)
+            {
+                canHit = false;
+                StartCoroutine(hit(index));
+            }
         }
 
         SwitchWeaponsThroughKeys();
@@ -116,9 +118,15 @@ public class WeaponManager : MonoBehaviour
             boomerangEquiped = false;
             weapons[boomerangIndex].GetComponent<Boomerbang>().isActive = false;
             weapons[boomerangIndex].GetComponent<Boomerbang>().isDone = true;
+            
         }
        
         weapons[index].SetActive(true);
+        if(index== shotgunIndex)
+        {
+            weapons[shotgunIndex].GetComponent<Shotgun>().transform.localPosition = weapons[shotgunIndex].GetComponent<Shotgun>().initialPosition;
+            weapons[shotgunIndex].GetComponent<Shotgun>().transform.localRotation = weapons[shotgunIndex].GetComponent<Shotgun>().initialRotation;
+        }
         AmmoCount weaponAmmo = weapons[index].GetComponent<AmmoCount>();
         ammoText.text = weaponAmmo.AmmoLeftInMagazine + " / " + weaponAmmo.TotalAmmo;
     }
@@ -127,7 +135,7 @@ public class WeaponManager : MonoBehaviour
     {
         
         weapons[index].SetActive(false);
-        weapons[boomerangIndex].GetComponent<Boomerbang>().transform.localPosition = weapons[3].GetComponent<Boomerbang>().originalPosition;
+        weapons[boomerangIndex].GetComponent<Boomerbang>().transform.localPosition = weapons[boomerangIndex].GetComponent<Boomerbang>().originalPosition;
         weapons[boomerangIndex].GetComponent<Boomerbang>().melee = true;
         
         yield return new WaitForSeconds(0.5f);
