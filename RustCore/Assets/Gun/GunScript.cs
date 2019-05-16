@@ -14,12 +14,12 @@ public class GunScript : MonoBehaviour
     bool disparo = false;
 
 
-    // public ParticleSystem fogonazo;
+    public ParticleSystem fogonazo;
 
     public GameObject efectoImpacto;
 
 
-   // public Bullet bala;
+    public Bullet bala;
 
 
     // retrocess
@@ -53,7 +53,7 @@ public class GunScript : MonoBehaviour
 
     private void LateUpdate()
     {
-        //Debug.Log("shoot ordered received, disparo = " + disparo.ToString());
+        Debug.Log("shoot ordered received, disparo = " + disparo.ToString());
         timer += Time.deltaTime;
 
         if (disparo == true && timer >= rafaga)
@@ -73,12 +73,12 @@ public class GunScript : MonoBehaviour
 
         RaycastHit hit;
 
-        // fogonazo.Play();
+        fogonazo.Play();
 
-        //Debug.Log(">>>>>>>>>>>>>>bala.Show() will be executed");
-       // bala.ShowBullet();
+        Debug.Log(">>>>>>>>>>>>>>bala.Show() will be executed");
+        bala.ShowBullet();
 
-        //Debug.Log(">>>>>>>>>>>>>>bala.Show() has been executed");
+        Debug.Log(">>>>>>>>>>>>>>bala.Show() has been executed");
 
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -96,15 +96,15 @@ public class GunScript : MonoBehaviour
 
             if (hit.rigidbody != null)
             {
-                //hit.rigidbody.AddForce(-hit.normal * fuerzaImpacto);
+                hit.rigidbody.AddForce(-hit.normal * fuerzaImpacto);
             }
 
             GameObject impactado = Instantiate(efectoImpacto, hit.point, Quaternion.LookRotation(hit.normal));
 
             Destroy(impactado, 0.25f);
         }
-       // bala.HideBullet();
-        //Debug.Log(">>>>>>>>>>>>>>bala.Hide() will be executed");
+        bala.HideBullet();
+        Debug.Log(">>>>>>>>>>>>>>bala.Hide() will be executed");
     }
 
     void Retroceso()
