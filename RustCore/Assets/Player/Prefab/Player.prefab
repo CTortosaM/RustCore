@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f22b8172205c9149b1ac9f438f2aeca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 3
+  weaponId: 2
   maxTotalAmmo: 0
   totalAmmo: 0
   ammoLeftInMagazine: 0
@@ -285,6 +285,8 @@ MonoBehaviour:
   camera: {fileID: 5028874359665819599}
   range: 30
   muzzleFlash: {fileID: 744827763117213682}
+  initialPosition: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &759254892244724023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -582,7 +584,7 @@ PrefabInstance:
     - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: weaponId
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
@@ -770,7 +772,7 @@ PrefabInstance:
     - target: {fileID: 1187377620524518979, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 1335
+      value: 5431
       objectReference: {fileID: 0}
     - target: {fileID: 1311608400482618542, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
@@ -842,6 +844,11 @@ PrefabInstance:
       propertyPath: weapons.Array.data[3]
       value: 
       objectReference: {fileID: 759254892818203129}
+    - target: {fileID: 756165118866256476, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: avalaibleWeapons.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6372643194913291675, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: m_Color.a
@@ -851,6 +858,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0.6509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544464840444742136, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: initialPosition.x
+      value: 0.072
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544464840444742136, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: initialPosition.y
+      value: 0.059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544464840444742136, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: initialPosition.z
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 595553847269226436, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}

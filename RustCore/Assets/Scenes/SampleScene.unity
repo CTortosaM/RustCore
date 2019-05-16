@@ -527,11 +527,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6903524663800873936, guid: 9d4fa58897738d14294921b04de141cd,
-        type: 3}
-      propertyPath: weaponSwitchDelay
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3894017516589996641, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -590,6 +585,11 @@ PrefabInstance:
     - target: {fileID: 4065530357872557333, guid: 9d4fa58897738d14294921b04de141cd,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6903524663800873936, guid: 9d4fa58897738d14294921b04de141cd,
+        type: 3}
+      propertyPath: weaponSwitchDelay
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

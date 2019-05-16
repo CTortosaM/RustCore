@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Escopeta
-  weaponID: 2
+  weaponID: 3
   weaponManager: {fileID: 0}
 --- !u!122 &9046071552463393771
 Halo:

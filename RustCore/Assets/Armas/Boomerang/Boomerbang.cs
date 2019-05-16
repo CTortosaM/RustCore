@@ -10,21 +10,24 @@ public class Boomerbang : MonoBehaviour
     public float longitude = 50;
     public float hitRadius = (float)0.5;
     public GameObject player;
-    private bool run = true;
+   public bool run = true;
     private bool rotationCalculated = false;
     private bool hasArrived = false;
     private float t = (float)0.5;
     private Vector3 playerForward;
     private Vector3 playerPosition;
     public int waiting=10;
-    private bool melee = false;
+   public  bool melee = false;
     public int Damage = 80;
     public Vector3 originalPosition;
     public Quaternion originalRotation;
     private Transform parentTransform;
     bool isEquiped;
+    public bool isActive = false;
     private float i;
     private GameObject clone;
+    public bool isDone = false;
+   
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,7 +38,7 @@ public class Boomerbang : MonoBehaviour
         curvey.postWrapMode = WrapMode.PingPong;
         curvex.preWrapMode = WrapMode.PingPong;
         curvex.postWrapMode = WrapMode.PingPong;
-        transform.localPosition =originalPosition ;
+        transform.localPosition =originalPosition;
        transform.localRotation =originalRotation;
         ammo = GetComponent<AmmoCount>();
         parentTransform = transform.parent;
@@ -46,50 +49,68 @@ public class Boomerbang : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (transform.parent != null)
         {
-            if (isEquiped)
+            if (transform.parent.GetComponent<WeaponManager>().isSwitching || !transform.parent.GetComponent<WeaponManager>().boomerangEquiped)
             {
-                if (!melee && !run)
+                transform.localPosition = new Vector3(originalPosition.x, originalPosition.y + 200, originalPosition.z);
+            }
+        }
+        if (!isDone)
+        {
+            transform.localPosition = originalPosition;
+            transform.localRotation = originalRotation;
+            isDone = true;
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            if (isActive)
+            {
+                if (isEquiped)
                 {
-                    i = 0.0f;
-                    hasArrived = false;
+                    if (!melee && !run)
+                    {
+                        i = 0.0f;
+                        hasArrived = false;
 
-                    playerForward = player.transform.forward;
-                    playerPosition = player.transform.position;
-                    //transform.position = player.transform.forward;
+                        playerForward = player.transform.forward;
+                        playerPosition = player.transform.position;
+                        //transform.position = player.transform.forward;
 
-                    /* RaycastHit hit;
+                        /* RaycastHit hit;
 
 
-                    //player.transform.Rotate(0, 0, -30, Space.Self);
-                    if (Physics.Raycast(player.transform.position, playerForward*longitude, out hit, 50))
-                     {
-                         if (hit.collider.gameObject.tag == "Enemy")
+                        //player.transform.Rotate(0, 0, -30, Space.Self);
+                        if (Physics.Raycast(player.transform.position, playerForward*longitude, out hit, 50))
                          {
-                             hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
-                         }
-                     }*/
-                    //  transform.position = Vector3.MoveTowards(player.transform.position, longitude * playerForward, (float)1.5);
+                             if (hit.collider.gameObject.tag == "Enemy")
+                             {
+                                 hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                             }
+                         }*/
+                        //  transform.position = Vector3.MoveTowards(player.transform.position, longitude * playerForward, (float)1.5);
 
-                    transform.SetParent(null, true);
-                    run = true;
+                        transform.SetParent(null, true);
+                        run = true;
+                    }
                 }
             }
         }
-        else if (Input.GetKey(KeyCode.Mouse0))
+        else if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0)
         {
-            if (isEquiped)
+            if (isActive)
             {
-                if (!run && !melee)
+                if (isEquiped)
                 {
-                    transform.SetParent(parentTransform, true);
-                    playerForward = player.transform.forward;
-                    transform.localPosition = originalPosition;
-                    transform.localRotation = originalRotation;
+                    if (!run && !melee)
+                    {
+                        transform.SetParent(parentTransform, true);
+                        playerForward = player.transform.forward;
+                        transform.localPosition = originalPosition;
+                        transform.localRotation = originalRotation;
 
-                    melee = true;
+                        melee = true;
+                    }
                 }
             }
         }
@@ -124,16 +145,18 @@ public class Boomerbang : MonoBehaviour
             else
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, (float)1.5);
-                if (Vector3.Distance(transform.position, player.transform.position) < 1)
-                {
-                    transform.SetParent(parentTransform, true);
-                    hasArrived = false;
+             
+                    if (Vector3.Distance(transform.position, player.transform.position) < 1)
+                    {
+                        transform.SetParent(parentTransform, true);
+                        hasArrived = false;
 
-                    run = false;
+                        run = false;
 
-                    transform.localPosition = originalPosition;
-                    transform.localRotation = originalRotation;
-                }
+                        transform.localPosition = originalPosition;
+                        transform.localRotation = originalRotation;
+                    }
+              
             }
            
 
@@ -174,9 +197,41 @@ public class Boomerbang : MonoBehaviour
                 hasArrived = false;
                 rotationCalculated = false;
                 run = false;
-                transform.localPosition = originalPosition;
-                transform.localRotation = originalRotation;
+                if (isActive)
+                {
+                  
+                    transform.localPosition = originalPosition;
+                    transform.localRotation = originalRotation;
+                }
+                else
+                {
+                    transform.localPosition = new Vector3(originalPosition.x, originalPosition.y+200, originalPosition.z);
+                }
             }
+            else
+            {
+                if (!isActive)
+                {
+                    transform.localPosition = new Vector3(originalPosition.x, originalPosition.y + 200, originalPosition.z);
+                }
+            }
+           /* else
+            {
+                run = false;
+                if (isActive)
+                {
+                    transform.SetParent(parentTransform, true);
+                    transform.localPosition = originalPosition;
+                    transform.localRotation = originalRotation;
+                }
+                else
+                {
+                    
+                    transform.localPosition = new Vector3(originalPosition.x, originalPosition.y+200, originalPosition.z);
+                    // transform.localPosition = originalPosition;
+                   // transform.localRotation = originalRotation;
+                }
+            }*/
         }
         if (melee || run)
         {
@@ -210,14 +265,7 @@ public class Boomerbang : MonoBehaviour
                 }
             }
         }
-        else
-        {
-
-             gameObject.GetComponent<Rigidbody>().useGravity = false;
-            transform.localPosition = originalPosition;
-            transform.localRotation = originalRotation;
-
-        }
+       
     }
   
     IEnumerator wait()

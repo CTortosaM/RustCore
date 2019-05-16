@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 9154431576086965019}
   - component: {fileID: 7923558921480345565}
   - component: {fileID: 5581490279467385542}
-  - component: {fileID: 5888557887592326832}
   - component: {fileID: 1358250197079321570}
-  m_Layer: 0
+  - component: {fileID: 248728081308033324}
+  m_Layer: 12
   m_Name: Quad (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5888557887592326832
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622552265150394048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1358250197079321570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +91,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &248728081308033324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622552265150394048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.9999988, z: 1.2446289}
+  m_Center: {x: 0, y: 0, z: -0.62231445}
 --- !u!1 &772863256829939109
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7280406176503534950}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +149,7 @@ GameObject:
   - component: {fileID: 6354720188156165911}
   - component: {fileID: 3819747167066033053}
   - component: {fileID: 2248702324409720580}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,13 +163,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481614698492737420}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.5599976, y: -0.76000214, z: -89.84}
   m_LocalScale: {x: 3.9964547, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 8666590963208195821}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4889230077447521145
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -196,7 +195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -255,7 +254,7 @@ GameObject:
   - component: {fileID: 6170089123703388903}
   - component: {fileID: 7505512706788078379}
   - component: {fileID: 5304594065376337657}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,13 +268,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2518074999604112978}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 5.5599976, y: 9.389999, z: -31.63}
   m_LocalScale: {x: 3.9964547, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 3395026177743467994}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &4352972832369141531
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -301,7 +300,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -358,9 +357,9 @@ GameObject:
   - component: {fileID: 2901995638028005638}
   - component: {fileID: 76283246602365772}
   - component: {fileID: 3644596936723614105}
-  - component: {fileID: 467158928264029263}
   - component: {fileID: 4217877653743404863}
-  m_Layer: 0
+  - component: {fileID: 8789117990834008916}
+  m_Layer: 12
   m_Name: Quad (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +405,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -426,20 +425,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &467158928264029263
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2875123710784118480}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &4217877653743404863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +437,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8789117990834008916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875123710784118480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999934, z: 0.8012581}
+  m_Center: {x: 0, y: 0, z: -0.40062904}
 --- !u!1 &3258938813075718668
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +463,7 @@ GameObject:
   - component: {fileID: 5748330248953318688}
   - component: {fileID: 7680593914556354378}
   - component: {fileID: 6366069603548253166}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,13 +477,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3258938813075718668}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 5.5599976, y: -0.76000214, z: -31.5}
   m_LocalScale: {x: 3.9964547, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 2268927408032478303}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &4216382718076870656
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -511,7 +509,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -600,7 +598,7 @@ GameObject:
   - component: {fileID: 7761064389577269563}
   - component: {fileID: 4367450060877859786}
   - component: {fileID: 7340594974202238975}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,13 +612,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3600119465897192845}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -23.54, y: 9.389999, z: -60.73}
   m_LocalScale: {x: 3.9964566, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 8379314488677757606}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6756614500444534311
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -646,7 +644,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19279,7 +19277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3395026177743467994}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19313,9 +19311,9 @@ GameObject:
   - component: {fileID: 4833413588920921279}
   - component: {fileID: 5706946976183051823}
   - component: {fileID: 4628327509771689059}
-  - component: {fileID: 3404223570712635277}
   - component: {fileID: 6483209030007511821}
-  m_Layer: 0
+  - component: {fileID: 5305591294798998017}
+  m_Layer: 12
   m_Name: Quad (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19361,7 +19359,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19381,20 +19379,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3404223570712635277
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694146556818465693}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &6483209030007511821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19407,6 +19391,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5305591294798998017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694146556818465693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.99999744, z: 0.6463975}
+  m_Center: {x: 2.5932136e-16, y: 0, z: -0.32321408}
 --- !u!1 &4879069003801417252
 GameObject:
   m_ObjectHideFlags: 0
@@ -19420,7 +19417,7 @@ GameObject:
   - component: {fileID: 6405480166195533807}
   - component: {fileID: 2847280362022412467}
   - component: {fileID: 1582636634187217123}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19434,13 +19431,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4879069003801417252}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -23.8, y: -0.76000214, z: -60.73}
   m_LocalScale: {x: 3.9964566, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 6465537667059852318}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6390552834724962870
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19466,7 +19463,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19521,7 +19518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2268927408032478303}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19553,7 +19550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8666590963208195821}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19653,7 +19650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2289534749962675413}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19689,7 +19686,7 @@ GameObject:
   - component: {fileID: 3644979297187313290}
   - component: {fileID: 7259393501643925106}
   - component: {fileID: 883909653676240692}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19703,13 +19700,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6398152637873136088}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.5599976, y: 9.389999, z: -89.83}
   m_LocalScale: {x: 3.9964547, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 2289534749962675413}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1933181227581099638
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19735,7 +19732,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19822,9 +19819,9 @@ GameObject:
   - component: {fileID: 8600161203334865947}
   - component: {fileID: 3324685952924380825}
   - component: {fileID: 4077784540701073740}
-  - component: {fileID: 2680977817191839505}
   - component: {fileID: 1157961058862266475}
-  m_Layer: 0
+  - component: {fileID: 4229029300210741916}
+  m_Layer: 12
   m_Name: Quad (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19870,7 +19867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19890,20 +19887,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2680977817191839505
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7249972292055625375}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1157961058862266475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19916,6 +19899,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4229029300210741916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249972292055625375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.9999989, z: 0.7775162}
+  m_Center: {x: -3.9673075e-16, y: 0, z: -0.38877344}
 --- !u!1 &7349362353530294516
 GameObject:
   m_ObjectHideFlags: 0
@@ -19927,9 +19923,9 @@ GameObject:
   - component: {fileID: 8412414455968524127}
   - component: {fileID: 4517250852764194163}
   - component: {fileID: 5093046941854798902}
-  - component: {fileID: 4729558853691013732}
   - component: {fileID: 8104521378264543946}
-  m_Layer: 0
+  - component: {fileID: 7048704072318555300}
+  m_Layer: 12
   m_Name: Quad (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19975,7 +19971,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19995,20 +19991,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4729558853691013732
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7349362353530294516}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &8104521378264543946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20021,6 +20003,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7048704072318555300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349362353530294516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.9999987, z: 0.9791549}
+  m_Center: {x: -0.00000023862998, y: 0, z: -0.48957756}
 --- !u!1 &7508764755836531965
 GameObject:
   m_ObjectHideFlags: 0
@@ -20030,7 +20025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6465537667059852318}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20064,9 +20059,9 @@ GameObject:
   - component: {fileID: 2789010996073430496}
   - component: {fileID: 2312231662239381640}
   - component: {fileID: 7891634736306741952}
-  - component: {fileID: 7662187623294736864}
   - component: {fileID: 3847349115822375098}
-  m_Layer: 0
+  - component: {fileID: 131656756637586407}
+  m_Layer: 12
   m_Name: Quad (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20112,7 +20107,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20132,20 +20127,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7662187623294736864
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8050656022836635336}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &3847349115822375098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20158,6 +20139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &131656756637586407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050656022836635336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999857, z: 1.2591019}
+  m_Center: {x: 0, y: 0, z: -0.62955093}
 --- !u!1 &8334981700395200188
 GameObject:
   m_ObjectHideFlags: 0
@@ -20199,9 +20193,9 @@ GameObject:
   - component: {fileID: 6841466423031677685}
   - component: {fileID: 8866189096140400503}
   - component: {fileID: 1089315730775621000}
-  - component: {fileID: 4845653280166674341}
   - component: {fileID: 516517827573410876}
-  m_Layer: 0
+  - component: {fileID: 6324884383264094178}
+  m_Layer: 12
   m_Name: Quad (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20247,7 +20241,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20267,20 +20261,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4845653280166674341
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8395730978247787839}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &516517827573410876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20293,6 +20273,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6324884383264094178
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395730978247787839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.9999989, z: 0.9123519}
+  m_Center: {x: -0.00000023862998, y: 0, z: -0.45617607}
 --- !u!1 &8762639315364221964
 GameObject:
   m_ObjectHideFlags: 0
@@ -20306,7 +20299,7 @@ GameObject:
   - component: {fileID: 3343438795384557619}
   - component: {fileID: 6025281807366898446}
   - component: {fileID: 4466706265305502851}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20320,13 +20313,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8762639315364221964}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 34.7, y: -0.76000214, z: -60.73}
   m_LocalScale: {x: 3.9964566, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 7280406176503534950}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &449617737108598860
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20352,7 +20345,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20407,7 +20400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8379314488677757606}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20443,7 +20436,7 @@ GameObject:
   - component: {fileID: 2886270912494141041}
   - component: {fileID: 3508822772507829285}
   - component: {fileID: 3416018305140890745}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Quad (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20457,13 +20450,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9012053639295649388}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 34.7, y: 9.389999, z: -60.73}
   m_LocalScale: {x: 3.9964566, y: 3.9530394, z: 1}
   m_Children: []
   m_Father: {fileID: 7105045176480239627}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &4398789104933259785
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20489,7 +20482,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29f5133979d27c14f8a114c4211a5a44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20544,7 +20537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7105045176480239627}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doorway (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20648,9 +20641,9 @@ GameObject:
   - component: {fileID: 8346353059641901903}
   - component: {fileID: 5201583709237924934}
   - component: {fileID: 431214263088053963}
-  - component: {fileID: 394716259894772803}
   - component: {fileID: 6707963862735557710}
-  m_Layer: 0
+  - component: {fileID: 514926246431173116}
+  m_Layer: 12
   m_Name: Quad (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20696,7 +20689,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 935578c57673d3041994ac8fb364a750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20716,20 +20709,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &394716259894772803
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172846657159388611}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &6707963862735557710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20742,3 +20721,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &514926246431173116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172846657159388611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.9999992, z: 0.70985794}
+  m_Center: {x: 0, y: 0, z: -0.35492897}

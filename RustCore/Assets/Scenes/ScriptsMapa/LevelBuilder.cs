@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class LevelBuilder : MonoBehaviour
 {
     public Room startRoomPrefab, endRoomPrefab;
-    public AIEnemigo enemyPrefab;
+    public List<AIEnemigo> enemyPrefabs;
+ 
     public List<Room> roomPrefabs = new List<Room>();
     public Vector2 iterationRange = new Vector2(3, 20);
     public GameObject playerprefab;
@@ -88,7 +89,8 @@ public class LevelBuilder : MonoBehaviour
         {
             foreach (Transform enemySpawn in room.enemySpawns)
             {
-                Instantiate(enemyPrefab, enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
+                
+                Instantiate(enemyPrefabs[Random.Range(0,enemyPrefabs.Count)], enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
             }
         }
         shotgunPickup = Instantiate(pickupPrefab);

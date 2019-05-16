@@ -5,7 +5,7 @@ using UnityEngine;
 public class gunPickup : MonoBehaviour
 {
     public string gunName = "Escopeta";
-    public int weaponID = 2;
+    public int weaponID = 3;
     
 
 

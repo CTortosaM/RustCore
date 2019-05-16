@@ -6,27 +6,22 @@ public class Triggered : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+       // Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Player")
         {
             openDoor();
-            Destroy(this.transform.parent.gameObject);
+            StartCoroutine(openDoor());
+         
         }
     }
     IEnumerator openDoor(){
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
-        yield return new WaitForSeconds((float)0.1);
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
-        yield return new WaitForSeconds((float)0.1);
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
-        yield return new WaitForSeconds((float)0.1);
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
-        yield return new WaitForSeconds((float)0.1);
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
-        yield return new WaitForSeconds((float)0.1);
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
-        yield return new WaitForSeconds((float)0.1);
-        this.transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, transform.parent.transform.right * 2, (float)0.25);
 
+        for(int i=0; i<10; i++)
+        {
+            this.transform.parent.transform.position = Vector3.MoveTowards(transform.position, transform.right * 2, (float)1);
+            yield return new WaitForSeconds((float)0.1);
+
+        }
+        Destroy(this.transform.parent.gameObject);
     }
 }
