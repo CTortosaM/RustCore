@@ -13,7 +13,16 @@ public class AIEnemigo : MonoBehaviour
     public GameManager gameManager;
     private NavMeshAgent agente;
 
+    [SerializeField] private float despawnAfterDeathTimer = 30f;
 
+    private float deathTime;
+    private float timeToDespawn;
+
+    [SerializeField] private int enemyID;
+
+    [SerializeField] private bool canDamage = true;
+    [SerializeField] private ParticleSystem explosion;
+    [SerializeField] private ParticleSystem smoke;
     public float SaludRestante
     {
         get => saludRestante;
@@ -23,7 +32,8 @@ public class AIEnemigo : MonoBehaviour
     public enum EstadosPatrulla
     {
         Calma,
-        Ataque
+        Ataque,
+        Muerte
     }
 
     private EstadosPatrulla _estado = EstadosPatrulla.Calma;
@@ -37,6 +47,10 @@ public class AIEnemigo : MonoBehaviour
         }
     }
 
+    public bool CanDamage { get => canDamage; set => canDamage = value; }
+    public int EnemyID { get => enemyID;}
+    public float DespawnAfterDeathTimer { get => despawnAfterDeathTimer; set => despawnAfterDeathTimer = value; }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -46,8 +60,20 @@ public class AIEnemigo : MonoBehaviour
 
     public void Actualizar(int dañoRecibido)
     {
-        SaludRestante -= dañoRecibido;
-        if (SaludRestante <= 0) Destroy(gameObject);
+        if(Estado != EstadosPatrulla.Muerte)
+        {
+            SaludRestante -= dañoRecibido;
+            if (SaludRestante <= 0)
+            {
+                deathTime = Time.time;
+                timeToDespawn = deathTime + despawnAfterDeathTimer;
+                Estado = EstadosPatrulla.Muerte;
+                if (!explosion.isPlaying) explosion.Play();
+                if (!smoke.isPlaying) smoke.Play();
+            }
+        }
+        
+        
     }
 
     // Start is called before the first frame update
@@ -63,6 +89,11 @@ public class AIEnemigo : MonoBehaviour
     void Update()
     {
         //agente.destination = player.position;
+
+        if(Estado == EstadosPatrulla.Muerte && Time.time >= timeToDespawn)
+        {
+            Destroy(gameObject);
+        }
 
         if(player != null)
         {
@@ -81,6 +112,10 @@ public class AIEnemigo : MonoBehaviour
                         Estado = EstadosPatrulla.Calma;
                     }
                     break;
+                case EstadosPatrulla.Muerte:
+                    agente.isStopped = true;
+                    canDamage = false;
+                    break;
             }
         }
         
@@ -89,19 +124,26 @@ public class AIEnemigo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if(Estado != EstadosPatrulla.Muerte)
         {
-            Debug.Log("El enemigo te hace " + dañoHacido + " de daño.");
-            other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
-            //gameManager.Daño = dañoHacido;
-            //gameManager.ComprobarVictoria();
-        }
+            if (other.gameObject.CompareTag("Player"))
+            {
+                if (canDamage) other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
 
-        //Hacer que se eliminen si se les dispara un proyectil
-        if (other.gameObject.CompareTag("Proyectil"))
-        {
-            Destroy(gameObject);
+                //gameManager.Daño = dañoHacido;
+                //gameManager.ComprobarVictoria();
+            }
+
+            //Hacer que se eliminen si se les dispara un proyectil
+            if (other.gameObject.CompareTag("Proyectil"))
+            {
+                //Destroy(gameObject);
+                Estado = EstadosPatrulla.Muerte;
+                deathTime = Time.time;
+                timeToDespawn = deathTime + despawnAfterDeathTimer;
+            }
         }
+        
     }
     /*
     private void OnCollisionEnter(Collision collision)
