@@ -288,7 +288,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 32
   m_IsActive: 1
 --- !u!4 &7365174945172890780
 Transform:
@@ -19264,9 +19264,9 @@ MonoBehaviour:
   m_StartPoint: {x: 20.265015, y: -2.7499542, z: -41.969204}
   m_EndPoint: {x: 20.33647, y: 1.6852798, z: -35.847267}
   m_Width: 23.504593
-  m_CostModifier: -1
+  m_CostModifier: 0
   m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
+  m_AutoUpdatePosition: 1
   m_Area: 0
 --- !u!114 &8426885188885122686
 MonoBehaviour:
@@ -19284,9 +19284,9 @@ MonoBehaviour:
   m_StartPoint: {x: 26.7, y: -2.9, z: -51.8}
   m_EndPoint: {x: 30.295506, y: 1.0812378, z: -51.900005}
   m_Width: 23.504593
-  m_CostModifier: -1
+  m_CostModifier: 0
   m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
+  m_AutoUpdatePosition: 1
   m_Area: 0
 --- !u!191 &6812956596542492912
 OffMeshLink:
@@ -19301,7 +19301,7 @@ OffMeshLink:
   m_AgentTypeID: 0
   m_Start: {fileID: 468234277453116071}
   m_End: {fileID: 6395791488348269969}
-  m_CostOverride: -1
+  m_CostOverride: 0
   m_BiDirectional: 1
   m_Activated: 1
   m_AutoUpdatePositions: 0
