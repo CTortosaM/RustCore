@@ -197,6 +197,7 @@ MonoBehaviour:
   shield: 100
   maxShield: 100
   maxHealth: 100
+  mainCamera: {fileID: 5028874359665819599}
 --- !u!1 &4442079611274103354
 GameObject:
   m_ObjectHideFlags: 0

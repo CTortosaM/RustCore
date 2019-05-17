@@ -128,7 +128,7 @@ public class AIEnemigo : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                if (canDamage) other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
+                if (canDamage) other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, gameObject.transform.position);
 
                 //gameManager.Daño = dañoHacido;
                 //gameManager.ComprobarVictoria();

@@ -16,6 +16,7 @@ public class HealtAndShield : MonoBehaviour
     [SerializeField] private int shield = 100;
     [SerializeField] private int maxShield = 100;
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private Camera mainCamera;
 
     public int Health { get => health; set => health = value; }
     public int Shield { get => shield; set => shield = value; }
@@ -45,8 +46,9 @@ public class HealtAndShield : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damageDone)
+    public void TakeDamage(int damageDone, Vector3 enemyPosition)
     {
+        Quaternion attackAngle = getAttackAngle(enemyPosition);
         CancelInvoke("regenerateShield");
         shieldRegenerating = false;
         if (shield > 0)
@@ -115,5 +117,16 @@ public class HealtAndShield : MonoBehaviour
             health += ammount;
             UpdateShieldAndHealtText();
         }
+    }
+
+   private Quaternion getAttackAngle(Vector3 hitPosition)
+    {
+        Vector3 myPosition = mainCamera.transform.forward;
+        Vector3 cameraPosition = mainCamera.transform.position;
+        Vector3 relativeEnemyPosition = new Vector3(hitPosition.x - cameraPosition.x, 0f, hitPosition.z - cameraPosition.z);
+
+        Debug.Log( "Angulo: " + Vector3.SignedAngle(myPosition, relativeEnemyPosition, Vector3.up));
+
+        return new Quaternion(0, Vector3.SignedAngle(myPosition,relativeEnemyPosition,Vector3.up),0,0);
     }
 }
