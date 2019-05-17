@@ -14,7 +14,7 @@ public class LevelBuilder : MonoBehaviour
     List<Doorway> avaliableDoorways = new List<Doorway>();
     public delegate void LevelGeneration();
     public static event LevelGeneration onLevelFinished;
-    [SerializeField] private NavMeshSurface surface;
+    [SerializeField] private List<NavMeshSurface> surface;
 
     StartRoom startRoom;
     EndRoom endRoom;
@@ -71,7 +71,10 @@ public class LevelBuilder : MonoBehaviour
         yield return interval;
         //Level generation finished
         Debug.Log("Level generation finished");
-        surface.BuildNavMesh();
+       foreach(NavMeshSurface n in surface)
+        {
+            n.BuildNavMesh();
+        }
 
         foreach (Room room in placedRooms)
         {
