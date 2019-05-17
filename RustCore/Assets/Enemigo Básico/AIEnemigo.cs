@@ -58,7 +58,6 @@ public class AIEnemigo : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
        Forward = player.transform.forward;
-
         if (ID == 2)
         {
            
@@ -88,7 +87,22 @@ public class AIEnemigo : MonoBehaviour
                 case EstadosPatrulla.Ataque:
                     
                     agente.SetDestination(player.position - stopDistance * Forward);
-                    if (ID==2)
+
+                    if (ID == 3)
+                    {
+                        agente.gameObject.transform.LookAt(player);
+                        agente.transform.Rotate(new Vector3(0, 90, 0));
+                        if (Vector3.Distance(player.position, agente.transform.position) < 10)
+                        {
+                           // Destroy(agente.GetComponent<NavMeshAgent>());
+                            agente.transform.position = Vector3.MoveTowards(agente.transform.position, player.position, 0.5f);
+                            if (Vector3.Distance(player.position, agente.transform.position) < 2)
+                            {
+                                StartCoroutine(explotar());
+                            }
+                            }
+                    }
+                    else if (ID==2)
                     {
                         agente.gameObject.transform.LookAt(player);
                         agente.gameObject.GetComponentInChildren<enemyShoot>().aux = true;
@@ -111,7 +125,7 @@ public class AIEnemigo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && ID!=2)
+        if (other.gameObject.CompareTag("Player") && ID!=2 && ID!=3)
         {
             Debug.Log("El enemigo te hace " + dañoHacido + " de daño.");
             other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
@@ -132,6 +146,14 @@ public class AIEnemigo : MonoBehaviour
         //Destroy(gameObject);
     }
     */
+    IEnumerator explotar()
+    {
+        //Código de la explosión va aquí supongo
+        yield return new WaitForSeconds(1);
+        player.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
+        Destroy(gameObject);
+
+    }
 
 
 }
