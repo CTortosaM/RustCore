@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b95b10f711371b4b83f47d92485c8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootInterval: 0.5
+  shootInterval: 1
   perdigones: 12
   damage: 20
   text: {fileID: 3321300801420097057}
@@ -361,6 +361,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 744827763117213682}
   initialPosition: {x: 0, y: 0, z: 0}
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  metalHit: {fileID: 6347032788309237713, guid: e2ca0bfccac8ca841a3645fdfec46a14,
+    type: 3}
 --- !u!1001 &759254892244724023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1108,26 +1110,6 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 3321300801420097057}
-    - target: {fileID: 3729872241310496277, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
-        type: 3}
-      propertyPath: ammoLeftInMagazine
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3729872241310496277, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
-        type: 3}
-      propertyPath: maxAmmoPerMagazine
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3729872241310496277, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
-        type: 3}
-      propertyPath: totalAmmo
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3729872241310496277, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
-        type: 3}
-      propertyPath: maxTotalAmmo
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1834622303841424944, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
         type: 3}
       propertyPath: camera

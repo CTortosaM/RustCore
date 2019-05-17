@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponId: 0
-  maxTotalAmmo: 200
-  totalAmmo: 200
+  maxTotalAmmo: 90
+  totalAmmo: 90
   ammoLeftInMagazine: 12
   maxAmmoPerMagazine: 12
   ammoText: {fileID: 0}
