@@ -104,10 +104,8 @@ public class InitialP : MonoBehaviour
                     enemigo.Actualizar(Damage);
                     
                 }
-                Instantiate(metalCollision, hit.point, Quaternion.LookRotation(hit.normal));
-
-
             }
+            Instantiate(metalCollision, hit.point, Quaternion.LookRotation(hit.normal));
         }
 
     }

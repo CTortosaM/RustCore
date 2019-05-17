@@ -9,7 +9,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000010355441670, guid: dfb1f84b052af3c48a295056a484a8f6, type: 3}
       propertyPath: m_Name
-      value: EfectoHitMetal
+      value: EfectoHitMetal Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000013440722320, guid: dfb1f84b052af3c48a295056a484a8f6,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000013440722320, guid: dfb1f84b052af3c48a295056a484a8f6,
+        type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011450163336, guid: dfb1f84b052af3c48a295056a484a8f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53,6 +63,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011450163336, guid: dfb1f84b052af3c48a295056a484a8f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011252715808, guid: dfb1f84b052af3c48a295056a484a8f6,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011252715808, guid: dfb1f84b052af3c48a295056a484a8f6,
+        type: 3}
+      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013747836344, guid: dfb1f84b052af3c48a295056a484a8f6, type: 3}
