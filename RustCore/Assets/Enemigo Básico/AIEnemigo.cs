@@ -92,6 +92,10 @@ public class AIEnemigo : MonoBehaviour
                     {
                         agente.gameObject.transform.LookAt(player);
                         agente.gameObject.GetComponentInChildren<enemyShoot>().aux = true;
+                    }else if (ID == 1)
+                    {
+                        agente.gameObject.transform.LookAt(player);
+                        agente.transform.Rotate(new Vector3(0, 90, 0));
                     }
                     
                     if (Vector3.Distance(transform.position, player.position) > radio)

@@ -118,6 +118,8 @@ MonoBehaviour:
   "da\xF1oHacido": 20
   saludRestante: 100
   gameManager: {fileID: 0}
+  stopDistance: 0
+  ID: 0
 --- !u!195 &115228448
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -126,7 +128,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115228446}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: 1479372276
   m_Radius: 0.51015437
   m_Speed: 10
   m_Acceleration: 60

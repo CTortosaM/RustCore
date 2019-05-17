@@ -17,8 +17,8 @@ public class enemyShoot : MonoBehaviour
         private float t = (float)0.5;
         private Vector3 Forward;
         private Vector3 Position;
-     
 
+    public float velocidad=0.5f;
         public int Damage = 80;
         public Vector3 originalPosition;
         
@@ -70,7 +70,7 @@ public class enemyShoot : MonoBehaviour
 
 
 
-                if (t >= 2*(1.5 / 100) * longitude)
+                if (t >= 4*(1.5 / 100) * longitude)
                 {
                     t = 0;
 
@@ -84,7 +84,7 @@ public class enemyShoot : MonoBehaviour
                     //vDirection = vDirection.normalized;
                    // i += Time.deltaTime * 2f;
 
-                transform.position = Vector3.MoveTowards(transform.position, Forward, 0.25f);// transform.position + i*Forward;//i * Vector3.Lerp(Forward, Player.position,1);
+                transform.position = Vector3.MoveTowards(transform.position, Forward,velocidad);// transform.position + i*Forward;//i * Vector3.Lerp(Forward, Player.position,1);
 
 
                     t += Time.deltaTime;
@@ -131,8 +131,13 @@ public class enemyShoot : MonoBehaviour
                 transform.SetParent(parentTransform, true);
                 transform.localPosition = originalPosition;
             }
-              
-            }
+
+        }
+        else
+        {
+            transform.SetParent(parentTransform, true);
+            transform.localPosition = originalPosition;
+        }
 
         }
     private void OnCollisionEnter(Collision col)

@@ -17,7 +17,7 @@ public class LevelBuilder : MonoBehaviour
     public delegate void LevelGeneration();
     public static event LevelGeneration onLevelFinished;
     public static event LevelGeneration startingGeneration;
-    [SerializeField] private NavMeshSurface surface;
+    [SerializeField] private List<NavMeshSurface> surfaces;
 
     StartRoom startRoom;
     EndRoom endRoom;
@@ -82,8 +82,10 @@ public class LevelBuilder : MonoBehaviour
         //Level generation finished
         Debug.Log("Level generation finished");
 
-       
-        surface.BuildNavMesh();
+        foreach (NavMeshSurface n in surfaces)
+        {
+            n.BuildNavMesh();
+        }
 
         foreach (Room room in placedRooms)
         {
