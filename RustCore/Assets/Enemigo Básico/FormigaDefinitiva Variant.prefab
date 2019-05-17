@@ -196,8 +196,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.125854, y: 0.13796157, z: 0.42249486}
-  m_Center: {x: -0.0029907348, y: -0.03506232, z: 0.043203168}
+  m_Size: {x: 0.125854, y: 0.13796157, z: 0.37746465}
+  m_Center: {x: -0.0029907348, y: -0.03506232, z: 0.020688202}
 --- !u!195 &5336958441527461971
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ Animator:
   m_GameObject: {fileID: 2201199714131341233}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3589bb965488d44ab1d2969ca791ad0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

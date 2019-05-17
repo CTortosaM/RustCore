@@ -93,16 +93,20 @@ public class LevelBuilder : MonoBehaviour
             {
                 int random = Random.Range(0, enemyPrefabs.Count);
 
-                if (random == 1)
-                {
-                    Instantiate(enemyPrefabs[random], new Vector3(enemySpawn.transform.position.x, enemySpawn.transform.position.y+1, enemySpawn.transform.position.z), new Quaternion(0, 0, 0, 0), this.transform);
-                }
-                else
-                {
+               
                     Instantiate(enemyPrefabs[random], enemySpawn.transform.position , new Quaternion(0, 0, 0, 0), this.transform);
                 
+            
             }
-            }
+        }
+        foreach (Transform enemySpawn in endRoom.enemySpawns)
+        {
+            int random = Random.Range(0, enemyPrefabs.Count);
+
+
+            Instantiate(enemyPrefabs[random], enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
+
+
         }
         shotgunPickup = Instantiate(pickupPrefab);
         shotgunPickup.transform.position = startRoom.pickupSpawn.position;
