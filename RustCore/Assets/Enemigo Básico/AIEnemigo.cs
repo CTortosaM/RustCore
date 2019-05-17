@@ -12,8 +12,9 @@ public class AIEnemigo : MonoBehaviour
     [SerializeField] private float saludRestante = 100;
     public GameManager gameManager;
     private NavMeshAgent agente;
-
-
+    [SerializeField] private float stopDistance=0;
+    Vector3 Forward;
+    public int ID=0;
     public float SaludRestante
     {
         get => saludRestante;
@@ -54,10 +55,20 @@ public class AIEnemigo : MonoBehaviour
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //agente.destination = punto.position;
-        //SiguientePunto();
-    }
+       Forward = player.transform.forward;
+
+        if (ID == 2)
+        {
+           
+           
+            agente.gameObject.GetComponentInChildren<enemyShoot>().gameObject.SetActive(true);
+        
+        }
+            //agente.destination = punto.position;
+            //SiguientePunto();
+        }
 
     // Update is called once per frame
     void Update()
@@ -75,7 +86,14 @@ public class AIEnemigo : MonoBehaviour
                     }
                     break;
                 case EstadosPatrulla.Ataque:
-                    agente.SetDestination(player.position);
+                    
+                    agente.SetDestination(player.position - stopDistance * Forward);
+                    if (ID==2)
+                    {
+                        agente.gameObject.transform.LookAt(player);
+                        agente.gameObject.GetComponentInChildren<enemyShoot>().aux = true;
+                    }
+                    
                     if (Vector3.Distance(transform.position, player.position) > radio)
                     {
                         Estado = EstadosPatrulla.Calma;
@@ -89,7 +107,7 @@ public class AIEnemigo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && ID!=2)
         {
             Debug.Log("El enemigo te hace " + dañoHacido + " de daño.");
             other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
