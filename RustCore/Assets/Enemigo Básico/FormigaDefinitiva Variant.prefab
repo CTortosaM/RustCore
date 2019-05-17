@@ -196,8 +196,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.125854, y: 0.114560984, z: 0.32745394}
-  m_Center: {x: -0.0029907345, y: -0.04676261, z: -0.004317534}
+  m_Size: {x: 0.125854, y: 0.114560984, z: 0.3548677}
+  m_Center: {x: -0.0029907348, y: -0.04676261, z: 0.009389484}
 --- !u!195 &5336958441527461971
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.51015437
-  m_Speed: 10
+  m_Speed: 6
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 360
@@ -217,7 +217,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0.50341916
+  m_BaseOffset: 0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &6666723040740425174
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   radio: 23
-  "da\xF1oHacido": 20
+  "da\xF1oHacido": 5
   saludRestante: 100
   gameManager: {fileID: 0}
 --- !u!95 &7639714351481658748
@@ -1756,6 +1756,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -16.359692
       objectReference: {fileID: 0}
+    - target: {fileID: 54228116, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e377795e3604fb64481eac574c621fea, type: 2}
+    - target: {fileID: 317450852, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e377795e3604fb64481eac574c621fea, type: 2}
+    - target: {fileID: 450065382, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e377795e3604fb64481eac574c621fea, type: 2}
+    - target: {fileID: 515911987, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e377795e3604fb64481eac574c621fea, type: 2}
+    - target: {fileID: 569730783, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e377795e3604fb64481eac574c621fea, type: 2}
+    - target: {fileID: 1658931428, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e377795e3604fb64481eac574c621fea, type: 2}
+    - target: {fileID: 157494303, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 184845ec35bcf344785f47f2942df660, type: 2}
+    - target: {fileID: 264581718, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 184845ec35bcf344785f47f2942df660, type: 2}
+    - target: {fileID: 664147300, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 184845ec35bcf344785f47f2942df660, type: 2}
+    - target: {fileID: 1786687939, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 184845ec35bcf344785f47f2942df660, type: 2}
+    - target: {fileID: 1813681410, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 184845ec35bcf344785f47f2942df660, type: 2}
+    - target: {fileID: 1999185661, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 184845ec35bcf344785f47f2942df660, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ea2f01fdd0125409640f52499a5590, type: 3}
 --- !u!1 &2201199714131341233 stripped

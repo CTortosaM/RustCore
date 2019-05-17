@@ -76,6 +76,8 @@ public class AIEnemigo : MonoBehaviour
                     break;
                 case EstadosPatrulla.Ataque:
                     agente.SetDestination(player.position);
+                    agente.transform.LookAt(player.position);
+                    agente.transform.Rotate(new Vector3(0, 90, 0));
                     if (Vector3.Distance(transform.position, player.position) > radio)
                     {
                         Estado = EstadosPatrulla.Calma;
