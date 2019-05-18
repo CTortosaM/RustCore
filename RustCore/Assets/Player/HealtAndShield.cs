@@ -28,7 +28,7 @@ public class HealtAndShield : MonoBehaviour
 
     public delegate void PlayerDeath();
     public static event PlayerDeath onPlayerDeath;
-    public delegate void PlayerHit();
+    public delegate void PlayerHit(bool isOnHealth);
     public static event PlayerHit onPlayerHit;
 
     private bool shieldRegenerating = false;
@@ -54,11 +54,11 @@ public class HealtAndShield : MonoBehaviour
     {
         float attackAngle = getAttackAngle(enemyPosition);
         damageIndicator.transform.rotation = Quaternion.Euler(0f,0f,180 - attackAngle);
-        onPlayerHit();
         CancelInvoke("regenerateShield");
         shieldRegenerating = false;
         if (shield > 0)
         {
+            onPlayerHit(false);
             nextPossibleRegen = Time.time + shieldRegenInterval;
             if (shield - damageDone < 0)
             {
@@ -81,6 +81,7 @@ public class HealtAndShield : MonoBehaviour
         }
 
         health -= damageDone;
+        onPlayerHit(true);
         UpdateShieldAndHealtText();
     }
 

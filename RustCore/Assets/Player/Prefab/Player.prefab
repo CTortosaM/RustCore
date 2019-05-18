@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 8128099672694368324}
   - component: {fileID: 2323232021405700794}
   - component: {fileID: 5928648849361196516}
+  - component: {fileID: 8213034707570256810}
   m_Layer: 5
   m_Name: DamageIndicator
   m_TagString: Untagged
@@ -460,6 +461,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8213034707570256810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9212434509383810589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0eb0e724d1f84479f024acad3a5249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &759254892244724023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,15 +865,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3894017516589996641}
     m_Modifications:
-    - target: {fileID: 1187377620524518979, guid: a08af3fb54bf0744eb1e7307d79dc490,
+    - target: {fileID: 7916172986130943129, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 5431
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187377620524519005, guid: a08af3fb54bf0744eb1e7307d79dc490,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerCamera
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1187377620524518978, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
@@ -917,16 +925,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1187377620524518979, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 5431
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187377620524519005, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 1187377620524518977, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 3894017516589996641}
-    - target: {fileID: 7916172986130943129, guid: a08af3fb54bf0744eb1e7307d79dc490,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1311608400482618542, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: m_IsActive
@@ -1054,12 +1067,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08af3fb54bf0744eb1e7307d79dc490, type: 3}
---- !u!224 &4065530357872557333 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7916172986130943129, guid: a08af3fb54bf0744eb1e7307d79dc490,
-    type: 3}
-  m_PrefabInstance: {fileID: 6174522163789279628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5028874360880650535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1187377621675272363, guid: a08af3fb54bf0744eb1e7307d79dc490,
@@ -1108,6 +1115,12 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4065530357872557333 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7916172986130943129, guid: a08af3fb54bf0744eb1e7307d79dc490,
+    type: 3}
+  m_PrefabInstance: {fileID: 6174522163789279628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5840157573056647391 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 341191031082377555, guid: a08af3fb54bf0744eb1e7307d79dc490,
