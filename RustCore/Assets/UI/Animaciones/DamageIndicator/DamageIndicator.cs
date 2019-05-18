@@ -13,15 +13,15 @@ public class DamageIndicator : MonoBehaviour
         HealtAndShield.onPlayerHit += StartAnimation;
     }
 
-   private void StartAnimation(bool isOnHealth)
+   private void StartAnimation(bool isOnHealth, bool isDead)
     {
-        if (isOnHealth)
+        if (isOnHealth && !isDead)
         {
             animator.Play("HealthHit");
             return;
         }
 
-        animator.Play("ShieldHit");
+        if(!isDead) animator.Play("ShieldHit");
     }
     
 }

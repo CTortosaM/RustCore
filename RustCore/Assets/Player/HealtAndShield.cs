@@ -28,7 +28,7 @@ public class HealtAndShield : MonoBehaviour
 
     public delegate void PlayerDeath();
     public static event PlayerDeath onPlayerDeath;
-    public delegate void PlayerHit(bool isOnHealth);
+    public delegate void PlayerHit(bool isOnHealth, bool isDead);
     public static event PlayerHit onPlayerHit;
 
     private bool shieldRegenerating = false;
@@ -58,7 +58,7 @@ public class HealtAndShield : MonoBehaviour
         shieldRegenerating = false;
         if (shield > 0)
         {
-            onPlayerHit(false);
+            onPlayerHit(false, IsDead);
             nextPossibleRegen = Time.time + shieldRegenInterval;
             if (shield - damageDone < 0)
             {
@@ -81,7 +81,7 @@ public class HealtAndShield : MonoBehaviour
         }
 
         health -= damageDone;
-        onPlayerHit(true);
+        onPlayerHit(true, IsDead);
         UpdateShieldAndHealtText();
     }
 
@@ -118,12 +118,12 @@ public class HealtAndShield : MonoBehaviour
         if(health + ammount > maxHealth)
         {
             health = maxHealth;
-            UpdateShieldAndHealtText();
+            
         } else
         {
             health += ammount;
-            UpdateShieldAndHealtText();
         }
+        UpdateShieldAndHealtText();
     }
 
    private float getAttackAngle(Vector3 hitPosition)
