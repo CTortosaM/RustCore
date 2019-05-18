@@ -128,12 +128,12 @@ public class HealtAndShield : MonoBehaviour
 
    private float getAttackAngle(Vector3 hitPosition)
     {
-        Vector3 myPosition = playerBody.forward;
+        Vector3 playerForward = playerBody.forward;
         Vector3 cameraPosition = mainCamera.transform.position;
         Vector3 relativeEnemyPosition = new Vector3(hitPosition.x - cameraPosition.x, 0f, hitPosition.z - cameraPosition.z);
 
-        Debug.Log( "Angulo: " + Vector3.SignedAngle(myPosition, relativeEnemyPosition, Vector3.up));
-        return Vector3.SignedAngle(myPosition, relativeEnemyPosition, Vector3.up);
+        //Debug.Log( "Angulo: " + Vector3.SignedAngle(myPosition, relativeEnemyPosition, Vector3.up));
+        return Vector3.SignedAngle(playerForward, relativeEnemyPosition, Vector3.up);
         
         //return new Quaternion(0, Vector3.SignedAngle(myPosition,relativeEnemyPosition,Vector3.up),0,0);
     }
