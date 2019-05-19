@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DamageIndicator : MonoBehaviour
 {
-     private Animator animator;
+    [SerializeField] private Animator animator;
     // Start is called before the first frame update
    
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         HealtAndShield.onPlayerHit += StartAnimation;
     }
 

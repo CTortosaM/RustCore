@@ -203,7 +203,7 @@ public class AIEnemigo : MonoBehaviour
     {
         //Código de la explosión va aquí supongo
         yield return new WaitForSeconds(1);
-        player.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
+        player.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, transform.position);
         Destroy(gameObject);
 
     }

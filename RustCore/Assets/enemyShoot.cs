@@ -122,7 +122,7 @@ public class enemyShoot : MonoBehaviour
                 if (col.gameObject.tag == "Player")
                 {
                     Debug.Log("te dio");
-                col.gameObject.GetComponent<HealtAndShield>().TakeDamage(Damage);
+                col.gameObject.GetComponent<HealtAndShield>().TakeDamage(Damage, parentTransform.position);
                 // hasArrived = true;
             }
             else
@@ -149,7 +149,7 @@ public class enemyShoot : MonoBehaviour
             if (col.gameObject.tag == "Player")
             {
                 Debug.Log("te dio");
-                col.gameObject.GetComponent<HealtAndShield>().TakeDamage(Damage);
+                col.gameObject.GetComponent<HealtAndShield>().TakeDamage(Damage, col.transform.position);
                 // hasArrived = true;
             }
             else
