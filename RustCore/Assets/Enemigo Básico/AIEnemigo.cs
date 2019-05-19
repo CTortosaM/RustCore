@@ -13,6 +13,7 @@ public class AIEnemigo : MonoBehaviour
     public GameManager gameManager;
     private NavMeshAgent agente;
 
+
     [SerializeField] private float despawnAfterDeathTimer = 30f;
 
     private float deathTime;
@@ -23,6 +24,11 @@ public class AIEnemigo : MonoBehaviour
     [SerializeField] private bool canDamage = true;
     [SerializeField] private ParticleSystem explosion;
     [SerializeField] private ParticleSystem smoke;
+
+    [SerializeField] private float stopDistance=0;
+    Vector3 Forward;
+    public int ID=0;
+
     public float SaludRestante
     {
         get => saludRestante;
@@ -80,10 +86,19 @@ public class AIEnemigo : MonoBehaviour
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //agente.destination = punto.position;
-        //SiguientePunto();
-    }
+       Forward = player.transform.forward;
+        if (ID == 2)
+        {
+           
+           
+            agente.gameObject.GetComponentInChildren<enemyShoot>().gameObject.SetActive(true);
+        
+        }
+            //agente.destination = punto.position;
+            //SiguientePunto();
+        }
 
     // Update is called once per frame
     void Update()
@@ -106,7 +121,33 @@ public class AIEnemigo : MonoBehaviour
                     }
                     break;
                 case EstadosPatrulla.Ataque:
-                    agente.SetDestination(player.position);
+                    
+                    agente.SetDestination(player.position - stopDistance * Forward);
+
+                    if (ID == 3)
+                    {
+                        agente.gameObject.transform.LookAt(player);
+                        agente.transform.Rotate(new Vector3(0, 90, 0));
+                        if (Vector3.Distance(player.position, agente.transform.position) < 10)
+                        {
+                           // Destroy(agente.GetComponent<NavMeshAgent>());
+                            agente.transform.position = Vector3.MoveTowards(agente.transform.position, player.position, 0.5f);
+                            if (Vector3.Distance(player.position, agente.transform.position) < 2)
+                            {
+                                StartCoroutine(explotar());
+                            }
+                            }
+                    }
+                    else if (ID==2)
+                    {
+                        agente.gameObject.transform.LookAt(player);
+                        agente.gameObject.GetComponentInChildren<enemyShoot>().aux = true;
+                    }else if (ID == 1)
+                    {
+                        agente.gameObject.transform.LookAt(player);
+                        agente.transform.Rotate(new Vector3(0, 90, 0));
+                    }
+                    
                     if (Vector3.Distance(transform.position, player.position) > radio)
                     {
                         Estado = EstadosPatrulla.Calma;
@@ -124,23 +165,29 @@ public class AIEnemigo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(Estado != EstadosPatrulla.Muerte)
+
+        if (Estado != EstadosPatrulla.Muerte)
         {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                if (canDamage) other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, gameObject.transform.position);
 
-                //gameManager.Daño = dañoHacido;
-                //gameManager.ComprobarVictoria();
-            }
+            if (other.gameObject.CompareTag("Player") && ID != 2 && ID != 3)
 
-            //Hacer que se eliminen si se les dispara un proyectil
-            if (other.gameObject.CompareTag("Proyectil"))
             {
-                //Destroy(gameObject);
-                Estado = EstadosPatrulla.Muerte;
-                deathTime = Time.time;
-                timeToDespawn = deathTime + despawnAfterDeathTimer;
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    if (canDamage) other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, gameObject.transform.position);
+
+                    //gameManager.Daño = dañoHacido;
+                    //gameManager.ComprobarVictoria();
+                }
+
+                //Hacer que se eliminen si se les dispara un proyectil
+                if (other.gameObject.CompareTag("Proyectil"))
+                {
+                    //Destroy(gameObject);
+                    Estado = EstadosPatrulla.Muerte;
+                    deathTime = Time.time;
+                    timeToDespawn = deathTime + despawnAfterDeathTimer;
+                }
             }
         }
         
@@ -152,6 +199,14 @@ public class AIEnemigo : MonoBehaviour
         //Destroy(gameObject);
     }
     */
+    IEnumerator explotar()
+    {
+        //Código de la explosión va aquí supongo
+        yield return new WaitForSeconds(1);
+        player.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido);
+        Destroy(gameObject);
+
+    }
 
 
 }

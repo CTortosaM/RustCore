@@ -1,50 +1,41 @@
 fileFormatVersion: 2
-guid: 212c8164ef6db0c4eacb106a2d9b66f6
+guid: ce4fe1f066ae6274b91395d1f2fd7c15
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: cabeza
+    100004: propulsor
+    100006: Robot
+    100008: Robot001
+    100010: robot_B
     400000: //RootNode
+    400002: cabeza
+    400004: propulsor
+    400006: Robot
+    400008: Robot001
+    400010: robot_B
     2100000: "cuerpoBot\xE7"
     2100002: lineascabeza
     2100004: ojobot
     2100006: carcasaojo
     2100008: shield
     2100010: luz
-    2300000: //RootNode
-    3300000: //RootNode
+    2300000: cabeza
+    2300002: propulsor
+    2300004: Robot
+    2300006: Robot001
+    3300000: cabeza
+    3300002: propulsor
+    3300004: Robot
+    3300006: Robot001
     4300000: Robot
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: carcasaojo
-    second: {fileID: 2100000, guid: 50f4196032d2d0c428e7cfa29ade525d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "cuerpoBot\xE7"
-    second: {fileID: 2100000, guid: 008b9f9f52f7f2249a408f37acb806ed, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lineascabeza
-    second: {fileID: 2100000, guid: 114cef9f443744d42bc93d3cf7af036b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: luz
-    second: {fileID: 2100000, guid: 69bcf6962f04d14469b883fe10c87996, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ojobot
-    second: {fileID: 2100000, guid: 69bcf6962f04d14469b883fe10c87996, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: shield
-    second: {fileID: 2100000, guid: 114cef9f443744d42bc93d3cf7af036b, type: 2}
+    4300002: cabeza
+    4300004: propulsor
+    4300006: Robot001
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -97,7 +88,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -124,7 +115,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
