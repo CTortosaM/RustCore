@@ -20,8 +20,8 @@ public class DamageIndicator : MonoBehaviour
             animator.Play("HealthHit");
             return;
         }
-
-        if(!isDead) animator.Play("ShieldHit");
+        if (!animator) animator = FindObjectOfType<DamageIndicator>().GetComponent<Animator>();
+        if(!isDead && animator) animator.Play("ShieldHit");
     }
     
 }
