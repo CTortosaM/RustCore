@@ -28,6 +28,8 @@ public class PrecisionRifle : MonoBehaviour
     public int Damage { get => damage; set => damage = value; }
     public float ShootInterval { get => shootInterval; set => shootInterval = value; }
 
+    [SerializeField] private ParticleSystem metalHit;
+
 
     private void Awake()
     {
@@ -81,7 +83,10 @@ public class PrecisionRifle : MonoBehaviour
                 ammo.AmmoLeftInMagazine--;
                 ammo.updateAmmoText();
             }
-        } else
+
+            Instantiate(metalHit, hit.point, Quaternion.LookRotation(hit.normal));
+        }
+        else
         {
             ammo.AmmoLeftInMagazine--;
             ammo.updateAmmoText();

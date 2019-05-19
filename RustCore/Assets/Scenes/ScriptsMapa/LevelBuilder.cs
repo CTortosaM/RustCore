@@ -17,7 +17,7 @@ public class LevelBuilder : MonoBehaviour
     public delegate void LevelGeneration();
     public static event LevelGeneration onLevelFinished;
     public static event LevelGeneration startingGeneration;
-    [SerializeField] private NavMeshSurface surface;
+    [SerializeField] private List<NavMeshSurface> surfaces;
 
     StartRoom startRoom;
     EndRoom endRoom;
@@ -82,16 +82,31 @@ public class LevelBuilder : MonoBehaviour
         //Level generation finished
         Debug.Log("Level generation finished");
 
-       
-        surface.BuildNavMesh();
+        foreach (NavMeshSurface n in surfaces)
+        {
+            n.BuildNavMesh();
+        }
 
         foreach (Room room in placedRooms)
         {
             foreach (Transform enemySpawn in room.enemySpawns)
             {
+                int random = Random.Range(0, enemyPrefabs.Count);
+
+               
+                    Instantiate(enemyPrefabs[random], enemySpawn.transform.position , new Quaternion(0, 0, 0, 0), this.transform);
                 
-                Instantiate(enemyPrefabs[Random.Range(0,enemyPrefabs.Count)], enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
+            
             }
+        }
+        foreach (Transform enemySpawn in endRoom.enemySpawns)
+        {
+            int random = Random.Range(0, enemyPrefabs.Count);
+
+
+            Instantiate(enemyPrefabs[random], enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
+
+
         }
         shotgunPickup = Instantiate(pickupPrefab);
         shotgunPickup.transform.position = startRoom.pickupSpawn.position;

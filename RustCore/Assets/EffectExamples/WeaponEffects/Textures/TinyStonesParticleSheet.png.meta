@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 15bab659a34764d43b2f24c86f1b8d7a
+guid: 450524da16ce64a4bb69b3939d4d1a63
 TextureImporter:
   fileIDToRecycleName:
     21300000: TinyStones_0
@@ -102,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8bcc35e06f0b6f45b1859eb755982ab
+      spriteID: 50b21ce035218214a90a9ae53f18c123
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3540a95daa698ab47a85b0ee038bb6b1
+      spriteID: a9db0e630a15ec848b256b09c41919d1
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bce4ace7103af5a42ae127ad7622e8aa
+      spriteID: b92e3b0165e818c42b0eb07a43d726a8
       vertices: []
       indices: 
       edges: []
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 495fef0547a58044b9f5727df65be9c7
+      spriteID: b757454e348f3684eaa91280944a6a4f
       vertices: []
       indices: 
       edges: []
