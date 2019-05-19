@@ -56,6 +56,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 4829545603973455677}
   initialPosition: {x: 0, y: 0, z: 0}
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  metalHit: {fileID: 6347032788309237713, guid: e2ca0bfccac8ca841a3645fdfec46a14,
+    type: 3}
 --- !u!114 &6996054822176135957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +87,7 @@ Animator:
   m_GameObject: {fileID: 4469126575249509879}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 49aaf09d3886caa4da402cbc8a17fa0d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 74d622d6647ad6b4f8e668008b6d1e91, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -239,8 +239,14 @@ public class Boomerbang : MonoBehaviour
           
             if (col.gameObject.tag == "Enemy")
             {
-                 Debug.Log("le di");
-                col.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                //Debug.Log("le di");
+
+                AIEnemigo enemigo = col.gameObject.GetComponent<AIEnemigo>();
+                if (enemigo.Estado != AIEnemigo.EstadosPatrulla.Muerte)
+                {
+                    enemigo.Actualizar(Damage);
+
+                }
                 hasArrived = true;
             }
             else

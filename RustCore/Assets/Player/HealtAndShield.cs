@@ -16,6 +16,9 @@ public class HealtAndShield : MonoBehaviour
     [SerializeField] private int shield = 100;
     [SerializeField] private int maxShield = 100;
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private Transform playerBody;
+    [SerializeField] private Image damageIndicator;
 
     public int Health { get => health; set => health = value; }
     public int Shield { get => shield; set => shield = value; }
@@ -25,6 +28,8 @@ public class HealtAndShield : MonoBehaviour
 
     public delegate void PlayerDeath();
     public static event PlayerDeath onPlayerDeath;
+    public delegate void PlayerHit(bool isOnHealth, bool isDead);
+    public static event PlayerHit onPlayerHit;
 
     private bool shieldRegenerating = false;
 
@@ -45,12 +50,15 @@ public class HealtAndShield : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damageDone)
+    public void TakeDamage(int damageDone, Vector3 enemyPosition)
     {
+        float attackAngle = getAttackAngle(enemyPosition);
+        damageIndicator.transform.rotation = Quaternion.Euler(0f,0f,180 - attackAngle);
         CancelInvoke("regenerateShield");
         shieldRegenerating = false;
         if (shield > 0)
         {
+            onPlayerHit(false, IsDead);
             nextPossibleRegen = Time.time + shieldRegenInterval;
             if (shield - damageDone < 0)
             {
@@ -73,6 +81,7 @@ public class HealtAndShield : MonoBehaviour
         }
 
         health -= damageDone;
+        onPlayerHit(true, IsDead);
         UpdateShieldAndHealtText();
     }
 
@@ -109,11 +118,23 @@ public class HealtAndShield : MonoBehaviour
         if(health + ammount > maxHealth)
         {
             health = maxHealth;
-            UpdateShieldAndHealtText();
+            
         } else
         {
             health += ammount;
-            UpdateShieldAndHealtText();
         }
+        UpdateShieldAndHealtText();
+    }
+
+   private float getAttackAngle(Vector3 hitPosition)
+    {
+        Vector3 playerForward = playerBody.forward;
+        Vector3 cameraPosition = mainCamera.transform.position;
+        Vector3 relativeEnemyPosition = new Vector3(hitPosition.x - cameraPosition.x, 0f, hitPosition.z - cameraPosition.z);
+
+        //Debug.Log( "Angulo: " + Vector3.SignedAngle(myPosition, relativeEnemyPosition, Vector3.up));
+        return Vector3.SignedAngle(playerForward, relativeEnemyPosition, Vector3.up);
+        
+        //return new Quaternion(0, Vector3.SignedAngle(myPosition,relativeEnemyPosition,Vector3.up),0,0);
     }
 }

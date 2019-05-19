@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponId: 1
-  maxTotalAmmo: 200
-  totalAmmo: 200
-  ammoLeftInMagazine: 12
-  maxAmmoPerMagazine: 12
+  maxTotalAmmo: 4
+  totalAmmo: 2
+  ammoLeftInMagazine: 2
+  maxAmmoPerMagazine: 2
   ammoText: {fileID: 0}
 --- !u!114 &1834622303841424944
 MonoBehaviour:
@@ -67,6 +67,8 @@ MonoBehaviour:
   damage: 100
   camera: {fileID: 0}
   range: 100
+  metalHit: {fileID: 6347032788309237713, guid: e2ca0bfccac8ca841a3645fdfec46a14,
+    type: 3}
 --- !u!1001 &8591496562967857278
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class Shotgun : MonoBehaviour
 
     public int Damage { get => damage; set => damage = value; }
     public float ShootInterval { get => shootInterval; set => shootInterval = value; }
-
+    [SerializeField] private ParticleSystem metalHit;
 
     // Start is called before the first frame update
     void Awake()
@@ -119,6 +119,7 @@ public class Shotgun : MonoBehaviour
 
         if (Physics.Raycast(camera.transform.position, direction, out hit, range))
         {
+            
             Debug.DrawRay(camera.transform.position, camera.transform.forward, Color.green, 10.0f, false);
             if (hit.collider.gameObject.tag == "Enemy")
             {
@@ -143,6 +144,8 @@ public class Shotgun : MonoBehaviour
                 {
                     hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
                 }
+
+                Instantiate(metalHit, hit2.point, Quaternion.LookRotation(hit2.normal));
             }
         }
         for (int i = 0; i < perdigones / 2; i++)
@@ -163,6 +166,7 @@ public class Shotgun : MonoBehaviour
                 {
                     hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
                 }
+                Instantiate(metalHit, hit2.point, Quaternion.LookRotation(hit2.normal));
             }
         }
       //  transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.5f);
