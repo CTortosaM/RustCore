@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13805,11 +13805,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3092396374207891030, guid: b1b49952408a699479cde5a39d448ec1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3092396373476678400, guid: b1b49952408a699479cde5a39d448ec1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13914,6 +13909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092396374207891030, guid: b1b49952408a699479cde5a39d448ec1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3092396374888456219, guid: b1b49952408a699479cde5a39d448ec1,
         type: 3}
@@ -29303,16 +29303,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2001682374206935076, guid: 520b4211fcecdb3428970f9a1d9b7c57,
-        type: 3}
-      propertyPath: m_Name
-      value: gameManager
-      objectReference: {fileID: 0}
     - target: {fileID: 2001682374206935075, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: mensajeFinal
       value: 
       objectReference: {fileID: 641536431}
+    - target: {fileID: 2001682374206935076, guid: 520b4211fcecdb3428970f9a1d9b7c57,
+        type: 3}
+      propertyPath: m_Name
+      value: gameManager
+      objectReference: {fileID: 0}
     - target: {fileID: 2001682374206935074, guid: 520b4211fcecdb3428970f9a1d9b7c57,
         type: 3}
       propertyPath: m_LocalPosition.x
