@@ -54,8 +54,10 @@ public class enemyShoot : MonoBehaviour
             hasArrived = false;
 
             Forward = Player.position;
-            Position = player.transform.position;
-
+            if (player != null)
+            {
+                Position = player.transform.position;
+            }
 
             transform.SetParent(null, true);
             aux = false;
