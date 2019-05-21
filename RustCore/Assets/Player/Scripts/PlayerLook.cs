@@ -6,16 +6,18 @@ public class PlayerLook : MonoBehaviour
 {
     public string mouseXInputName, mouseYInputName;
     public float mouseSensitivity;
-
+    private Animator animator;
     [SerializeField] private Transform playerBody;
 
     private float xAxisClamp;
 
     private void Awake()
     {
+        PlayerController.onPlayerDash += startDashAnimation;
         LockCursor();
         Cursor.visible = false;
         xAxisClamp = 0.0f;
+        animator = GetComponent<Animator>();
         
     }
 
@@ -59,5 +61,10 @@ public class PlayerLook : MonoBehaviour
         Vector3 eulerRotation = transform.eulerAngles;
         eulerRotation.x = value;
         transform.eulerAngles = eulerRotation;
+    }
+
+    private void startDashAnimation()
+    {
+        animator.Play("dash_fov_increase");
     }
 }
