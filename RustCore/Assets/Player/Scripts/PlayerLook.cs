@@ -6,7 +6,7 @@ public class PlayerLook : MonoBehaviour
 {
     public string mouseXInputName, mouseYInputName;
     public float mouseSensitivity;
-    private Animator animator;
+    [SerializeField] private Animator animator;
     [SerializeField] private Transform playerBody;
 
     private float xAxisClamp;
@@ -17,7 +17,7 @@ public class PlayerLook : MonoBehaviour
         LockCursor();
         Cursor.visible = false;
         xAxisClamp = 0.0f;
-        animator = GetComponent<Animator>();
+        if(!animator) animator = GetComponent<Animator>();
         
     }
 
@@ -65,6 +65,7 @@ public class PlayerLook : MonoBehaviour
 
     private void startDashAnimation()
     {
-        animator.Play("dash_fov_increase");
+        if (!animator) animator = FindObjectOfType<PlayerLook>().GetComponent<Animator>();
+        if(animator) animator.Play("dash_fov_increase");
     }
 }

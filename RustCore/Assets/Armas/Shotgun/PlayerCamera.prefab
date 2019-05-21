@@ -201,6 +201,7 @@ MonoBehaviour:
   mouseXInputName: Mouse X
   mouseYInputName: Mouse Y
   mouseSensitivity: 100
+  animator: {fileID: 0}
   playerBody: {fileID: 0}
 --- !u!1 &1187377621675272356
 GameObject:
