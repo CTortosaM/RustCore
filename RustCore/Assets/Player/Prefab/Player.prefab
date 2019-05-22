@@ -243,7 +243,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0.96116, b: 0.7783019, a: 1}
   m_Intensity: 1.4
-  m_Range: 25
+  m_Range: 35
   m_SpotAngle: 100
   m_CookieSize: 10
   m_Shadows:
@@ -690,6 +690,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5028874360880650535}
     m_Modifications:
+    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.068752214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.068752214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4469126575249509879, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: m_Name
@@ -839,36 +869,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9716981
-      objectReference: {fileID: 0}
-    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.068752214
-      objectReference: {fileID: 0}
-    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.068752214
-      objectReference: {fileID: 0}
-    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8353416092144543, guid: 5f80b3de41fd56e40817d94f70ba0a8c, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -908,10 +908,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3894017516589996641}
     m_Modifications:
-    - target: {fileID: 1187377620524519005, guid: a08af3fb54bf0744eb1e7307d79dc490,
+    - target: {fileID: 7916172986130943129, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
-      propertyPath: m_Name
-      value: PlayerCamera
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1187377620524518978, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
@@ -983,10 +983,10 @@ PrefabInstance:
       propertyPath: m_FocalLength
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 7916172986130943129, guid: a08af3fb54bf0744eb1e7307d79dc490,
+    - target: {fileID: 1187377620524519005, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      propertyPath: m_Name
+      value: PlayerCamera
       objectReference: {fileID: 0}
     - target: {fileID: 6796524867776829389, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
