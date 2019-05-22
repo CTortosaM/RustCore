@@ -170,7 +170,10 @@ public class AIEnemigo : MonoBehaviour
                 case EstadosPatrulla.Muerte:
                     if (ID == 2)
                     {
-                        agente.gameObject.GetComponentInChildren<enemyShoot>().aux = false;
+                        if (agente.gameObject.GetComponentInChildren<enemyShoot>() != null)
+                        {
+                            agente.gameObject.GetComponentInChildren<enemyShoot>().aux = false;
+                        }
                     }
                     agente.isStopped = true;
                     canDamage = false;
