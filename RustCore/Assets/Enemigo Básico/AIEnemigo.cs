@@ -132,7 +132,7 @@ public class AIEnemigo : MonoBehaviour
                     break;
                 case EstadosPatrulla.Ataque:
                     
-                    agente.SetDestination(player.position - stopDistance * Forward);
+                    if(agente.isOnNavMesh)agente.SetDestination(player.position - stopDistance * Forward);
 
                     if (ID == 3)
                     {

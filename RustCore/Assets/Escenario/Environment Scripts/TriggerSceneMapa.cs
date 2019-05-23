@@ -21,7 +21,7 @@ public class TriggerSceneMapa : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync("Mapa");
+            SceneManager.LoadScene("Mapa");
         }
     }
 }
