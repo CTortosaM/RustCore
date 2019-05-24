@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f22b8172205c9149b1ac9f438f2aeca, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   weaponId: 2
   maxTotalAmmo: 0
   totalAmmo: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9c9370750dcc2d47b40bf6bf16fd7c4, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   isDead: 0
   health: 100
   shield: 100
@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bf1b0a4f54cee2408434595abec452b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   shieldRegenInterval: 5
   shieldRegenStep: 100
   shieldRegenSpeed: 0.1
@@ -279,8 +279,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   volumeTrigger: {fileID: 5028874359665819598}
   volumeLayer:
     serializedVersion: 2
@@ -384,8 +384,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
@@ -413,11 +413,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b95b10f711371b4b83f47d92485c8b6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   shootInterval: 1
   perdigones: 12
-  damage: 20
+  damage: 15
   text: {fileID: 3321300801420097057}
   camera: {fileID: 5028874359665819599}
   range: 30
@@ -555,8 +555,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &759254892244724023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 642869457, guid: e493a69e918974d4e9d51ccfd75afe07, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 5028874359665819601}
     - target: {fileID: 889773416, guid: e493a69e918974d4e9d51ccfd75afe07, type: 3}
       propertyPath: m_Layer
@@ -866,6 +866,16 @@ PrefabInstance:
       propertyPath: maxAmmoPerMagazine
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: maxTotalAmmo
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996054822176135957, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: totalAmmo
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 9117284837575353141, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: m_Layer
@@ -878,22 +888,22 @@ PrefabInstance:
     - target: {fileID: 4035775667767463587, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: m_Controller
-      value:
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9716981
+      value: 0.972549
       objectReference: {fileID: 0}
     - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.068752214
+      value: 0.40174994
       objectReference: {fileID: 0}
     - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.068752214
+      value: 0.07058822
       objectReference: {fileID: 0}
     - target: {fileID: 4829545603973455677, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
@@ -910,6 +920,21 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1134063102354553951, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134063102354553951, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.34211394
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134063102354553951, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.18431371
+      objectReference: {fileID: 0}
     - target: {fileID: 8353416092144543, guid: 5f80b3de41fd56e40817d94f70ba0a8c, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -925,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c,
         type: 3}
       propertyPath: text
-      value:
+      value: 
       objectReference: {fileID: 3321300801420097057}
     m_RemovedComponents:
     - {fileID: 7220927370381549170, guid: 5f80b3de41fd56e40817d94f70ba0a8c, type: 3}
@@ -949,6 +974,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3894017516589996641}
     m_Modifications:
+    - target: {fileID: 1187377620524519005, guid: a08af3fb54bf0744eb1e7307d79dc490,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 5431
+      objectReference: {fileID: 0}
     - target: {fileID: 1187377620524518978, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1014,11 +1044,6 @@ PrefabInstance:
       propertyPath: m_ForceIntoRT
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1187377620524519005, guid: a08af3fb54bf0744eb1e7307d79dc490,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 5431
-      objectReference: {fileID: 0}
     - target: {fileID: 7916172986130943129, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1047,7 +1072,7 @@ PrefabInstance:
     - target: {fileID: 1187377620524518977, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: playerBody
-      value:
+      value: 
       objectReference: {fileID: 3894017516589996641}
     - target: {fileID: 1311608400482618542, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
@@ -1102,22 +1127,22 @@ PrefabInstance:
     - target: {fileID: 756165118866256476, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: ammoText
-      value:
+      value: 
       objectReference: {fileID: 3321300801420097057}
     - target: {fileID: 756165118866256476, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: weapons.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2454105559313251439}
     - target: {fileID: 756165118866256476, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: weapons.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 8599148731068126520}
     - target: {fileID: 756165118866256476, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
       propertyPath: weapons.Array.data[3]
-      value:
+      value: 
       objectReference: {fileID: 759254892818203129}
     - target: {fileID: 756165118866256476, guid: a08af3fb54bf0744eb1e7307d79dc490,
         type: 3}
@@ -1172,8 +1197,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5840157573056647391 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 341191031082377555, guid: a08af3fb54bf0744eb1e7307d79dc490,
@@ -1184,8 +1209,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3321300801420097057 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8910352393576826797, guid: a08af3fb54bf0744eb1e7307d79dc490,
@@ -1196,8 +1221,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5028874360880650535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1187377621675272363, guid: a08af3fb54bf0744eb1e7307d79dc490,
@@ -1307,12 +1332,12 @@ PrefabInstance:
     - target: {fileID: 3729872241310496277, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
         type: 3}
       propertyPath: ammoText
-      value:
+      value: 
       objectReference: {fileID: 3321300801420097057}
     - target: {fileID: 1834622303841424944, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
         type: 3}
       propertyPath: camera
-      value:
+      value: 
       objectReference: {fileID: 5028874359665819599}
     - target: {fileID: 1834622303841424944, guid: f4a86b4f7db6fee4e9c6ddf8f5ca8262,
         type: 3}

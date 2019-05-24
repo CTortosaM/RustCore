@@ -250,7 +250,7 @@ public class AIEnemigo : MonoBehaviour
     {
         if (Estado != EstadosPatrulla.Muerte && !PauseManager.isPaused)
         {
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.4f);
             {
                 if (Estado != EstadosPatrulla.Muerte && !PauseManager.isPaused)
                 {
