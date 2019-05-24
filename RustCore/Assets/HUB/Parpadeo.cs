@@ -32,7 +32,7 @@ public class Parpadeo : MonoBehaviour
 
         if (Timer <= 0)
         {
-            _Light.enabled = !_Light.enabled;
+           if(_Light) _Light.enabled = !_Light.enabled;
             Timer = Random.Range(MinTime, MaxTime);
             AS.PlayOneShot(LightAudio);
         }

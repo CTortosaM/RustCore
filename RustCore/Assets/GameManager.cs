@@ -62,11 +62,15 @@ public class GameManager : MonoBehaviour
 
     public void death()
     {
-        mensajeFinal.SetActive(true);
+        if(mensajeFinal) mensajeFinal.SetActive(true);
     }
 
     public void ReloadLevel()
     {
         SceneManager.LoadScene("Mapa");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
+        PauseManager.isPaused = false;
     }
 }

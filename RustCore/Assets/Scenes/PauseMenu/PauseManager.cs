@@ -38,7 +38,7 @@ public class PauseManager : MonoBehaviour
             }
             else
             {
-               Pause();
+               Pause(); 
             }
         }
 
@@ -51,10 +51,19 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            if (SceneManager.GetSceneAt(i).name == "PauseMenu")
+            {
+                SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
+            }
+        }
+        Debug.Log("Voy a reanudar el juego");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         //menu.SetActive(false);
-        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu"));
+        
+       
         Time.timeScale = 1f;
         isPaused = false;
         
@@ -73,13 +82,31 @@ public class PauseManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            if (SceneManager.GetSceneAt(i).name == "PauseMenu")
+            {
+                SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
+            }
+        }
         SceneManager.LoadScene("Menu");
     }
 
     public void Restart()
     {
-       // SceneManager.UnloadSceneAsync("PauseMenu");
+        // SceneManager.UnloadSceneAsync("PauseMenu");
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            if (SceneManager.GetSceneAt(i).name == "PauseMenu")
+            {
+                SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
+            }
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 
 }

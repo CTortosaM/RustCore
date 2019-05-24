@@ -160,7 +160,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 70.70925
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -201,6 +201,7 @@ MonoBehaviour:
   mouseXInputName: Mouse X
   mouseYInputName: Mouse Y
   mouseSensitivity: 100
+  animator: {fileID: 0}
   playerBody: {fileID: 0}
 --- !u!1 &1187377621675272356
 GameObject:
@@ -278,6 +279,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   weaponSwitchDelay: 0.5
+  isSwitching: 0
+  boomerangEquiped: 0
+  boomerangIndex: 3
+  shotgunIndex: 2
 --- !u!114 &3270819574771106704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,11 +1014,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Initial-P
       objectReference: {fileID: 0}
-    - target: {fileID: 469893682874239020, guid: c4ee013635700964d9e5ba66ca6f5d91,
-        type: 3}
-      propertyPath: LightsModule.light
-      value: 
-      objectReference: {fileID: 1815035525032005129}
     - target: {fileID: 7152589883604907709, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1104,6 +1104,11 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 1987057798839384642}
+    - target: {fileID: 469893682874239020, guid: c4ee013635700964d9e5ba66ca6f5d91,
+        type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1815035525032005129}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ee013635700964d9e5ba66ca6f5d91, type: 3}
 --- !u!108 &1815035525032005129 stripped

@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCoolDown;
     [SerializeField] private float dashDuration;
 
+    public delegate void PlayerMove();
+    public static event PlayerMove onPlayerDash;
+
     //Variables de control de cooldown
     private bool isJumping;
     private bool isDashing;
@@ -134,6 +137,7 @@ public class PlayerController : MonoBehaviour
             canDash = false;
             isDashing = true;
             StartCoroutine(dashEvent());
+            onPlayerDash();
         }
     }
 

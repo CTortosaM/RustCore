@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5757984657236597301}
   - component: {fileID: 5324793596287532943}
   - component: {fileID: 6079340707115658661}
-  - component: {fileID: 987983216276774258}
+  - component: {fileID: 999484252874262909}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &987983216276774258
+--- !u!64 &999484252874262909
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,92 +107,92 @@ PrefabInstance:
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: doorways.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 285436475376384210}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: doorways.Array.data[1]
-      value: 
+      value:
       objectReference: {fileID: 7620058602352186652}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: doorways.Array.data[2]
-      value: 
+      value:
       objectReference: {fileID: 3088605905492343442}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: doorways.Array.data[3]
-      value: 
+      value:
       objectReference: {fileID: 7182263441306901315}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: meshCollider
-      value: 
+      value:
       objectReference: {fileID: 79659087589844886}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 8166642078006440879}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[1]
-      value: 
+      value:
       objectReference: {fileID: 2091522349793241770}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[2]
-      value: 
+      value:
       objectReference: {fileID: 3256887666445920373}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[3]
-      value: 
+      value:
       objectReference: {fileID: 2287229913799879727}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[4]
-      value: 
+      value:
       objectReference: {fileID: 1499008135221013075}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[5]
-      value: 
+      value:
       objectReference: {fileID: 1864908999069774999}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[6]
-      value: 
+      value:
       objectReference: {fileID: 4989600252307401362}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: enemySpawns.Array.data[7]
-      value: 
+      value:
       objectReference: {fileID: 188790226077306334}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: playerSpawns.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 5016905085609010943}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: playerSpawns.Array.data[1]
-      value: 
+      value:
       objectReference: {fileID: 2195529694468669537}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: playerSpawns.Array.data[2]
-      value: 
+      value:
       objectReference: {fileID: 5422081894515246879}
     - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: playerSpawns.Array.data[3]
-      value: 
+      value:
       objectReference: {fileID: 8290363458125563893}
     - target: {fileID: 2181834669812943590, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 6540297643894688655, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
@@ -329,20 +329,85 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8029923621787131773, guid: 58f18853639109c46afa36ff19d53e55,
+    - target: {fileID: 2181834669812943590, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
-      propertyPath: m_Start
-      value: 
-      objectReference: {fileID: 747126928484483956}
-    - target: {fileID: 8029923621787131773, guid: 58f18853639109c46afa36ff19d53e55,
+      propertyPath: m_Mesh
+      value:
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377722846144220680, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
-      propertyPath: m_End
-      value: 
-      objectReference: {fileID: 2614737634681101387}
+      propertyPath: m_Name
+      value: room Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: doorways.Array.data[0]
+      value:
+      objectReference: {fileID: 285436475376384210}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: doorways.Array.data[1]
+      value:
+      objectReference: {fileID: 7620058602352186652}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: doorways.Array.data[2]
+      value:
+      objectReference: {fileID: 3088605905492343442}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: doorways.Array.data[3]
+      value:
+      objectReference: {fileID: 7182263441306901315}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: meshCollider
+      value:
+      objectReference: {fileID: 79659087589844886}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[0]
+      value:
+      objectReference: {fileID: 8166642078006440879}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[1]
+      value:
+      objectReference: {fileID: 2091522349793241770}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[2]
+      value:
+      objectReference: {fileID: 3256887666445920373}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[3]
+      value:
+      objectReference: {fileID: 2287229913799879727}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[4]
+      value:
+      objectReference: {fileID: 1499008135221013075}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[5]
+      value:
+      objectReference: {fileID: 1864908999069774999}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[6]
+      value:
+      objectReference: {fileID: 4989600252307401362}
+    - target: {fileID: 2483445938718113572, guid: 58f18853639109c46afa36ff19d53e55,
+        type: 3}
+      propertyPath: enemySpawns.Array.data[7]
+      value:
+      objectReference: {fileID: 188790226077306334}
     - target: {fileID: 2181834669812943589, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 2181834669812943588, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
@@ -352,17 +417,17 @@ PrefabInstance:
     - target: {fileID: 2181834669812943588, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
-      value: 
+      value:
       objectReference: {fileID: 2100000, guid: cd3e8e44e5d58a544b8c0d1e59bfcd1e, type: 2}
     - target: {fileID: 2181834669812943588, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Materials.Array.data[3]
-      value: 
+      value:
       objectReference: {fileID: 2100000, guid: f7cab7b267ebe824d969beebb1063d24, type: 2}
     - target: {fileID: 2181834669812943588, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Materials.Array.data[4]
-      value: 
+      value:
       objectReference: {fileID: 2100000, guid: f7cab7b267ebe824d969beebb1063d24, type: 2}
     - target: {fileID: 2181834669812943591, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
@@ -807,32 +872,32 @@ PrefabInstance:
     - target: {fileID: 3212229134141516225, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 2056967329030242892, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 4777070178299246080, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 5571134923574915524, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 1225786972701325522, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 3355062869708123551, guid: 58f18853639109c46afa36ff19d53e55,
         type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58f18853639109c46afa36ff19d53e55, type: 3}
@@ -858,8 +923,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &7620058602352186652 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8566845377018673260, guid: 58f18853639109c46afa36ff19d53e55,
@@ -870,8 +935,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &3088605905492343442 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3855222168274261986, guid: 58f18853639109c46afa36ff19d53e55,
@@ -882,8 +947,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &7182263441306901315 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9002950869727508019, guid: 58f18853639109c46afa36ff19d53e55,
@@ -894,8 +959,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaaf25c6850ab4446935c76a554d1326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!4 &8166642078006440879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7929100777605127903, guid: 58f18853639109c46afa36ff19d53e55,

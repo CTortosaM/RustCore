@@ -140,7 +140,7 @@ public class Boomerbang : MonoBehaviour
                
            
                 t += Time.deltaTime;
-                Debug.Log(playerForward.x + "," + playerForward.y + "," + playerForward.z);
+                //Debug.Log(playerForward.x + "," + playerForward.y + "," + playerForward.z);
             }
             else
             {
