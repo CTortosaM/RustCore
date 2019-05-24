@@ -244,7 +244,7 @@ public class Boomerbang : MonoBehaviour
                 AIEnemigo enemigo = col.gameObject.GetComponent<AIEnemigo>();
                 if (enemigo.Estado != AIEnemigo.EstadosPatrulla.Muerte)
                 {
-                    enemigo.Actualizar(Damage);
+                    enemigo.Actualizar(Damage, ammo.weaponId);
 
                 }
                 hasArrived = true;

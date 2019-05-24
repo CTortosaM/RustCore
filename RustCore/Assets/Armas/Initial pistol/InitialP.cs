@@ -101,7 +101,7 @@ public class InitialP : MonoBehaviour
                 AIEnemigo enemigo = hit.collider.gameObject.GetComponent<AIEnemigo>();
                 if(enemigo.Estado != AIEnemigo.EstadosPatrulla.Muerte)
                 {
-                    enemigo.Actualizar(Damage);
+                    enemigo.Actualizar(Damage, ammo.weaponId);
                     
                 }
             }

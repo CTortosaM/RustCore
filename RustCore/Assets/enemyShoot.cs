@@ -72,7 +72,7 @@ public class enemyShoot : MonoBehaviour
 
 
 
-                if (t >= 4*(1.5 / 100) * longitude)
+                if (t >= 3*(1.5 / 100) * longitude)
                 {
                     t = 0;
 
@@ -111,7 +111,7 @@ public class enemyShoot : MonoBehaviour
 
         }
 
-    private void OnTriggerEnter(Collider col)
+   private void OnTriggerEnter(Collider col)
         {
 
 
@@ -142,6 +142,7 @@ public class enemyShoot : MonoBehaviour
         }
 
         }
+    
     private void OnCollisionEnter(Collision col)
     {
         if (run)

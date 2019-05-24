@@ -28,7 +28,7 @@ public class AIEnemigo : MonoBehaviour
     [SerializeField] private float stopDistance=0;
     Vector3 Forward;
     public int ID=0;
-
+    public delegate void boomerangDeath();
     public float SaludRestante
     {
         get => saludRestante;
@@ -64,7 +64,7 @@ public class AIEnemigo : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radio);
     }
 
-    public void Actualizar(int dañoRecibido)
+    public void Actualizar(int dañoRecibido, int idArma)
     {
         if(Estado != EstadosPatrulla.Muerte)
         {
@@ -114,19 +114,33 @@ public class AIEnemigo : MonoBehaviour
     void Update()
     {
         //agente.destination = player.position;
-
+      
         if(Estado == EstadosPatrulla.Muerte && Time.time >= timeToDespawn)
         {
             Destroy(gameObject);
         }
-
+       
         if(player != null)
         {
             switch (Estado)
             {
                 case EstadosPatrulla.Calma:
+                    if (ID == 2)
+                    {
+                        if (agente.gameObject.GetComponentInChildren<enemyShoot>() != null)
+                        {
+                            agente.gameObject.GetComponentInChildren<enemyShoot>().aux = false;
+                        }
+                    }
                     if (Vector3.Distance(transform.position, player.position) <= radio)
                     {
+                        if (ID == 2)
+                        {
+                            if (agente.gameObject.GetComponentInChildren<enemyShoot>() != null)
+                            {
+                                agente.gameObject.GetComponentInChildren<enemyShoot>().aux = true;
+                            }
+                        }
                         Estado = EstadosPatrulla.Ataque;
                     }
                     break;
@@ -136,8 +150,12 @@ public class AIEnemigo : MonoBehaviour
 
                     if (ID == 3)
                     {
-                        agente.gameObject.transform.LookAt(player);
-                        agente.transform.Rotate(new Vector3(0, 90, 0));
+                        if (IsAgentOnNavMesh(agente.gameObject))
+                        {
+                            agente.gameObject.transform.LookAt(player);
+                            agente.transform.Rotate(new Vector3(0, 90, 0));
+                        }
+                        
                         if (Vector3.Distance(player.position, agente.transform.position) < 10)
                         {
                            // Destroy(agente.GetComponent<NavMeshAgent>());
@@ -151,18 +169,26 @@ public class AIEnemigo : MonoBehaviour
                     else if (ID==2)
                     {
                         agente.gameObject.transform.LookAt(player);
-                        agente.gameObject.GetComponentInChildren<enemyShoot>().aux = true;
+                     
                     }else if (ID == 1)
                     {
-                        agente.gameObject.transform.LookAt(player);
-                        agente.transform.Rotate(new Vector3(0, 90, 0));
+                        if (IsAgentOnNavMesh(agente.gameObject))
+                        {
+                            agente.gameObject.transform.LookAt(player);
+                            agente.transform.Rotate(new Vector3(0, 90, 0));
+                        }
+                        
+                       
                     }
                     
                     if (Vector3.Distance(transform.position, player.position) > radio)
                     {
                         if (ID == 2)
                         {
-                            agente.gameObject.GetComponentInChildren<enemyShoot>().aux = false;
+                            if (agente.gameObject.GetComponentInChildren<enemyShoot>() != null)
+                            {
+                                agente.gameObject.GetComponentInChildren<enemyShoot>().aux = false;
+                            }
                         }
                         Estado = EstadosPatrulla.Calma;
                     }
@@ -222,14 +248,42 @@ public class AIEnemigo : MonoBehaviour
     */
     IEnumerator explotar()
     {
-        yield return new WaitForSeconds(0.7f);
-        if (!explosion.isPlaying) explosion.Play(); //Código de la explosión va aquí supongo
-        yield return new WaitForSeconds(0.3f);
-      
-        player.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, transform.position);
-        Destroy(gameObject);
+        if (Estado != EstadosPatrulla.Muerte && !PauseManager.isPaused)
+        {
+            yield return new WaitForSeconds(0.7f);
+            {
+                if (Estado != EstadosPatrulla.Muerte && !PauseManager.isPaused)
+                {
+                    if (!explosion.isPlaying) explosion.Play(); //Código de la explosión va aquí supongo
+                    yield return new WaitForSeconds(0.3f);
+
+                    if (canDamage) player.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, transform.position);
+                    Destroy(gameObject);
+                }
+            }
+        }
 
     }
+    // Don't set this too high, or NavMesh.SamplePosition() may slow down
+    float onMeshThreshold = 3;
 
+    public bool IsAgentOnNavMesh(GameObject agentObject)
+    {
+        Vector3 agentPosition = agentObject.transform.position;
+        NavMeshHit hit;
 
+        // Check for nearest point on navmesh to agent, within onMeshThreshold
+        if (NavMesh.SamplePosition(agentPosition, out hit, onMeshThreshold, NavMesh.GetAreaFromName("navMesh")))
+        {
+            // Check if the positions are vertically aligned
+            if (Mathf.Approximately(agentPosition.x, hit.position.x)
+                && Mathf.Approximately(agentPosition.z, hit.position.z))
+            {
+                // Lastly, check if object is below navmesh
+                return agentPosition.y >= hit.position.y;
+            }
+        }
+
+        return false;
+    }
 }

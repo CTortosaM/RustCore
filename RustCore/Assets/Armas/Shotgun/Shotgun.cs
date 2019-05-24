@@ -123,7 +123,7 @@ public class Shotgun : MonoBehaviour
             Debug.DrawRay(camera.transform.position, camera.transform.forward, Color.green, 10.0f, false);
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage, ammo.weaponId);
             }
         }
         for(int i=0; i<perdigones/2; i++)
@@ -142,7 +142,7 @@ public class Shotgun : MonoBehaviour
                 Debug.DrawRay(camera.transform.position, direction2, Color.red,  10.0f,  false);
                 if (hit2.collider.gameObject.tag == "Enemy")
                 {
-                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage, ammo.weaponId);
                 }
 
                 Instantiate(metalHit, hit2.point, Quaternion.LookRotation(hit2.normal));
@@ -164,7 +164,7 @@ public class Shotgun : MonoBehaviour
                 Debug.DrawRay(camera.transform.position, direction2, Color.red, 10.0f, false);
                 if (hit2.collider.gameObject.tag == "Enemy")
                 {
-                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage, ammo.weaponId);
                 }
                 Instantiate(metalHit, hit2.point, Quaternion.LookRotation(hit2.normal));
             }
