@@ -58,7 +58,7 @@ public class PauseManager : MonoBehaviour
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
             }
         }
-        Debug.Log("Voy a reanudar el juego");
+        //Debug.Log("Voy a reanudar el juego");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         //menu.SetActive(false);
