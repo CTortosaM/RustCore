@@ -109,4 +109,9 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
     }
 
+    public void OpenOptionsMenu()
+    {
+        SceneManager.LoadSceneAsync("OptionsMenu", LoadSceneMode.Additive);
+    }
+
 }

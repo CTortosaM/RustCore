@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class menuManager: MonoBehaviour
 {
-
+    [SerializeField] GameObject postProcessing;
     [SerializeField] GameObject ExitConfirm;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (!FindObjectOfType<ChangePostSettings>())
+        {
+            Instantiate(postProcessing);
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +42,11 @@ public class menuManager: MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         PauseManager.isPaused = false;
+    }
+
+    public void OpenSettings()
+    {
+        SceneManager.LoadSceneAsync("OptionsMenu", LoadSceneMode.Additive);
     }
 
 

@@ -34,7 +34,6 @@ public static class SaveSettings
     {
         Init();
         File.WriteAllText(path, save);
-        Debug.Log(save);
     }
 
     public static string Load(string path)

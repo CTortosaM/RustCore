@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class ChangePostSettings : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class ChangePostSettings : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        OptionsMenuManager.onChangeVideoSettings += setVideoSetting;
         postVolume = GetComponent<PostProcessVolume>();
         if (postVolume)
         {
@@ -41,27 +41,7 @@ public class ChangePostSettings : MonoBehaviour
         
     }
 
-    private void setVideoSetting(int id)
-    {
-        Debug.Log("Soy el prefab: " + id);
-        switch (id)
-        {
-            case 0:
-                if (motionBlur) motionBlur.enabled.value = !motionBlur.enabled.value;
-                break;
-            case 1:
-                if (occlusion) occlusion.enabled.value = !occlusion.enabled.value;
-                break;
-            case 2:
-                if (grading) occlusion.enabled.value = !grading.enabled.value;
-                break;
-            case 3:
-                if (vignette) vignette.enabled.value = !vignette.enabled.value;
-                break;
-            default:
-                break;
-        }
-    }
+  
 
     private void loadVideoSettingsFromFile()
     {
