@@ -14,6 +14,7 @@ public class LevelBuilder : MonoBehaviour
     public GameObject playerprefab;
     public GameObject pickupPrefab;
     List<Doorway> avaliableDoorways = new List<Doorway>();
+    public static List<Transform> spawns = new List<Transform>();
     public delegate void LevelGeneration();
     public static event LevelGeneration onLevelFinished;
     public static event LevelGeneration startingGeneration;
@@ -97,6 +98,23 @@ public class LevelBuilder : MonoBehaviour
                     Instantiate(enemyPrefabs[random], enemySpawn.transform.position , new Quaternion(0, 0, 0, 0), this.transform);
                 
             
+            }
+        }
+        foreach (Room room in placedRooms)
+        {
+            foreach (Transform playerSpawn in room.playerSpawns)
+            {
+
+                 foreach (Doorway doorway in room.doorways)
+                 {
+                     if (doorway.isActiveAndEnabled)
+                     {
+                          spawns.Add(playerSpawn);
+                     }
+                 }
+
+
+
             }
         }
         foreach (Transform enemySpawn in endRoom.enemySpawns)
@@ -362,7 +380,7 @@ public class LevelBuilder : MonoBehaviour
         //Clear lists
         placedRooms.Clear();
         avaliableDoorways.Clear();
-
+        spawns.Clear();
         //Reset coroutine
         StartCoroutine("GenerateLevel");
     }

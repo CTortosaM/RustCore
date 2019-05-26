@@ -11,4 +11,5 @@ public class Room : MonoBehaviour
         get { return meshCollider.bounds; }
     }
     public Transform[] enemySpawns;
+    public Transform[] playerSpawns;
 }

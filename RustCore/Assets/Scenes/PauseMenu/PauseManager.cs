@@ -15,7 +15,8 @@ public class PauseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log(Time.timeScale);
+        Debug.Log(isPaused);
     }
 
     private void Awake()

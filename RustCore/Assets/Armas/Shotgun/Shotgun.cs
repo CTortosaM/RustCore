@@ -60,12 +60,11 @@ public class Shotgun : MonoBehaviour
                 {
                     StopCoroutine(reload());
                     nextPossibleShootTime = Time.time + ShootInterval;
-                    ammo.AmmoLeftInMagazine--;
-                    ammo.updateAmmoText();
+                   
                     Shoot();
                 }
 
-                text.text = ammo.AmmoLeftInMagazine.ToString();
+               // text.text = ammo.AmmoLeftInMagazine.ToString();
             }
 
 
@@ -90,7 +89,8 @@ public class Shotgun : MonoBehaviour
         for (int i = ammo.AmmoLeftInMagazine; i <= ammo.MaxAmmoPerMagazine; i++)
         {
             ammo.AmmoLeftInMagazine = i;
-            text.text = ammo.AmmoLeftInMagazine.ToString();
+            ammo.TotalAmmo = ammo.TotalAmmo - 1;
+            text.text = ammo.AmmoLeftInMagazine + " / " + ammo.TotalAmmo;
             //transform.position = Vector3.MoveTowards(transform.localPosition, initialPosition, (float)0.5);
             yield return new WaitForSeconds(0.2f);
         }
@@ -101,17 +101,38 @@ public class Shotgun : MonoBehaviour
         }
         //yield return new WaitForSeconds(1);
 
-        ammo.reload();
+        if (ammo.MaxAmmoPerMagazine > ammo.TotalAmmo)
+        {
+            int difference = ammo.MaxAmmoPerMagazine - ammo.AmmoLeftInMagazine;
+            if (difference > ammo.TotalAmmo)
+            {
+                ammo.AmmoLeftInMagazine += ammo.TotalAmmo;
+                ammo.TotalAmmo = 0;
+            }
+            else
+            {
+                ammo.AmmoLeftInMagazine = ammo.MaxAmmoPerMagazine;
+                ammo.TotalAmmo -= difference;
+            }
+        }
+        else
+        {
+            ammo.TotalAmmo -= ammo.MaxAmmoPerMagazine - ammo.AmmoLeftInMagazine;
+            ammo.AmmoLeftInMagazine = ammo.MaxAmmoPerMagazine;
+
+        }
+      
 
         isReloading = false;
-        ammo.AmmoLeftInMagazine = ammo.MaxAmmoPerMagazine;
-        text.text = ammo.AmmoLeftInMagazine.ToString();
-       // animator.SetBool("isReloading", false);
+        text.text = ammo.AmmoLeftInMagazine + " / " + ammo.TotalAmmo;
+        // animator.SetBool("isReloading", false);
     }
 
 
     private void Shoot()
     {
+        ammo.AmmoLeftInMagazine--;
+        text.text = ammo.AmmoLeftInMagazine + " / " + ammo.TotalAmmo;
         Vector3 direction = camera.transform.forward;
         RaycastHit hit;
 
@@ -123,7 +144,7 @@ public class Shotgun : MonoBehaviour
             Debug.DrawRay(camera.transform.position, camera.transform.forward, Color.green, 10.0f, false);
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage, ammo.weaponId);
             }
         }
         for(int i=0; i<perdigones/2; i++)
@@ -142,7 +163,7 @@ public class Shotgun : MonoBehaviour
                 Debug.DrawRay(camera.transform.position, direction2, Color.red,  10.0f,  false);
                 if (hit2.collider.gameObject.tag == "Enemy")
                 {
-                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage, ammo.weaponId);
                 }
 
                 Instantiate(metalHit, hit2.point, Quaternion.LookRotation(hit2.normal));
@@ -164,7 +185,7 @@ public class Shotgun : MonoBehaviour
                 Debug.DrawRay(camera.transform.position, direction2, Color.red, 10.0f, false);
                 if (hit2.collider.gameObject.tag == "Enemy")
                 {
-                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                    hit2.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage, ammo.weaponId);
                 }
                 Instantiate(metalHit, hit2.point, Quaternion.LookRotation(hit2.normal));
             }
@@ -186,7 +207,7 @@ public class Shotgun : MonoBehaviour
             transform.Rotate(0.01f, 0, 0, Space.Self);// = Vector3.MoveTowards(transform.position, camera.transform.position, (float)0.5);
             yield return new WaitForSeconds(0.007f);
         }
-       
+        ammo.updateAmmoText();
     }
     void OnEnable()
     {
