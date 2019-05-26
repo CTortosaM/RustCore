@@ -20,9 +20,8 @@ public class TriggerDaño : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<HealtAndShield>().TakeDamage(100, gameObject.transform.position);
+            other.gameObject.GetComponent<HealtAndShield>().TakeDamage(other.gameObject.GetComponent<HealtAndShield>().Shield, gameObject.transform.position);
             other.gameObject.GetComponent<HealtAndShield>().TakeDamage(30, gameObject.transform.position);
-            Destroy(gameObject);
         }
     }
 }
