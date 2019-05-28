@@ -31,13 +31,13 @@ public class AIEnemigo : MonoBehaviour
     [SerializeField] private float stopDistance=0;
     Vector3 Forward;
     public int ID=0;
-    public delegate void boomerangDeath();
+    private int contBoomerbang = 0;
     public float SaludRestante
     {
         get => saludRestante;
         set => saludRestante = value;
     }
-
+    private float SaludTotal;
     public enum EstadosPatrulla
     {
         Calma,
@@ -59,6 +59,10 @@ public class AIEnemigo : MonoBehaviour
     public bool CanDamage { get => canDamage; set => canDamage = value; }
     public int EnemyID { get => enemyID;}
     public float DespawnAfterDeathTimer { get => despawnAfterDeathTimer; set => despawnAfterDeathTimer = value; }
+    public delegate void boomerangDeath();
+    public static event boomerangDeath boom;
+    public delegate void kills();
+    public static event kills onekill;
 
     void OnDrawGizmos()
     {
@@ -71,10 +75,19 @@ public class AIEnemigo : MonoBehaviour
     {
         if(Estado != EstadosPatrulla.Muerte)
         {
+            if (idArma == 2)
+            {
+                contBoomerbang++;
+            }
             SaludRestante -= dañoRecibido;
             if (SaludRestante <= 0)
             {
                 onEnemyHit(true);
+                onekill();
+                if (contBoomerbang == -Mathf.Floor(-SaludTotal / 80))
+                {
+                    boom();
+                }
                 deathTime = Time.time;
                 timeToDespawn = deathTime + despawnAfterDeathTimer;
                 Estado = EstadosPatrulla.Muerte;
@@ -101,6 +114,7 @@ public class AIEnemigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SaludTotal = saludRestante;
         agente = GetComponent<NavMeshAgent>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
