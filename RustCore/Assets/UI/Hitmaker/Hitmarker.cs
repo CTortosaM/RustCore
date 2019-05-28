@@ -20,6 +20,15 @@ public class Hitmarker : MonoBehaviour
         {
             animator = FindObjectOfType<Hitmarker>().gameObject.GetComponent<Animator>();
         }
-       if(animator) animator.Play("hitmarkerHitOnEnemy");
+        if (animator)
+        {
+            if (isDead)
+            {
+                animator.Play("hitmarkerFatalHit");
+                return;
+            }
+
+            animator.Play("hitmarkerHitOnEnemy");
+        }
     }
 }
