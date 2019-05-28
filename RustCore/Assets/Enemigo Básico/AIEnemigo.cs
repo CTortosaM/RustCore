@@ -13,6 +13,9 @@ public class AIEnemigo : MonoBehaviour
     public GameManager gameManager;
     private NavMeshAgent agente;
 
+    //Delegates
+    public delegate void EnemyHit(bool isDead);
+    public static event EnemyHit onEnemyHit; 
 
     [SerializeField] private float despawnAfterDeathTimer = 30f;
 
@@ -71,7 +74,7 @@ public class AIEnemigo : MonoBehaviour
             SaludRestante -= dañoRecibido;
             if (SaludRestante <= 0)
             {
-               
+                onEnemyHit(true);
                 deathTime = Time.time;
                 timeToDespawn = deathTime + despawnAfterDeathTimer;
                 Estado = EstadosPatrulla.Muerte;
@@ -86,6 +89,9 @@ public class AIEnemigo : MonoBehaviour
                 {
                     Destroy(agente.gameObject.GetComponent<Animator>());
                 }
+            } else
+            {
+                onEnemyHit(false);
             }
         }
         
