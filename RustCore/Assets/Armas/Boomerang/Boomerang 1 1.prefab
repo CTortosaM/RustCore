@@ -452,8 +452,13 @@ MonoBehaviour:
   hitRadius: 0.5
   player: {fileID: 0}
   run: 0
+  waiting: 10
   melee: 0
   Damage: 80
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  isActive: 0
+  isDone: 0
 --- !u!54 &642869459
 Rigidbody:
   m_ObjectHideFlags: 0

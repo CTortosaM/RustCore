@@ -15,7 +15,8 @@ public class PauseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log(Time.timeScale);
+        Debug.Log(isPaused);
     }
 
     private void Awake()
@@ -58,7 +59,7 @@ public class PauseManager : MonoBehaviour
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
             }
         }
-        Debug.Log("Voy a reanudar el juego");
+        //Debug.Log("Voy a reanudar el juego");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         //menu.SetActive(false);
@@ -107,6 +108,11 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void OpenOptionsMenu()
+    {
+        SceneManager.LoadSceneAsync("OptionsMenu", LoadSceneMode.Additive);
     }
 
 }

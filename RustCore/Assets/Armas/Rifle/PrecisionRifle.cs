@@ -77,7 +77,7 @@ public class PrecisionRifle : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage);
+                hit.collider.gameObject.GetComponent<AIEnemigo>().Actualizar(Damage,ammo.weaponId);
             } else
             {
                 ammo.AmmoLeftInMagazine--;
