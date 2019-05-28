@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour
 
     private int daño;
     private IndicadorSalud indicadorSalud;
-    public GameObject mensajeFinal; 
-    
-
+    public GameObject mensajeFinal;
+    public static int contBoomerang;
+    public static int contkills;
     public int Daño
     {
         get => daño;
@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        AIEnemigo.onekill += enemyKill;
+        AIEnemigo.boom += boomerangDeath;
         PauseManager.HasRestarted += ReloadLevel;
         HealtAndShield.onPlayerDeath += death;
         mensajeFinal.SetActive(false);
@@ -60,6 +63,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void boomerangDeath()
+    {
+        contBoomerang++;
+    }
+    public void enemyKill()
+    {
+        contkills++;
+    }
     public void death()
     {
         if(mensajeFinal) mensajeFinal.SetActive(true);
