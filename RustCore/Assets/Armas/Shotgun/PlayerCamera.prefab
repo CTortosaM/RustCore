@@ -1123,6 +1123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Initial-P
       objectReference: {fileID: 0}
+    - target: {fileID: 469893682874239020, guid: c4ee013635700964d9e5ba66ca6f5d91,
+        type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1815035525032005129}
     - target: {fileID: 7152589883604907709, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1213,11 +1218,6 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 1987057798839384642}
-    - target: {fileID: 469893682874239020, guid: c4ee013635700964d9e5ba66ca6f5d91,
-        type: 3}
-      propertyPath: LightsModule.light
-      value: 
-      objectReference: {fileID: 1815035525032005129}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ee013635700964d9e5ba66ca6f5d91, type: 3}
 --- !u!108 &1815035525032005129 stripped

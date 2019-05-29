@@ -1,1 +1,1 @@
-{"motionBlur":true,"ambientOcclussion":true,"colorGradient":true,"vignette":true}
+{"motionBlur":false,"ambientOcclussion":false,"colorGradient":false,"vignette":false}
