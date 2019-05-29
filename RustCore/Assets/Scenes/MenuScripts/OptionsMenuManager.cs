@@ -9,6 +9,8 @@ public class OptionsMenuManager : MonoBehaviour
     [SerializeField] private Button goBackButton;
     [SerializeField] private Button closeMenuButton;
     [SerializeField] private List<GameObject> menus;
+    [SerializeField] private Text[] audioValues;
+    [SerializeField] private Slider[] audioSliders;
     // Start is called before the first frame update
 
 
@@ -38,5 +40,26 @@ public class OptionsMenuManager : MonoBehaviour
         menus[index].SetActive(true);
         goBackButton.gameObject.SetActive(true);
         closeMenuButton.gameObject.SetActive(false);
+    }
+
+    public void updateAudioValuesText(int which)
+    {
+        audioValues[which].text = audioSliders[which].value.ToString();
+    }
+
+
+    public void saveAudioSettings()
+    {
+        SaveSettings.Init();
+        AudioSettings audio = new AudioSettings
+        {
+            masterVolume = Mathf.RoundToInt(audioSliders[0].value),
+            musicVolume = Mathf.RoundToInt(audioSliders[1].value),
+            effectsVolume = Mathf.RoundToInt(audioSliders[2].value)
+        };
+
+        string Json = JsonUtility.ToJson(audio);
+        Debug.Log(Json);
+        SaveSettings.Save(SaveSettings.SAVE_FOLDER_Audio + "audioSettings.txt", Json);
     }
 }
