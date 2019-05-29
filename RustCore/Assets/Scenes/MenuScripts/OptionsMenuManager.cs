@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,6 +39,10 @@ public class OptionsMenuManager : MonoBehaviour
             menu.SetActive(false);
         }
         menus[index].SetActive(true);
+        if(index == 2)
+        {
+            updateAudioSliderValuesOnLoad();
+        }
         goBackButton.gameObject.SetActive(true);
         closeMenuButton.gameObject.SetActive(false);
     }
@@ -61,5 +66,23 @@ public class OptionsMenuManager : MonoBehaviour
         string Json = JsonUtility.ToJson(audio);
         Debug.Log(Json);
         SaveSettings.Save(SaveSettings.SAVE_FOLDER_Audio + "audioSettings.txt", Json);
+    }
+
+    public void updateAudioSliderValuesOnLoad()
+    {
+        string settings = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Audio + "audioSettings.txt");
+        try
+        {
+            AudioSettings audio = JsonUtility.FromJson<AudioSettings>(settings);
+            audioSliders[0].value = audio.masterVolume;
+            audioSliders[1].value = audio.musicVolume;
+            audioSliders[2].value = audio.effectsVolume;
+        } catch(Exception e)
+        {
+            Debug.Log("Algo ha pasado en Audio");
+            audioSliders[0].value = 100;
+            audioSliders[1].value = 100;
+            audioSliders[2].value = 100;
+        }
     }
 }
