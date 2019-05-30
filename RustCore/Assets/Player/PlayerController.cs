@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
     public int Health { get => health; set => health = value; }
     public int Shield { get => shield; set => shield = value; }
 
+    private void Start()
+    {
+        isDead = false;
+    }
+
     private void Awake()
     {
         //LevelBuilder.startingGeneration += TurnOffCameras;

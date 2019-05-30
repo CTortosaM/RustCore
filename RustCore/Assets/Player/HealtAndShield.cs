@@ -36,6 +36,7 @@ public class HealtAndShield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        IsDead = false;
         UpdateShieldAndHealtText();
     }
 

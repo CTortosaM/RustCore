@@ -12,6 +12,8 @@ public class AIEnemigo : MonoBehaviour
     [SerializeField] private float saludRestante = 100;
     public GameManager gameManager;
     private NavMeshAgent agente;
+    private float nextPossibleAttack;
+    [SerializeField] private float attackCooldown = .5f;
 
     //Delegates
     public delegate void EnemyHit(bool isDead);
@@ -114,6 +116,7 @@ public class AIEnemigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        nextPossibleAttack = 0f;
         SaludTotal = saludRestante;
         agente = GetComponent<NavMeshAgent>();
 
@@ -241,7 +244,11 @@ public class AIEnemigo : MonoBehaviour
             {
                 if (other.gameObject.CompareTag("Player"))
                 {
-                    if (canDamage) other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, gameObject.transform.position);
+                    if (canDamage && Time.time >= nextPossibleAttack)
+                    {
+                        other.gameObject.GetComponent<HealtAndShield>().TakeDamage(dañoHacido, gameObject.transform.position);
+                        nextPossibleAttack = Time.time + attackCooldown;
+                    }
 
                     //gameManager.Daño = dañoHacido;
                     //gameManager.ComprobarVictoria();
