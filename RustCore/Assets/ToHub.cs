@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToHub : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class ToHub : MonoBehaviour
     public GameObject notnot;
     public GameObject yesyes;
     public GameObject bossboss;
-    public int killsToUse = 5;
+    public int killsToUse = 20;
     
 
     // Start is called before the first frame update
@@ -81,6 +82,7 @@ public class ToHub : MonoBehaviour
     IEnumerator teleport()
     {
         yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadSceneAsync("SalaHub");
         /*player = GameObject.FindGameObjectWithTag("Player");
         int random = Random.Range(0, LevelBuilder.spawns.Count - 1);
         Debug.Log(LevelBuilder.spawns[random]);
