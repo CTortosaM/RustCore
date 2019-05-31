@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject mensajeFinal;
     public static int contBoomerang;
     public static int contkills;
+    public static float ticktock;
     public int Daño
     {
         get => daño;
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ticktock += Time.deltaTime;
         if (Input.GetKey("escape"))
         {
             //Application.Quit();
