@@ -95,6 +95,7 @@ public class PauseManager : MonoBehaviour
 
     public void Restart()
     {
+        string scene = SceneManager.GetActiveScene().name;
         // SceneManager.UnloadSceneAsync("PauseMenu");
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
@@ -103,7 +104,9 @@ public class PauseManager : MonoBehaviour
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
             }
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Resources.UnloadUnusedAssets();
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Mapa").buildIndex);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;

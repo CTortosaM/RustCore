@@ -35,11 +35,7 @@ public class toNew : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.contBoomerang >= enemyBoomerang)
-        {
-
-        }
-        else if (GameManager.contkills >= killsToUse)
+        if (GameManager.contkills >= killsToUse)
         {
 
             bossboss.SetActive(true);
@@ -61,11 +57,8 @@ public class toNew : MonoBehaviour
             Debug.Log(other.gameObject.name);
             Debug.Log(GameManager.contBoomerang);
             Debug.Log(GameManager.contkills);
-            if (GameManager.contBoomerang >= enemyBoomerang)
-            {
-
-            }
-            else if (GameManager.contkills >= killsToUse)
+            
+            if (GameManager.contkills >= killsToUse)
             {
                 StartCoroutine(teleport());
                 notnot.SetActive(true);
@@ -82,6 +75,7 @@ public class toNew : MonoBehaviour
     IEnumerator teleport()
     {
         yield return new WaitForSeconds(0.5f);
+        string scene = SceneManager.GetActiveScene().name;
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             if (SceneManager.GetSceneAt(i).name == "PauseMenu")
@@ -89,7 +83,9 @@ public class toNew : MonoBehaviour
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
             }
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(scene);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;

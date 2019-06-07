@@ -57,7 +57,7 @@ public class AIEnemigo : MonoBehaviour
             _estado = value;
         }
     }
-
+    private bool hasDied;
     public bool CanDamage { get => canDamage; set => canDamage = value; }
     public int EnemyID { get => enemyID;}
     public float DespawnAfterDeathTimer { get => despawnAfterDeathTimer; set => despawnAfterDeathTimer = value; }
@@ -84,26 +84,23 @@ public class AIEnemigo : MonoBehaviour
             SaludRestante -= dañoRecibido;
             if (SaludRestante <= 0)
             {
-                onEnemyHit(true);
-                onekill();
-                if (contBoomerbang == -Mathf.Floor(-SaludTotal / 80))
-                {
-                    boom();
-                }
-                deathTime = Time.time;
-                timeToDespawn = deathTime + despawnAfterDeathTimer;
-                Estado = EstadosPatrulla.Muerte;
-                if (!explosion.isPlaying) explosion.Play();
-                if (!smoke.isPlaying) smoke.Play();
-                if (ID == 2)
-                {
-                   // Destroy(agente.gameObject.GetComponentInChildren<enemyShoot>());
-                    agente.GetComponent<CapsuleCollider>().isTrigger = true;
-                }
-                if (agente.gameObject.GetComponent<Animator>() != null)
-                {
-                    Destroy(agente.gameObject.GetComponent<Animator>());
-                }
+               
+                    deathTime = Time.time;
+                    timeToDespawn = deathTime + despawnAfterDeathTimer;
+                    Estado = EstadosPatrulla.Muerte;
+                    if (!explosion.isPlaying) explosion.Play();
+                    if (!smoke.isPlaying) smoke.Play();
+                    if (ID == 2)
+                    {
+                        // Destroy(agente.gameObject.GetComponentInChildren<enemyShoot>());
+                        agente.GetComponent<CapsuleCollider>().isTrigger = true;
+                    }
+                    if (agente.gameObject.GetComponent<Animator>() != null)
+                    {
+                        Destroy(agente.gameObject.GetComponent<Animator>());
+                    }
+                    
+                
             } else
             {
                 onEnemyHit(false);
@@ -116,6 +113,7 @@ public class AIEnemigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hasDied= false;
         nextPossibleAttack = 0f;
         SaludTotal = saludRestante;
         agente = GetComponent<NavMeshAgent>();
@@ -141,6 +139,7 @@ public class AIEnemigo : MonoBehaviour
         if(Estado == EstadosPatrulla.Muerte && Time.time >= timeToDespawn)
         {
             Destroy(gameObject);
+
         }
        
         if(player != null)
@@ -224,7 +223,17 @@ public class AIEnemigo : MonoBehaviour
                             agente.gameObject.GetComponentInChildren<enemyShoot>().aux = false;
                         }
                     }
-                    agente.isStopped = true;
+                    if (!hasDied)
+                    {
+                        onEnemyHit(true);
+                        onekill();
+                        if (contBoomerbang == -Mathf.Floor(-SaludTotal / 80))
+                        {
+                            boom();
+                        }
+                        hasDied = true;
+                    }
+                        agente.isStopped = true;
                     canDamage = false;
                     break;
             }

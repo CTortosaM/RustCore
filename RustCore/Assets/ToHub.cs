@@ -35,11 +35,7 @@ public class ToHub : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.contBoomerang >= enemyBoomerang)
-        {
-        
-        }
-        else if (GameManager.contkills >= killsToUse)
+        if (GameManager.contkills >= killsToUse)
         {
 
             bossboss.SetActive(false);
@@ -61,11 +57,7 @@ public class ToHub : MonoBehaviour
             Debug.Log(other.gameObject.name);
             Debug.Log(GameManager.contBoomerang);
             Debug.Log(GameManager.contkills);
-            if (GameManager.contBoomerang >= enemyBoomerang)
-            {
-               
-            }
-            else if (GameManager.contkills >= killsToUse )
+            if (GameManager.contkills >= killsToUse )
             {
                 StartCoroutine(teleport());
                 notnot.SetActive(true);

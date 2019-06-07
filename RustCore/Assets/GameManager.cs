@@ -80,7 +80,8 @@ public class GameManager : MonoBehaviour
 
     public void ReloadLevel()
     {
-        SceneManager.LoadScene("Mapa");
+        Resources.UnloadUnusedAssets();
+        SceneManager.LoadScene("Mapa", LoadSceneMode.Single);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;

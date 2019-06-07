@@ -35,6 +35,7 @@ public class LevelBuilder : MonoBehaviour
     {
         roomLayerMask = LayerMask.GetMask("Room");
         //Place start room
+        Resources.UnloadUnusedAssets();
         SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Additive);
         PlaceStartRoom();
 
@@ -59,6 +60,9 @@ public class LevelBuilder : MonoBehaviour
     }
     IEnumerator GenerateLevel()
     {
+        Resources.UnloadUnusedAssets();
+
+        spawns.Clear();
         WaitForSeconds startup = new WaitForSeconds(1);
         WaitForFixedUpdate interval = new WaitForFixedUpdate();
 

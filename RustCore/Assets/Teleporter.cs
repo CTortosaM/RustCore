@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Teleporter : MonoBehaviour
 {
     GameObject player;
@@ -12,6 +12,7 @@ public class Teleporter : MonoBehaviour
     public int killsToUse = 5;
     public float secondsToWait = 60;
     private Transform spawn;
+    public TextMeshPro text;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -51,6 +52,7 @@ public class Teleporter : MonoBehaviour
             bossboss.SetActive(false);
             notnot.SetActive(true);
             yesyes.SetActive(false);
+            text.text = GameManager.contkills.ToString()+"/"+killsToUse;
         }
         }
     private void OnTriggerEnter(Collider other)
