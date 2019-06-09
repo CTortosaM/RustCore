@@ -5,14 +5,23 @@ using TMPro;
 public class Teleporter : MonoBehaviour
 {
     GameObject player;
-    public int enemyBoomerang=20;
+    public static int enemyBoomerang=20;
     public GameObject notnot;
     public GameObject yesyes;
     public GameObject bossboss;
-    public int killsToUse = 5;
+    public static int killsToUse = 5;
     public float secondsToWait = 60;
     private Transform spawn;
     public TextMeshPro text;
+
+    public delegate void textYes();
+    public static event textYes onYes;
+    public delegate void textNo();
+    public static event textYes onNo;
+    public delegate void textBoss();
+    public static event textYes onBoss;
+
+    bool aux;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -21,9 +30,11 @@ public class Teleporter : MonoBehaviour
         notnot.SetActive(false);
         bossboss.SetActive(false);
         yesyes.SetActive(true);
+        aux = false;
     }
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         GameManager.contBoomerang = 0;
         GameManager.contkills = killsToUse;
         notnot.SetActive(false);
@@ -34,14 +45,45 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
+        
+
         if (GameManager.contBoomerang >= enemyBoomerang)
         {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
+            
+                onBoss();
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    GameManager.contkills = 0;
+                    StartCoroutine(teleport());
+                }
+
+
+            }
+           
             yesyes.SetActive(false);
             notnot.SetActive(false);
             bossboss.SetActive(true);
         }else if(GameManager.contkills >=killsToUse||GameManager.ticktock>=60)
         {
+
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
+             
+                onYes();
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    StartCoroutine(teleport());
+                    notnot.SetActive(true);
+                    yesyes.SetActive(false);
+                    GameManager.ticktock = 0;
+                    GameManager.contkills = 0;
+                }
+
+
+            }
             
             bossboss.SetActive(false);
             notnot.SetActive(false);
@@ -49,12 +91,26 @@ public class Teleporter : MonoBehaviour
         }
         else
         {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
+          
+                onNo();
+
+            }
+            
             bossboss.SetActive(false);
             notnot.SetActive(true);
             yesyes.SetActive(false);
             text.text = GameManager.contkills.ToString()+"/"+killsToUse;
         }
+       if (Vector3.Distance(player.transform.position, transform.position) >2)
+        {
+            okComputer.clearText = true;
         }
+    }
+
+  
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -82,8 +138,11 @@ public class Teleporter : MonoBehaviour
            // }
         }
     }
+    */
+
     IEnumerator teleport()
     {
+    
         player = GameObject.FindGameObjectWithTag("Player");
         spawn = GameObject.FindGameObjectWithTag("EndRoom").GetComponent<EndRoom>().playerSpawn;
         int random = Random.Range(0, LevelBuilder.spawns.Count - 1);
@@ -97,5 +156,6 @@ public class Teleporter : MonoBehaviour
         {
             player.transform.position = LevelBuilder.spawns[random].position;
         }
+  
     }
 }

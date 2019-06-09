@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject mensajeFinal;
     public static int contBoomerang;
     public static int contkills;
+    public static int totalKills;
     public static float ticktock;
     public int Daño
     {
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void enemyKill()
     {
         contkills++;
+        totalKills++;
     }
     public void death()
     {
