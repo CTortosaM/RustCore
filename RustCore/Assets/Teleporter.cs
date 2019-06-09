@@ -103,10 +103,7 @@ public class Teleporter : MonoBehaviour
             yesyes.SetActive(false);
             text.text = GameManager.contkills.ToString()+"/"+killsToUse;
         }
-       if (Vector3.Distance(player.transform.position, transform.position) >2)
-        {
-            okComputer.clearText = true;
-        }
+      
     }
 
   
