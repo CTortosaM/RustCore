@@ -112,7 +112,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &633212736976381077
 Transform:
@@ -843,7 +843,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7498791092430818317
 Transform:
@@ -912,7 +912,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8431352241401913937
 Transform:
@@ -985,7 +985,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7532940181782507995
 Transform:
@@ -4648,11 +4648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ffc33e2dba8e214892c5e7c262997b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBoomerang: 10
   notnot: {fileID: 8952978365233506168}
   yesyes: {fileID: 9115655801219939327}
   bossboss: {fileID: 308694013623321517}
-  killsToUse: 5
   secondsToWait: 60
   text: {fileID: 7890228543052960458}
 --- !u!1 &7077575489169161630
@@ -4762,7 +4760,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2286929291953999053
 Transform:

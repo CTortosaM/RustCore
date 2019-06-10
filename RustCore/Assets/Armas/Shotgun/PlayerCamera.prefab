@@ -1321,11 +1321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1187377621675272363}
     m_Modifications:
-    - target: {fileID: 1895541492578586504, guid: c4ee013635700964d9e5ba66ca6f5d91,
-        type: 3}
-      propertyPath: m_Name
-      value: Initial-P
-      objectReference: {fileID: 0}
     - target: {fileID: 7152589883604907709, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1380,6 +1375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895541492578586504, guid: c4ee013635700964d9e5ba66ca6f5d91,
+        type: 3}
+      propertyPath: m_Name
+      value: Initial-P
       objectReference: {fileID: 0}
     - target: {fileID: 6029685914992132730, guid: c4ee013635700964d9e5ba66ca6f5d91,
         type: 3}
@@ -1466,19 +1466,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7916172986130943129}
     m_Modifications:
-    - target: {fileID: 5333384566487815627, guid: c1866d1f50134c048b446ad42577b3aa,
-        type: 3}
-      propertyPath: m_Name
-      value: Ammo
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380632344027577721, guid: c1866d1f50134c048b446ad42577b3aa,
-        type: 3}
-      propertyPath: m_Text
-      value: '30/200
-
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 4443710644164322430, guid: c1866d1f50134c048b446ad42577b3aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1583,6 +1570,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333384566487815627, guid: c1866d1f50134c048b446ad42577b3aa,
+        type: 3}
+      propertyPath: m_Name
+      value: Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380632344027577721, guid: c1866d1f50134c048b446ad42577b3aa,
+        type: 3}
+      propertyPath: m_Text
+      value: '30/200
+
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1866d1f50134c048b446ad42577b3aa, type: 3}

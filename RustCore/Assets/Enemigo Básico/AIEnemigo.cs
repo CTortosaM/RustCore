@@ -113,7 +113,8 @@ public class AIEnemigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hasDied= false;
+        
+        hasDied = false;
         nextPossibleAttack = 0f;
         SaludTotal = saludRestante;
         agente = GetComponent<NavMeshAgent>();
@@ -167,8 +168,8 @@ public class AIEnemigo : MonoBehaviour
                     }
                     break;
                 case EstadosPatrulla.Ataque:
-                    
-                    if(agente.isOnNavMesh)agente.SetDestination(player.position - stopDistance * Forward);
+               
+                    if (agente.isOnNavMesh)agente.SetDestination(player.position - stopDistance * Forward);
 
                     if (ID == 3)
                     {

@@ -21578,6 +21578,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P1 - Ascensor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3135822736153445677, guid: 98da063b3b39f4a479519fac7676a270,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6279116246000078152, guid: 98da063b3b39f4a479519fac7676a270,
         type: 3}
       propertyPath: m_Mesh
@@ -21597,6 +21602,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 557984675680373861, guid: 98da063b3b39f4a479519fac7676a270,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150909379115553992, guid: 98da063b3b39f4a479519fac7676a270,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179604867361796970, guid: 98da063b3b39f4a479519fac7676a270,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284024496539593747, guid: 98da063b3b39f4a479519fac7676a270,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98da063b3b39f4a479519fac7676a270, type: 3}

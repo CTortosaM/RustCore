@@ -36,6 +36,10 @@ public class LevelBuilder : MonoBehaviour
         roomLayerMask = LayerMask.GetMask("Room");
         //Place start room
         Resources.UnloadUnusedAssets();
+        GameManager.contBoomerang = 0;
+        GameManager.totalKills = 0;
+        GameManager.contkills = 0;
+        GameManager.ticktock = 0;
         SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Additive);
         PlaceStartRoom();
 
