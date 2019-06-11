@@ -210,13 +210,13 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: cb75e6f0f8aee8d42a5040920abe6c67, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.19
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 59
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -5096,6 +5096,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8906586112743424896}
     m_Modifications:
+    - target: {fileID: 100004, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
+      propertyPath: m_Name
+      value: Shotgun
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5152,10 +5156,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
-      propertyPath: m_Name
-      value: Shotgun
-      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6cd60c8ce53134446803b72e75065eeb, type: 2}
+    - target: {fileID: 2300000, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c82e263d539ef924da083b8c348f556c, type: 2}
     - target: {fileID: 2300004, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -5166,14 +5174,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c82e263d539ef924da083b8c348f556c, type: 2}
     - target: {fileID: 2300004, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
       propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: c82e263d539ef924da083b8c348f556c, type: 2}
-    - target: {fileID: 2300002, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6cd60c8ce53134446803b72e75065eeb, type: 2}
-    - target: {fileID: 2300000, guid: 2633b0c420565cf4da38fceaf9024072, type: 3}
-      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c82e263d539ef924da083b8c348f556c, type: 2}
     m_RemovedComponents: []
