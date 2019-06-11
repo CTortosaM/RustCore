@@ -33,11 +33,15 @@ public class HealtAndShield : MonoBehaviour
 
     private bool shieldRegenerating = false;
 
+    AudioSource[] aSource; 
     // Start is called before the first frame update
     void Start()
     {
+        aSource = GetComponents<AudioSource>();
+
         IsDead = false;
         UpdateShieldAndHealtText();
+        
     }
 
     // Update is called once per frame
@@ -53,6 +57,10 @@ public class HealtAndShield : MonoBehaviour
 
     public void TakeDamage(int damageDone, Vector3 enemyPosition)
     {
+        int rand = Random.Range(3, 5);
+       
+            aSource[rand].Play();
+        
         float attackAngle = getAttackAngle(enemyPosition);
         damageIndicator.transform.rotation = Quaternion.Euler(0f,0f,180 - attackAngle);
         CancelInvoke("regenerateShield");
@@ -88,6 +96,7 @@ public class HealtAndShield : MonoBehaviour
 
     public void killPlayer()
     {
+
         IsDead = true;
         onPlayerDeath();
     }

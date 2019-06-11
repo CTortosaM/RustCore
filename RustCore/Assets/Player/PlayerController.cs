@@ -46,9 +46,22 @@ public class PlayerController : MonoBehaviour
     public int Health { get => health; set => health = value; }
     public int Shield { get => shield; set => shield = value; }
 
+    //Audiosources
+    public AudioSource jump;
+    public AudioSource doubleJump;
+    public AudioSource dash;
+   
+
+
+
     private void Start()
     {
         isDead = false;
+        AudioSource[] aSources = GetComponents<AudioSource>();
+        jump = aSources[0];
+        doubleJump = aSources[1];
+        dash = aSources[2];
+      
     }
 
     private void Awake()
@@ -105,7 +118,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && totalJumps > 0)
         {
-            isJumping = true;
+         
             StartCoroutine(JumpEvent());
         }
     }
@@ -113,11 +126,22 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator JumpEvent()
     {
+        if (isJumping)
+        {
+            doubleJump.Play();
+        }
+        else
+        {
+            jump.Play();
+        }
+        isJumping = true;
+       
         charController.slopeLimit = 90.0f;
         totalJumps -= 1;
         float timeInAir = 0.0f;
         do
         {
+         
             if (totalJumps == 0)
             {
                 //charController.Move(charController.);
@@ -148,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator dashEvent()
     {
-
+        dash.Play();
         float OGSpeed = movementSpeed;
         movementSpeed *= dashSpeedMultiplier;
         yield return new WaitForSeconds(DashDuration);

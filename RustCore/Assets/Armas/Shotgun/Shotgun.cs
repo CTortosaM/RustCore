@@ -30,10 +30,14 @@ public class Shotgun : MonoBehaviour
     public int Damage { get => damage; set => damage = value; }
     public float ShootInterval { get => shootInterval; set => shootInterval = value; }
     [SerializeField] private ParticleSystem metalHit;
-
+    public AudioSource shooting;
+    public AudioSource reloading;
     // Start is called before the first frame update
     void Awake()
     {
+        AudioSource[] aS = GetComponents<AudioSource>();
+        shooting = aS[0];
+        reloading = aS[1];
         initialPosition = transform.localPosition;
         initialRotation = transform.localRotation;
         ammo = GetComponent<AmmoCount>();
@@ -88,9 +92,11 @@ public class Shotgun : MonoBehaviour
         }
         for (int i = ammo.AmmoLeftInMagazine; i <= ammo.MaxAmmoPerMagazine; i++)
         {
+            reloading.Play();
             ammo.AmmoLeftInMagazine = i;
             ammo.TotalAmmo = ammo.TotalAmmo - 1;
             text.text = ammo.AmmoLeftInMagazine + " / " + ammo.TotalAmmo;
+
             //transform.position = Vector3.MoveTowards(transform.localPosition, initialPosition, (float)0.5);
             yield return new WaitForSeconds(0.2f);
         }
@@ -131,6 +137,7 @@ public class Shotgun : MonoBehaviour
 
     private void Shoot()
     {
+        shooting.Play();
         ammo.AmmoLeftInMagazine--;
         text.text = ammo.AmmoLeftInMagazine + " / " + ammo.TotalAmmo;
         Vector3 direction = camera.transform.forward;

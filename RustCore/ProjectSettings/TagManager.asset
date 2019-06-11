@@ -8,6 +8,7 @@ TagManager:
   - Pelota
   - Enemy
   - EndRoom
+  - Music
   layers:
   - Default
   - TransparentFX

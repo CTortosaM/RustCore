@@ -27,8 +27,10 @@ public class LevelBuilder : MonoBehaviour
     LayerMask roomLayerMask;
     GameObject player;
     GameObject shotgunPickup;
+    public AudioSource music;
     void Awake()
     {
+        music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
         //startingGeneration();
     }
     void Start()
@@ -139,11 +141,11 @@ public class LevelBuilder : MonoBehaviour
 
         SceneManager.UnloadSceneAsync("LoadingScreen");
         onLevelFinished();
-
+        
         yield return new WaitForSeconds(1);
 
 
-
+        music.Play();
 
 
         //player.active = true;

@@ -27,10 +27,18 @@ public class Boomerbang : MonoBehaviour
     private float i;
     private GameObject clone;
     public bool isDone = false;
-   
+    public AudioSource hitting;
+    public static AudioSource air;
+    public AudioSource spin;
+
     // Start is called before the first frame update
     void Awake()
     {
+       
+        AudioSource[] aS = GetComponents<AudioSource>();
+        spin = aS[0];
+        hitting = aS[1];
+        air = aS[2];
         isEquiped = true;
        
         gameObject.GetComponent<Rigidbody>().useGravity = false;
@@ -70,6 +78,7 @@ public class Boomerbang : MonoBehaviour
                 {
                     if (!melee && !run)
                     {
+                        spin.Play();
                         i = 0.0f;
                         hasArrived = false;
 
@@ -104,6 +113,7 @@ public class Boomerbang : MonoBehaviour
                 {
                     if (!run && !melee)
                     {
+                        air.Play();
                         transform.SetParent(parentTransform, true);
                         playerForward = player.transform.forward;
                         transform.localPosition = originalPosition;
@@ -152,6 +162,8 @@ public class Boomerbang : MonoBehaviour
                         hasArrived = false;
 
                         run = false;
+                    spin.Stop();
+                    air.Play();
 
                         transform.localPosition = originalPosition;
                         transform.localRotation = originalRotation;
@@ -239,6 +251,7 @@ public class Boomerbang : MonoBehaviour
           
             if (col.gameObject.tag == "Enemy")
             {
+                hitting.Play();
                 //Debug.Log("le di");
 
                 AIEnemigo enemigo = col.gameObject.GetComponent<AIEnemigo>();
@@ -253,6 +266,7 @@ public class Boomerbang : MonoBehaviour
             {
                 if (!(col.gameObject.tag == "Player"))
                 {
+                    hitting.Play();
                     if (run)
                     {
                         //transform.position = transform.position - i * playerForward;
@@ -264,6 +278,7 @@ public class Boomerbang : MonoBehaviour
                         run = false;
                         isEquiped = false;
                         gameObject.GetComponent<Rigidbody>().useGravity = true;
+                        spin.Stop();
                         
                         StartCoroutine("wait");
                         Debug.Log(col.gameObject.name);
@@ -278,6 +293,7 @@ public class Boomerbang : MonoBehaviour
     {
         yield return new WaitForSeconds(waiting);
       Debug.Log("Ya puedes");
+        air.Play();
         isEquiped = true;
         transform.SetParent(parentTransform, true);
         gameObject.GetComponent<Rigidbody>().useGravity = false;

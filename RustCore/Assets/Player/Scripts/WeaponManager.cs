@@ -78,6 +78,7 @@ public class WeaponManager : MonoBehaviour
         else if (Input.GetButtonDown("Fire2") && index != boomerangIndex ) {
             if (weapons[boomerangIndex].GetComponent<Boomerbang>().transform.parent!=null)
             {
+                Boomerbang.air.Play();
                 canHit = false;
                 StartCoroutine(hit(index));
             }
