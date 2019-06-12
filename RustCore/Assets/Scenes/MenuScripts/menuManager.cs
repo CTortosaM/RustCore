@@ -7,6 +7,7 @@ public class menuManager: MonoBehaviour
 {
     [SerializeField] GameObject postProcessing;
     [SerializeField] GameObject ExitConfirm;
+    [SerializeField] GameObject audio;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,10 @@ public class menuManager: MonoBehaviour
         if (!FindObjectOfType<ChangePostSettings>())
         {
             Instantiate(postProcessing);
+        }
+        if (!FindObjectOfType<AudioControllerClass>())
+        {
+            Instantiate(audio);
         }
     }
 
