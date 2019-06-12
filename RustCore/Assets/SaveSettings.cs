@@ -9,6 +9,7 @@ public static class SaveSettings
     public static string SAVE_FOLDER_Video = Application.dataPath + "/VideoSettings/";
     public static string SAVE_FOLDER_Audio = Application.dataPath + "/AudioSettings/";
     public static string SAVE_FOLDER_Controls = Application.dataPath + "/ControlsSettings/";
+    public static string SAVE_FOLDER_Savestate = Application.dataPath + "/Savestate/";
 
 
     public static void Init()
@@ -27,6 +28,11 @@ public static class SaveSettings
         {
             Directory.CreateDirectory(SAVE_FOLDER_Controls);
         }
+
+        if (!Directory.Exists(SAVE_FOLDER_Savestate))
+        {
+            Directory.CreateDirectory(SAVE_FOLDER_Savestate);
+        }
     }
 
 
@@ -38,6 +44,7 @@ public static class SaveSettings
 
     public static string Load(string path)
     {
+        Init();
         string save = null;
         if(File.Exists(path))
         {
@@ -46,4 +53,7 @@ public static class SaveSettings
 
         return save;
     }
+
+
+    
 }
