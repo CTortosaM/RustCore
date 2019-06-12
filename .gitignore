@@ -40,3 +40,4 @@ RustCore/Assets/AudioSettings/audioSettings.txt
 RustCore/Assets/AudioSettings/audioSettings.txt
 RustCore/Assets/AudioSettings/audioSettings.txt
 RustCore/Assets/VideoSettings/videoSettings.txt
+*.meta
