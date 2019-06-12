@@ -755,6 +755,7 @@ MonoBehaviour:
   postProcessing: {fileID: 1390729395565763174, guid: 3c9bc73f1e4026644a744f1daec29453,
     type: 3}
   ExitConfirm: {fileID: 1768723051}
+  audio: {fileID: 1913190991602306741, guid: 54a4eea2efdffe04cb327501ff06f797, type: 3}
 --- !u!4 &687685843
 Transform:
   m_ObjectHideFlags: 0

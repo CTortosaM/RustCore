@@ -161,7 +161,7 @@ public class AIEnemigo : MonoBehaviour
                     }
                     if (Vector3.Distance(transform.position, player.position) <= radio)
                     {
-                        enemySoundsController.sound(gameObject.transform, ID, Vector3.Distance(transform.position, player.position));
+                      
                         if (ID == 2)
                         {
                             if (agente.gameObject.GetComponentInChildren<enemyShoot>() != null)
@@ -175,7 +175,7 @@ public class AIEnemigo : MonoBehaviour
                 case EstadosPatrulla.Ataque:
                   
                     if (agente.isOnNavMesh)agente.SetDestination(player.position - stopDistance * Forward);
-
+                    if(Vector3.Distance(transform.position, player.position) <= 5) enemySoundsController.sound(gameObject.transform, ID);
                     if (ID == 3)
                     {
                         if (IsAgentOnNavMesh(agente.gameObject))
@@ -218,12 +218,12 @@ public class AIEnemigo : MonoBehaviour
                                 agente.gameObject.GetComponentInChildren<enemyShoot>().aux = false;
                             }
                         }
-                        enemySoundsController.noSound(gameObject.transform, ID);
+                        enemySoundsController.noSound( ID);
                         Estado = EstadosPatrulla.Calma;
                     }
                     break;
                 case EstadosPatrulla.Muerte:
-                    enemySoundsController.noSound(gameObject.transform, ID);
+                    enemySoundsController.noSound( ID);
                     if (ID == 2)
                     {
                         if (agente.gameObject.GetComponentInChildren<enemyShoot>() != null)
