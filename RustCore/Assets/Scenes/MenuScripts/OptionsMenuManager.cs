@@ -12,6 +12,11 @@ public class OptionsMenuManager : MonoBehaviour
     [SerializeField] private List<GameObject> menus;
     [SerializeField] private Text[] audioValues;
     [SerializeField] private Slider[] audioSliders;
+
+
+
+    public delegate void AudioOptionsChanged(AudioSettings settings);
+    public static event AudioOptionsChanged onAudioOptionsSaved;
     // Start is called before the first frame update
 
 
@@ -49,6 +54,7 @@ public class OptionsMenuManager : MonoBehaviour
 
     public void updateAudioValuesText(int which)
     {
+        float min = (float)0.0001;
         audioValues[which].text = audioSliders[which].value.ToString();
     }
 
@@ -66,10 +72,12 @@ public class OptionsMenuManager : MonoBehaviour
         string Json = JsonUtility.ToJson(audio);
         Debug.Log(Json);
         SaveSettings.Save(SaveSettings.SAVE_FOLDER_Audio + "audioSettings.txt", Json);
+        onAudioOptionsSaved(audio);
     }
 
     public void updateAudioSliderValuesOnLoad()
     {
+        float min = (float)0.0001;
         string settings = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Audio + "audioSettings.txt");
         try
         {

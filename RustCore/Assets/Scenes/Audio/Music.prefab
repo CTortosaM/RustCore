@@ -143,6 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9430196f0ce8b014c918066c0cf0cf94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groups:
+  - {fileID: 24300002, guid: be482553573951d44a19172f96c81ea6, type: 2}
+  - {fileID: 243621567722112390, guid: be482553573951d44a19172f96c81ea6, type: 2}
+  - {fileID: 243047542934510986, guid: be482553573951d44a19172f96c81ea6, type: 2}
   master: {fileID: 24100000, guid: be482553573951d44a19172f96c81ea6, type: 2}
   electronicMusic: {fileID: 0}
   silence: {fileID: 0}
