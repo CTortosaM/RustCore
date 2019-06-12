@@ -437,6 +437,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6650590791828638892, guid: 7ccbc16928a973b428672118aee348b6,
+        type: 3}
+      propertyPath: m_Name
+      value: FuturisticChair (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8719868535205369859, guid: 7ccbc16928a973b428672118aee348b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -491,11 +496,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6650590791828638892, guid: 7ccbc16928a973b428672118aee348b6,
-        type: 3}
-      propertyPath: m_Name
-      value: FuturisticChair (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ccbc16928a973b428672118aee348b6, type: 3}
@@ -1617,6 +1617,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7183324260251962958, guid: 3f430d419183636418503e68b6ba5f53,
+        type: 3}
+      propertyPath: m_Name
+      value: TableHUB
+      objectReference: {fileID: 0}
     - target: {fileID: 6384273436678541891, guid: 3f430d419183636418503e68b6ba5f53,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1671,11 +1676,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7183324260251962958, guid: 3f430d419183636418503e68b6ba5f53,
-        type: 3}
-      propertyPath: m_Name
-      value: TableHUB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f430d419183636418503e68b6ba5f53, type: 3}
@@ -13625,6 +13625,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &528542019
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 157470, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_Name
+      value: Jukebox03Dirty
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.588
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.71865207
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6953699
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 91.887
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8525
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8525
+      objectReference: {fileID: 0}
+    - target: {fileID: 408898, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8525
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64f48fa3fb502c7409a36f29b9dc0131, type: 3}
 --- !u!1 &563298014
 GameObject:
   m_ObjectHideFlags: 0
@@ -14990,6 +15059,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6650590791828638892, guid: 7ccbc16928a973b428672118aee348b6,
+        type: 3}
+      propertyPath: m_Name
+      value: FuturisticChair
+      objectReference: {fileID: 0}
     - target: {fileID: 8719868535205369859, guid: 7ccbc16928a973b428672118aee348b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15044,11 +15118,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6650590791828638892, guid: 7ccbc16928a973b428672118aee348b6,
-        type: 3}
-      propertyPath: m_Name
-      value: FuturisticChair
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ccbc16928a973b428672118aee348b6, type: 3}
