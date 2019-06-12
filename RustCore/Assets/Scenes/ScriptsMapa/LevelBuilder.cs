@@ -30,7 +30,7 @@ public class LevelBuilder : MonoBehaviour
     public AudioSource music;
     void Awake()
     {
-       // music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+        music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
         //startingGeneration();
     }
     void Start()
@@ -145,7 +145,7 @@ public class LevelBuilder : MonoBehaviour
         yield return new WaitForSeconds(1);
 
 
-       // music.Play();
+        music.Play();
 
 
         //player.active = true;

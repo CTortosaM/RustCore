@@ -12,7 +12,7 @@ public class enemyShoot : MonoBehaviour
     public Transform Player;
     public GameObject player;
         public bool run = false;
-     
+    bool audioPlaying;
         private bool hasArrived = false;
         private float t = (float)0.5;
         private Vector3 Forward;
@@ -31,8 +31,8 @@ public class enemyShoot : MonoBehaviour
         // Start is called before the first frame update
         void Awake()
         {
-          
 
+        audioPlaying = false;
      Player= GameObject.FindGameObjectWithTag("Player").transform;
 
         transform.localPosition = originalPosition;
@@ -50,6 +50,13 @@ public class enemyShoot : MonoBehaviour
 
         if (aux)
         {
+            if (!audioPlaying)
+            {
+                enemyShotSound.pewpew(gameObject.transform);
+                audioPlaying = true;
+            }
+
+
             i = 0.0f;
             hasArrived = false;
 
@@ -103,6 +110,7 @@ public class enemyShoot : MonoBehaviour
                 transform.SetParent(parentTransform, true);
                  transform.localPosition = originalPosition;
                 aux = true;
+                audioPlaying = false;
             }
 
 

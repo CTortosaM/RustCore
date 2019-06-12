@@ -31,7 +31,7 @@ public class InitialP : MonoBehaviour
     public int Damage { get => damage; set => damage = value; }
     public float ShootInterval { get => shootInterval; set => shootInterval = value; }
 
-
+  
     // Start is called before the first frame update
     void Awake()
     {
@@ -74,7 +74,9 @@ public class InitialP : MonoBehaviour
 
     private IEnumerator reload()
     {
+        WeaponManager.reloadingPistol.Play();
         isReloading = true;
+
         animator.SetBool("isReloading", true);
         
         yield return new WaitForSeconds(1);
@@ -90,6 +92,8 @@ public class InitialP : MonoBehaviour
 
     private void Shoot()
     {
+        WeaponManager.shootingPistol.Play();
+       // ResetAnimation();
         RaycastHit hit;
 
         muzzleFlash.Play();
@@ -112,7 +116,7 @@ public class InitialP : MonoBehaviour
 
     void OnEnable()
     {
-        //ammo.updateAmmoText();
+        ResetAnimation();//ammo.updateAmmoText();
     }
 
     private void ResetAnimation()

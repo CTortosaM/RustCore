@@ -32,9 +32,19 @@ public class WeaponManager : MonoBehaviour
     bool canHit;
     public int boomerangIndex = 3;
     public int shotgunIndex = 2;
+
+    public static AudioSource shootingShotgun;
+    public static AudioSource reloadingShotgun;
+    public static AudioSource shootingPistol;
+    public static AudioSource reloadingPistol;
     // Start is called before the first frame update
     private void Start()
     {
+        AudioSource[] aS = GetComponents<AudioSource>();
+        shootingShotgun = aS[0];
+        reloadingShotgun = aS[3];
+        shootingPistol = aS[1];
+        reloadingPistol = aS[2];
         canHit = true;
         avalaibleWeapons = new List<int>();
         avalaibleWeapons.Add(0);
