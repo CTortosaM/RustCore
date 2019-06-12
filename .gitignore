@@ -36,3 +36,7 @@ sysinfo.txt
 *.unitypackage
 RustCore/Assets/VideoSettings/videoSettings.txt
 RustCore/Assets/Savestate/savestate.txt
+RustCore/Assets/AudioSettings/audioSettings.txt
+RustCore/Assets/AudioSettings/audioSettings.txt
+RustCore/Assets/AudioSettings/audioSettings.txt
+RustCore/Assets/VideoSettings/videoSettings.txt
