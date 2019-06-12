@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class enemySoundsController : MonoBehaviour
 {
-  //  public static float distanceToPlayer;
+    public static float distanceToPlayer;
     private static enemySoundsController Instance;
     private AudioSource[] sounds;
     public float fade = 2;
     // Start is called before the first frame update
     void Start()
     {
-       // distanceToPlayer = 100;
+        distanceToPlayer = 100;
         sounds = GetComponents<AudioSource>();
         Instance = this;
     }
@@ -21,11 +21,11 @@ public class enemySoundsController : MonoBehaviour
     {
 
     }
-    public static void sound(Transform t, int ID )
+    public static void sound(Transform t, int ID, float distance)
     {
-      //  if (distance < distanceToPlayer)
-        //{
-           // distanceToPlayer = distance;
+        if (distance < distanceToPlayer)
+        {
+            distanceToPlayer = distance;
             Instance.gameObject.transform.position = t.position;
             if (ID == 0)
             {
@@ -43,11 +43,11 @@ public class enemySoundsController : MonoBehaviour
             {
                 Instance.StartCoroutine(FadeIn(Instance.sounds[1], Instance.fade));
             }
-       // }
+        }
     }
-    public static void noSound( int ID)
+    public static void noSound(Transform t, int ID)
     {
-       // distanceToPlayer = 100;
+        distanceToPlayer = 100;
         if (ID == 0)
         {
 
@@ -86,7 +86,7 @@ public class enemySoundsController : MonoBehaviour
         float startVolume = 0.2f;
 
         audioSource.volume = 0;
-        if(!audioSource.isPlaying)audioSource.Play();
+        audioSource.Play();
 
         while (audioSource.volume < 1.0f)
         {

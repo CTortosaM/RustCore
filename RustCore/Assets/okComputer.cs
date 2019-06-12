@@ -6,14 +6,13 @@ public class okComputer : MonoBehaviour
 {
     public Text text;
      bool clearText;
-    private static okComputer that;
     // Start is called before the first frame update
     void Start()
     {
         Teleporter.onBoss += Boss;
         Teleporter.onYes += Yes;
         Teleporter.onNo += No;
-        that = this;
+     
        
     }
 
@@ -52,11 +51,6 @@ public class okComputer : MonoBehaviour
         }*/
         text.text="";
         clearText = false;
-    }
-    public static void writeText(string t)
-    {
-        that.text.text = t;
-
     }
    
 }

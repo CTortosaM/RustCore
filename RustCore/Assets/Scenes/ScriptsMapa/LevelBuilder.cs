@@ -30,7 +30,7 @@ public class LevelBuilder : MonoBehaviour
     public AudioSource music;
     void Awake()
     {
-        music = AudioControllerClass.selected;
+        music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
         //startingGeneration();
     }
     void Start()
