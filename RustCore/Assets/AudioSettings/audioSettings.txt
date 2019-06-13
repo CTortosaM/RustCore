@@ -1,1 +1,1 @@
-{"masterVolume":66,"musicVolume":89,"effectsVolume":89}
+{"masterVolume":0,"musicVolume":0,"effectsVolume":0}

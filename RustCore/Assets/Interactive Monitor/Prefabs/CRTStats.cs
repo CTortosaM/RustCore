@@ -33,7 +33,6 @@ public class CRTStats : MonoBehaviour
             {
                 TotalKills = 0,
                 MaxKills = 0,
-                LeastTime = 0f,
                 timesPlayed = 0
             };
 
@@ -50,7 +49,7 @@ public class CRTStats : MonoBehaviour
     {
         int totalkills = 0;
         int maxkills = 0;
-        float leasttime = 0f;
+        int totalTimes = 0;
 
         Savestate savestate = getSaveState();
 
@@ -58,12 +57,12 @@ public class CRTStats : MonoBehaviour
         {
             totalkills = savestate.TotalKills;
             maxkills = savestate.MaxKills;
-            leasttime = savestate.LeastTime;
+            totalTimes = savestate.timesPlayed;
         }
 
         string newText = "Total Kills:" + Environment.NewLine + totalkills
             + Environment.NewLine + "Max Kills:" + Environment.NewLine + maxkills 
-            + Environment.NewLine + "Least time" + Environment.NewLine +leasttime;
+            + Environment.NewLine + "Times played" + Environment.NewLine + totalTimes;
 
 
         text.text = newText;
