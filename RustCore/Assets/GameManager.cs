@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static int contBoomerang;
     public static int contkills;
     public static int totalKills;
+    public static bool isBossDead;
     public static float ticktock;
     public int Daño
     {

@@ -12,7 +12,7 @@ public class AudioControllerClass : MonoBehaviour
    public static AudioSource selected;
     private static AudioControllerClass that;
 
-
+    public int selectedIndex = 0;
     private int masterIndex = 0;
     private int musicIndex = 1;
     private int effectsIndex = 2;
@@ -40,9 +40,13 @@ public class AudioControllerClass : MonoBehaviour
     {
         
     }
-
+    public static int getSelected()
+    {
+        return that.selectedIndex;
+    }
     public static void setSelected(int index)
     {
+        that.selectedIndex = index;
         selected.Stop();
         if (index == 0) {
             selected = that.silence;

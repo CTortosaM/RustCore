@@ -29,27 +29,59 @@ public class ToHub : MonoBehaviour
         notnot.SetActive(true);
         bossboss.SetActive(false);
         yesyes.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (GameManager.contkills >= killsToUse)
+      
+        if (GameManager.isBossDead)
         {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
 
+                okComputer.writeText("Press X to go to your rest room");
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    StartCoroutine(teleport());
+                    notnot.SetActive(true);
+                    yesyes.SetActive(false);
+
+                    GameManager.contkills = 0;
+
+                }
+
+
+            }
             bossboss.SetActive(false);
             notnot.SetActive(false);
             yesyes.SetActive(true);
         }
         else
         {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
+
+                okComputer.writeText("Kill the <color=red>big guy</color> first!");
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    StartCoroutine(teleport());
+                    notnot.SetActive(true);
+                    yesyes.SetActive(false);
+
+                    GameManager.contkills = 0;
+
+                }
+
+
+            }
             bossboss.SetActive(false);
             notnot.SetActive(true);
             yesyes.SetActive(false);
         }
     }
-    private void OnTriggerEnter(Collider other)
+   /* ivate void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -57,7 +89,7 @@ public class ToHub : MonoBehaviour
             Debug.Log(other.gameObject.name);
             Debug.Log(GameManager.contBoomerang);
             Debug.Log(GameManager.contkills);
-            if (GameManager.contkills >= killsToUse )
+            if (GameManager.isBossDead)
             {
                 StartCoroutine(teleport());
                 notnot.SetActive(true);
@@ -70,7 +102,7 @@ public class ToHub : MonoBehaviour
 
             // }
         }
-    }
+    }*/
     IEnumerator teleport()
     {
         yield return new WaitForSeconds(0.5f);

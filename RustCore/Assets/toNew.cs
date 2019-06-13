@@ -29,26 +29,59 @@ public class toNew : MonoBehaviour
         notnot.SetActive(true);
         bossboss.SetActive(false);
         yesyes.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (GameManager.contkills >= killsToUse)
+        if (GameManager.isBossDead)
         {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
 
+                okComputer.writeText("Press X to start a new combat");
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    StartCoroutine(teleport());
+                    notnot.SetActive(true);
+                    yesyes.SetActive(false);
+
+                    GameManager.contkills = 0;
+
+                }
+
+
+            }
             bossboss.SetActive(true);
             notnot.SetActive(false);
             yesyes.SetActive(false);
         }
         else
         {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
+
+                okComputer.writeText("Kill the <color=red>big guy</color> first!");
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    StartCoroutine(teleport());
+                    notnot.SetActive(true);
+                    yesyes.SetActive(false);
+
+                    GameManager.contkills = 0;
+
+                }
+
+
+            }
             bossboss.SetActive(false);
             notnot.SetActive(true);
             yesyes.SetActive(false);
         }
     }
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -58,7 +91,7 @@ public class toNew : MonoBehaviour
             Debug.Log(GameManager.contBoomerang);
             Debug.Log(GameManager.contkills);
             
-            if (GameManager.contkills >= killsToUse)
+            if (GameManager.isBossDead)
             {
                 StartCoroutine(teleport());
                 notnot.SetActive(true);
@@ -72,6 +105,7 @@ public class toNew : MonoBehaviour
             // }
         }
     }
+    */
     IEnumerator teleport()
     {
         yield return new WaitForSeconds(0.5f);

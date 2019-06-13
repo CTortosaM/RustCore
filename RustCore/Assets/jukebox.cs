@@ -11,8 +11,14 @@ public class jukebox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        selected = 0;
-        text.text = list[selected];
+        if (AudioControllerClass.getSelected()!=null)
+        {
+            text.text = list[AudioControllerClass.getSelected()];
+        }
+        else
+        {
+            text.text = list[0];
+        }
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

@@ -8,7 +8,7 @@ public class LevelBuilder : MonoBehaviour
 {
     public Room startRoomPrefab, endRoomPrefab;
     public List<AIEnemigo> enemyPrefabs;
- 
+    public AIEnemigo bossPrefab;
     public List<Room> roomPrefabs = new List<Room>();
     public Vector2 iterationRange = new Vector2(3, 20);
     public GameObject playerprefab;
@@ -45,7 +45,7 @@ public class LevelBuilder : MonoBehaviour
         SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Additive);
         PlaceStartRoom();
 
-       
+
 
         //Place player
         player = Instantiate(playerprefab);
@@ -104,35 +104,38 @@ public class LevelBuilder : MonoBehaviour
             {
                 int random = Random.Range(0, enemyPrefabs.Count);
 
-               
-                    Instantiate(enemyPrefabs[random], enemySpawn.transform.position , new Quaternion(0, 0, 0, 0), this.transform);
-                
-            
+
+                Instantiate(enemyPrefabs[random], enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
+
+
             }
         }
+
         foreach (Room room in placedRooms)
         {
             foreach (Transform playerSpawn in room.playerSpawns)
             {
 
-                 foreach (Doorway doorway in room.doorways)
-                 {
-                     if (doorway.isActiveAndEnabled)
-                     {
-                          spawns.Add(playerSpawn);
-                     }
-                 }
+                foreach (Doorway doorway in room.doorways)
+                {
+                    if (doorway.isActiveAndEnabled)
+                    {
+                        spawns.Add(playerSpawn);
+                    }
+                }
 
 
 
             }
         }
+        Instantiate(bossPrefab, endRoom.bossSpawn.position, new Quaternion(0, 0, 0, 0), this.transform);
+        GameManager.isBossDead = false;
         foreach (Transform enemySpawn in endRoom.enemySpawns)
         {
             int random = Random.Range(0, enemyPrefabs.Count);
 
 
-            Instantiate(enemyPrefabs[random], enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
+         Instantiate(enemyPrefabs[random], enemySpawn.transform.position, new Quaternion(0, 0, 0, 0), this.transform);
 
 
         }
@@ -141,7 +144,7 @@ public class LevelBuilder : MonoBehaviour
 
         SceneManager.UnloadSceneAsync("LoadingScreen");
         onLevelFinished();
-        
+
         yield return new WaitForSeconds(1);
 
 

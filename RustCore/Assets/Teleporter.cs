@@ -20,11 +20,12 @@ public class Teleporter : MonoBehaviour
     public static event textYes onNo;
     public delegate void textBoss();
     public static event textYes onBoss;
-
+    public AudioSource[] aS;
     bool aux;
     // Start is called before the first frame update
     private void Awake()
     {
+        aS = GetComponents<AudioSource>();
         GameManager.contBoomerang = 0;
         GameManager.contkills = killsToUse;
         notnot.SetActive(false);
@@ -71,7 +72,7 @@ public class Teleporter : MonoBehaviour
 
             if (Vector3.Distance(player.transform.position, transform.position) < 2)
             {
-             
+                if (!aS[1].isPlaying) aS[1].Play();
                 onYes();
                 if (Input.GetKeyUp(KeyCode.X))
                 {
@@ -139,7 +140,7 @@ public class Teleporter : MonoBehaviour
 
     IEnumerator teleport()
     {
-    
+        aS[0].Play();
         player = GameObject.FindGameObjectWithTag("Player");
         spawn = GameObject.FindGameObjectWithTag("EndRoom").GetComponent<EndRoom>().playerSpawn;
         int random = Random.Range(0, LevelBuilder.spawns.Count - 1);
@@ -147,6 +148,7 @@ public class Teleporter : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (GameManager.contBoomerang >= enemyBoomerang)
         {
+            okComputer.writeText("Now kill the big guy to enable the exits!");
             player.transform.position = spawn.position;
         }
         else
