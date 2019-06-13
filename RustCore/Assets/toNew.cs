@@ -44,6 +44,7 @@ public class toNew : MonoBehaviour
                 okComputer.writeText("Press X to start a new combat");
                 if (Input.GetKeyUp(KeyCode.X))
                 {
+                    ToHub.saveProgress();
                     StartCoroutine(teleport());
                     notnot.SetActive(true);
                     yesyes.SetActive(false);

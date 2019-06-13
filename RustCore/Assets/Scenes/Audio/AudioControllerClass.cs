@@ -17,7 +17,7 @@ public class AudioControllerClass : MonoBehaviour
     private int musicIndex = 1;
     private int effectsIndex = 2;
 
-    private float minAudio = -45;
+    private float minAudio = -20;
     private float maxAudio = 3;
     // Start is called before the first frame update
     void Start()

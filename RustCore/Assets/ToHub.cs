@@ -117,7 +117,7 @@ public class ToHub : MonoBehaviour
     }
 
 
-    private void saveProgress()
+    public static void saveProgress()
     {
 
         try
