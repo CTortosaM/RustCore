@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.07995314, g: 0.074883394, b: 0.05995217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1889,7 +1889,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bossPrefab
       value: 
-      objectReference: {fileID: 6895098628497518615, guid: 5db1021e205554849b664c6f50bd1ad9,
+      objectReference: {fileID: 6895098628497518615, guid: c5744b5841b169f4f8afd88725b4f383,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb, type: 3}
