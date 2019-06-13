@@ -12,6 +12,9 @@ public class PauseManager : MonoBehaviour
     public delegate void restartLevel();
     public static event restartLevel HasRestarted;
 
+    public delegate void quitToMenu();
+    public static event quitToMenu onQuitToMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +93,7 @@ public class PauseManager : MonoBehaviour
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
             }
         }
+        onQuitToMenu();
         SceneManager.LoadScene("Menu");
     }
 

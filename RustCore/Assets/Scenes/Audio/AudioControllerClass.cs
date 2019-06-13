@@ -12,6 +12,8 @@ public class AudioControllerClass : MonoBehaviour
    public static AudioSource selected;
     private static AudioControllerClass that;
 
+    private AudioSource[] audioSources;
+
     public int selectedIndex = 0;
     private int masterIndex = 0;
     private int musicIndex = 1;
@@ -26,11 +28,13 @@ public class AudioControllerClass : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         AudioSource[] aS = GetComponents<AudioSource>();
         OptionsMenuManager.onAudioOptionsSaved += onAudioOptionsChanged;
+        PauseManager.onQuitToMenu += onQuitToMainMenu;
         electronicMusic = aS[0];
         silence = aS[1];
         classicRock = aS[2];
         selected = silence;
         that = this;
+        audioSources = GetComponents<AudioSource>();
 
         loadAudioSettings();
     }
@@ -107,4 +111,14 @@ public class AudioControllerClass : MonoBehaviour
         master.SetFloat("VolumenVFX", effects);
         
     }
+
+    private void onQuitToMainMenu()
+    { 
+    
+        foreach(AudioSource audio in audioSources)
+        {
+            audio.Pause();
+        }
+    }
 }
+
