@@ -12,7 +12,7 @@ public class ToHub : MonoBehaviour
     public GameObject yesyes;
     public GameObject bossboss;
     public int killsToUse = 20;
-    
+    bool hasPlayed = false;
 
     // Start is called before the first frame update
     private void Awake()
@@ -39,7 +39,18 @@ public class ToHub : MonoBehaviour
       
         if (GameManager.isBossDead)
         {
-            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            if (hasPlayed == false)
+            {
+                hasPlayed = true;
+             
+                gameObject.GetComponent<AudioSource>().Play();
+                okComputer.writeText("GOOD JOB!!");
+            }
+        else
+        {
+            hasPlayed = false;
+        }
+        if (Vector3.Distance(player.transform.position, transform.position) < 2)
             {
 
                 okComputer.writeText("Press X to go to your rest room");
@@ -127,9 +138,9 @@ public class ToHub : MonoBehaviour
             {
                 Savestate state = JsonUtility.FromJson<Savestate>(save);
 
-                state.timesPlayed++;
-                state.TotalKills += GameManager.totalKills;
-                if (GameManager.totalKills > state.MaxKills) state.MaxKills = GameManager.totalKills;
+                //state.timesPlayed++;
+                state.TotalKills += (int)-Mathf.Floor(-GameManager.totalKills);
+                if ((int)-Mathf.Floor(-GameManager.totalKills) > state.MaxKills) state.MaxKills = (int)-Mathf.Floor(-GameManager.totalKills);
 
 
                 SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
@@ -139,10 +150,10 @@ public class ToHub : MonoBehaviour
             {
                 Savestate state = new Savestate
                 {
-                    timesPlayed = 0,
+                    timesPlayed = 1,
                     MaxKills = 0,
                     TotalKills = 0,
-                    LeastTime = 0f
+                    timesPlayedPublic = 0
                 };
 
                 SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
@@ -153,10 +164,10 @@ public class ToHub : MonoBehaviour
             Debug.LogError("Algo ocurre en ToHub: " + e.Message);
             Savestate state = new Savestate
             {
-                timesPlayed = 0,
+                timesPlayed = 1,
                 MaxKills = 0,
                 TotalKills = 0,
-                LeastTime = 0f
+                timesPlayedPublic=0
             };
 
             SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));

@@ -113,12 +113,20 @@ public class AudioControllerClass : MonoBehaviour
     }
 
     private void onQuitToMainMenu()
-    { 
-    
-        foreach(AudioSource audio in audioSources)
+    {
+        if (!audioSources.Equals(null))
         {
-            audio.Pause();
+
+            if (audioSources.Length > 0)
+            {
+                foreach (AudioSource audio in audioSources)
+                {
+                    audio.Pause();
+                }
+            }
         }
+        
+        
     }
 }
 

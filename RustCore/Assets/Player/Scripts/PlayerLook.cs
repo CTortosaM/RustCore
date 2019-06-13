@@ -8,11 +8,12 @@ public class PlayerLook : MonoBehaviour
     public float mouseSensitivity;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform playerBody;
-
+    public static AudioSource puertaAbrir;
     private float xAxisClamp;
 
     private void Awake()
     {
+        puertaAbrir = gameObject.GetComponent<AudioSource>();
         PlayerController.onPlayerDash += startDashAnimation;
         LockCursor();
         Cursor.visible = false;

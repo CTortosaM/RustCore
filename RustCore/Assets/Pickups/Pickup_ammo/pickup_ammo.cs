@@ -23,9 +23,15 @@ public class pickup_ammo : MonoBehaviour
     {
         if (other.gameObject.tag == targetTag)
         {
+            StartCoroutine(sound());
             other.GetComponentInChildren<WeaponManager>().getCurrentWeapon().rechargeAllAmmo();
-            Destroy(this.gameObject);
+          
         }
     }
-
+    IEnumerator sound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.7f);
+        Destroy(this.gameObject);
+    }
 }

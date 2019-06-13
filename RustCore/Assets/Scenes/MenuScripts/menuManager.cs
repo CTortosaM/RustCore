@@ -12,6 +12,7 @@ public class menuManager: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resetTimesPlayed();
         if (!FindObjectOfType<ChangePostSettings>())
         {
             Instantiate(postProcessing);
@@ -42,6 +43,7 @@ public class menuManager: MonoBehaviour
 
     public void LoadLevel()
     {
+      
         SceneManager.LoadSceneAsync("Tutorial");
         AudioControllerClass.setSelected(0);
         AudioControllerClass.selected.Play();
@@ -56,5 +58,15 @@ public class menuManager: MonoBehaviour
         SceneManager.LoadSceneAsync("OptionsMenu", LoadSceneMode.Additive);
     }
 
+    private void resetTimesPlayed()
+    {
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
 
+        if (!save.Equals(null))
+        {
+            Savestate state = JsonUtility.FromJson<Savestate>(save);
+            state.timesPlayed=1;
+            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+        }
+    }
 }

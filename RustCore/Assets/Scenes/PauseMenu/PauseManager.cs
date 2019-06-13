@@ -92,8 +92,10 @@ public class PauseManager : MonoBehaviour
             {
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PauseMenu").buildIndex);
             }
+
+           
         }
-        onQuitToMenu();
+        //onQuitToMenu();
         SceneManager.LoadScene("Menu");
     }
 
@@ -109,7 +111,7 @@ public class PauseManager : MonoBehaviour
             }
         }
         Resources.UnloadUnusedAssets();
-        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Mapa").buildIndex);
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(scene).buildIndex);
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

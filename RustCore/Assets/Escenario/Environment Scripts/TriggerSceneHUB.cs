@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TriggerSceneHUB : MonoBehaviour
 {
+    public string Levelname;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class TriggerSceneHUB : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync("SalaHub");
+            SceneManager.LoadSceneAsync(Levelname);
         }
     }
 }

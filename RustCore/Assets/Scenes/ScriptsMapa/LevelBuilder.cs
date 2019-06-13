@@ -148,7 +148,9 @@ public class LevelBuilder : MonoBehaviour
         yield return new WaitForSeconds(1);
 
 
-        music.Play();
+      //  music.Play();
+
+        increaseTimesPlayed();
 
 
         //player.active = true;
@@ -396,5 +398,20 @@ public class LevelBuilder : MonoBehaviour
         spawns.Clear();
         //Reset coroutine
         StartCoroutine("GenerateLevel");
+    }
+
+
+    private void increaseTimesPlayed()
+    {
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
+
+        if (!save.Equals(null))
+        {
+          
+            Savestate state = JsonUtility.FromJson<Savestate>(save);
+            state.timesPlayedPublic++;
+            state.timesPlayed++;
+            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+        }
     }
 }
