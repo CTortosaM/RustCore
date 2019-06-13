@@ -148,7 +148,7 @@ public class LevelBuilder : MonoBehaviour
         yield return new WaitForSeconds(1);
 
 
-        music.Play();
+      //  music.Play();
 
         increaseTimesPlayed();
 

@@ -128,8 +128,8 @@ public class ToHub : MonoBehaviour
                 Savestate state = JsonUtility.FromJson<Savestate>(save);
 
                 //state.timesPlayed++;
-                state.TotalKills += GameManager.totalKills;
-                if (GameManager.totalKills > state.MaxKills) state.MaxKills = GameManager.totalKills;
+                state.TotalKills += (int)-Mathf.Floor(-GameManager.totalKills);
+                if ((int)-Mathf.Floor(-GameManager.totalKills) > state.MaxKills) state.MaxKills = (int)-Mathf.Floor(-GameManager.totalKills);
 
 
                 SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
@@ -139,7 +139,7 @@ public class ToHub : MonoBehaviour
             {
                 Savestate state = new Savestate
                 {
-                    timesPlayed = 0,
+                    timesPlayed = 1,
                     MaxKills = 0,
                     TotalKills = 0,
                 };
@@ -152,7 +152,7 @@ public class ToHub : MonoBehaviour
             Debug.LogError("Algo ocurre en ToHub: " + e.Message);
             Savestate state = new Savestate
             {
-                timesPlayed = 0,
+                timesPlayed = 1,
                 MaxKills = 0,
                 TotalKills = 0
             };

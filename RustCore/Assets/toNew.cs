@@ -107,6 +107,7 @@ public class toNew : MonoBehaviour
         }
     }
     */
+ 
     IEnumerator teleport()
     {
         yield return new WaitForSeconds(0.5f);

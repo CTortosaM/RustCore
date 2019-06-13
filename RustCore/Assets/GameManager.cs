@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     private int daño;
     private IndicadorSalud indicadorSalud;
     public GameObject mensajeFinal;
-    public static int contBoomerang;
-    public static int contkills;
-    public static int totalKills;
+    public static float contBoomerang;
+    public static float contkills;
+    public static float totalKills;
     public static bool isBossDead;
     public static float ticktock;
     public int Daño
@@ -69,12 +69,48 @@ public class GameManager : MonoBehaviour
 
     public void boomerangDeath()
     {
-        contBoomerang++;
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
+        if (!save.Equals(null))
+        {
+            Savestate state = JsonUtility.FromJson<Savestate>(save);
+            if (state.timesPlayed != 0)
+            {
+                contBoomerang += (float)1 / state.timesPlayed;
+            }
+            else
+            {
+                contBoomerang++;
+            }
+        }
+        else
+        {
+            contBoomerang++;
+        }
     }
     public void enemyKill()
     {
-        contkills++;
-        totalKills++;
+     
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
+        if (!save.Equals(null))
+        {
+            Savestate state = JsonUtility.FromJson<Savestate>(save);
+            if (state.timesPlayed != 0)
+            {
+                contkills += (float)1 / state.timesPlayed;
+                totalKills += (float)1 / state.timesPlayed;
+                Debug.Log(totalKills);
+            }
+            else
+            {
+                contkills++;
+                totalKills++;
+            }
+        }
+        else
+        {
+            contkills++;
+            totalKills++;
+        }
     }
     public void death()
     {

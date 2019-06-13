@@ -56,5 +56,15 @@ public class menuManager: MonoBehaviour
         SceneManager.LoadSceneAsync("OptionsMenu", LoadSceneMode.Additive);
     }
 
+    private void resetTimesPlayed()
+    {
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
 
+        if (!save.Equals(null))
+        {
+            Savestate state = JsonUtility.FromJson<Savestate>(save);
+            state.timesPlayed=1;
+            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+        }
+    }
 }

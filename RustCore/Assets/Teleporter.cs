@@ -49,7 +49,7 @@ public class Teleporter : MonoBehaviour
 
         
 
-        if (GameManager.contBoomerang >= enemyBoomerang)
+        if ((-Mathf.Floor(-GameManager.contBoomerang)) >= enemyBoomerang)
         {
             if (Vector3.Distance(player.transform.position, transform.position) < 2)
             {
@@ -67,7 +67,7 @@ public class Teleporter : MonoBehaviour
             yesyes.SetActive(false);
             notnot.SetActive(false);
             bossboss.SetActive(true);
-        }else if(GameManager.contkills >=killsToUse||GameManager.ticktock>=60)
+        }else if((-Mathf.Floor(-GameManager.contkills)) >= killsToUse||GameManager.ticktock>=60)
         {
 
             if (Vector3.Distance(player.transform.position, transform.position) < 2)
@@ -102,7 +102,7 @@ public class Teleporter : MonoBehaviour
             bossboss.SetActive(false);
             notnot.SetActive(true);
             yesyes.SetActive(false);
-            text.text = GameManager.contkills.ToString()+"/"+killsToUse;
+            text.text = (-Mathf.Floor(-GameManager.contkills)).ToString()+"/"+killsToUse;
         }
       
     }
@@ -148,7 +148,7 @@ public class Teleporter : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (GameManager.contBoomerang >= enemyBoomerang)
         {
-            okComputer.writeText("Now kill the big guy to enable the exits!");
+            okComputer.writeText("Now kill the <color=red>big guy</color> to enable the exits!");
             player.transform.position = spawn.position;
         }
         else

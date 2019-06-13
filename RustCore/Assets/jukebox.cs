@@ -28,7 +28,7 @@ public class jukebox : MonoBehaviour
         if (Vector3.Distance(player.transform.position, transform.position) < 2)
         {
 
-            okComputer.writeText("Press X to select a song to be played while hunting");
+            okComputer.writeText("Press <color=red>X</color> to select a song to be played while hunting");
             if (Input.GetKeyUp(KeyCode.X))
             {
                 selected++;
