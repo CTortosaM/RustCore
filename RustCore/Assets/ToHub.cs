@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -44,6 +45,7 @@ public class ToHub : MonoBehaviour
                 okComputer.writeText("Press X to go to your rest room");
                 if (Input.GetKeyUp(KeyCode.X))
                 {
+                    saveProgress();
                     StartCoroutine(teleport());
                     notnot.SetActive(true);
                     yesyes.SetActive(false);
@@ -112,6 +114,53 @@ public class ToHub : MonoBehaviour
         Debug.Log(LevelBuilder.spawns[random]);
        
         player.transform.position = LevelBuilder.spawns[random].position;*/
+    }
+
+
+    private void saveProgress()
+    {
+
+        try
+        {
+            string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
+            if (!save.Equals(null))
+            {
+                Savestate state = JsonUtility.FromJson<Savestate>(save);
+
+                state.timesPlayed++;
+                state.TotalKills += GameManager.totalKills;
+                if (GameManager.totalKills > state.MaxKills) state.MaxKills = GameManager.totalKills;
+
+
+                SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+
+            }
+            else
+            {
+                Savestate state = new Savestate
+                {
+                    timesPlayed = 0,
+                    MaxKills = 0,
+                    TotalKills = 0,
+                    LeastTime = 0f
+                };
+
+                SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Algo ocurre en ToHub: " + e.Message);
+            Savestate state = new Savestate
+            {
+                timesPlayed = 0,
+                MaxKills = 0,
+                TotalKills = 0,
+                LeastTime = 0f
+            };
+
+            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+        }
     }
 }
 

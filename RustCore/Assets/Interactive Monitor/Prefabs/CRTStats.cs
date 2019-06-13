@@ -33,7 +33,8 @@ public class CRTStats : MonoBehaviour
             {
                 TotalKills = 0,
                 MaxKills = 0,
-                LeastTime = 0f
+                LeastTime = 0f,
+                timesPlayed = 0
             };
 
 

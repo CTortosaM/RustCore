@@ -16753,7 +16753,6 @@ GameObject:
   - component: {fileID: 8213241890366661209}
   - component: {fileID: 6764159326173899087}
   - component: {fileID: 1995807326893070965}
-  - component: {fileID: 5797766515497805826}
   - component: {fileID: 8057458731275199455}
   m_Layer: 0
   m_Name: P1 - Ascensor (2)
@@ -20411,23 +20410,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!114 &5797766515497805826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6879226203773714589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93896cedcd4a8074abdd6c346c8e1aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyBoomerang: 20
-  notnot: {fileID: 0}
-  yesyes: {fileID: 0}
-  bossboss: {fileID: 0}
-  killsToUse: 20
 --- !u!114 &8057458731275199455
 MonoBehaviour:
   m_ObjectHideFlags: 0
