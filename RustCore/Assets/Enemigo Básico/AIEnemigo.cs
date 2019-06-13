@@ -65,6 +65,8 @@ public class AIEnemigo : MonoBehaviour
     public static event boomerangDeath boom;
     public delegate void kills();
     public static event kills onekill;
+    bool hasPlayed = false;
+    
 
     void OnDrawGizmos()
     {
@@ -226,9 +228,21 @@ public class AIEnemigo : MonoBehaviour
                     break;
                 case EstadosPatrulla.Muerte:
                     enemySoundsController.noSound(ID);
-                    if ( ID == 69)
+                    if (ID == 69)
                     {
                         GameManager.isBossDead = true;
+                        AudioSource aS = GetComponent<AudioSource>();
+                        if (GameManager.isBossDead)
+                        {
+                            if (hasPlayed == false)
+                            {
+                                hasPlayed = true;
+
+                                aS.Play();
+                                okComputer.writeText("<b><size=30>GOOD JOB!!</size></b>");
+                            }
+                           
+                        }
                     }
                     if (ID == 2 || ID == 69)
                     {

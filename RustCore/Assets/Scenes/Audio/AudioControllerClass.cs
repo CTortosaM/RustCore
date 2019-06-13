@@ -27,18 +27,23 @@ public class AudioControllerClass : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
         AudioSource[] aS = GetComponents<AudioSource>();
-        OptionsMenuManager.onAudioOptionsSaved += onAudioOptionsChanged;
-        PauseManager.onQuitToMenu += onQuitToMainMenu;
         electronicMusic = aS[0];
         silence = aS[1];
         classicRock = aS[2];
         selected = silence;
+        OptionsMenuManager.onAudioOptionsSaved += onAudioOptionsChanged;
+        PauseManager.onQuitToMenu += onQuitToMainMenu;
+       
         that = this;
         audioSources = GetComponents<AudioSource>();
 
         loadAudioSettings();
     }
-
+    private void Awake()
+    {
+        selectedIndex =0;
+        selected = silence;
+    }
     // Update is called once per frame
     void Update()
     {

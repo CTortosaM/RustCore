@@ -34,7 +34,9 @@ public class CRTStats : MonoBehaviour
                 TotalKills = 0,
                 MaxKills = 0,
                 timesPlayed = 0,
-                timesPlayedPublic = 0
+                timesPlayedPublic = 0,
+                isOnGame=true
+
             };
 
 

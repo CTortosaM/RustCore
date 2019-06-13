@@ -13,10 +13,12 @@ public class ToHub : MonoBehaviour
     public GameObject bossboss;
     public int killsToUse = 20;
     bool hasPlayed = false;
+    public AudioSource aS;
 
     // Start is called before the first frame update
     private void Awake()
     {
+        aS = GetComponent<AudioSource>();
         GameManager.contBoomerang = 0;
         GameManager.contkills = killsToUse;
         notnot.SetActive(true);
@@ -39,17 +41,7 @@ public class ToHub : MonoBehaviour
       
         if (GameManager.isBossDead)
         {
-            if (hasPlayed == false)
-            {
-                hasPlayed = true;
-             
-                gameObject.GetComponent<AudioSource>().Play();
-                okComputer.writeText("GOOD JOB!!");
-            }
-        else
-        {
-            hasPlayed = false;
-        }
+          
         if (Vector3.Distance(player.transform.position, transform.position) < 2)
             {
 
@@ -153,7 +145,8 @@ public class ToHub : MonoBehaviour
                     timesPlayed = 1,
                     MaxKills = 0,
                     TotalKills = 0,
-                    timesPlayedPublic = 0
+                    timesPlayedPublic = 0,
+                    isOnGame = true
                 };
 
                 SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
@@ -167,7 +160,8 @@ public class ToHub : MonoBehaviour
                 timesPlayed = 1,
                 MaxKills = 0,
                 TotalKills = 0,
-                timesPlayedPublic=0
+                timesPlayedPublic=0,
+                isOnGame = true
             };
 
             SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));

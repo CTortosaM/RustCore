@@ -21,6 +21,7 @@ public class menuManager: MonoBehaviour
         {
             Instantiate(audio);
         }
+      
     }
 
     // Update is called once per frame
@@ -38,6 +39,17 @@ public class menuManager: MonoBehaviour
 
     public void closeGame()
     {
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
+
+        if (!save.Equals(null))
+        {
+            Savestate state = JsonUtility.FromJson<Savestate>(save);
+            if (!state.isOnGame)
+            {
+                state.isOnGame = false;
+            }
+            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+        }
         Application.Quit();
     }
 
@@ -65,7 +77,11 @@ public class menuManager: MonoBehaviour
         if (!save.Equals(null))
         {
             Savestate state = JsonUtility.FromJson<Savestate>(save);
-            state.timesPlayed=1;
+            if (!state.isOnGame)
+            {
+                state.timesPlayed = 1;
+                state.isOnGame = true;
+            }
             SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
         }
     }
