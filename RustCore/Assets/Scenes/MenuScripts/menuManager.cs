@@ -39,6 +39,7 @@ public class menuManager: MonoBehaviour
 
     public void closeGame()
     {
+        getSaveState();
         string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
 
         if (!save.Equals(null))
@@ -72,6 +73,7 @@ public class menuManager: MonoBehaviour
 
     private void resetTimesPlayed()
     {
+        getSaveState();
         string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
 
         if (!save.Equals(null))
@@ -82,7 +84,33 @@ public class menuManager: MonoBehaviour
                 state.timesPlayed = 1;
                 state.isOnGame = true;
             }
+         
             SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
         }
+    }
+    private Savestate getSaveState()
+    {
+        Savestate savestate = null;
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "savestate.txt");
+
+        savestate = JsonUtility.FromJson<Savestate>(save);
+
+        if (save == null)
+        {
+            savestate = new Savestate()
+            {
+                TotalKills = 0,
+                MaxKills = 0,
+                timesPlayed = 1,
+                timesPlayedPublic = 0,
+                isOnGame = false
+
+            };
+
+
+            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "savestate.txt", JsonUtility.ToJson(savestate));
+        }
+
+        return savestate;
     }
 }

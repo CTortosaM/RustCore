@@ -4653,7 +4653,7 @@ MonoBehaviour:
   notnot: {fileID: 8952978365233506168}
   yesyes: {fileID: 9115655801219939327}
   bossboss: {fileID: 308694013623321517}
-  secondsToWait: 40
+  secondsToWait: 30
   text: {fileID: 7890228543052960458}
   aS: []
 --- !u!82 &1247749712207247465
