@@ -33,7 +33,8 @@ public class CRTStats : MonoBehaviour
             {
                 TotalKills = 0,
                 MaxKills = 0,
-                timesPlayed = 0
+                timesPlayed = 0,
+                timesPlayedPublic = 0
             };
 
 
@@ -57,7 +58,7 @@ public class CRTStats : MonoBehaviour
         {
             totalkills = savestate.TotalKills;
             maxkills = savestate.MaxKills;
-            totalTimes = savestate.timesPlayed-1;
+            totalTimes = savestate.timesPlayedPublic;
         }
 
         string newText = "Total Kills:" + Environment.NewLine + totalkills

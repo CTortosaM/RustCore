@@ -12,6 +12,7 @@ public class menuManager: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resetTimesPlayed();
         if (!FindObjectOfType<ChangePostSettings>())
         {
             Instantiate(postProcessing);
@@ -42,6 +43,7 @@ public class menuManager: MonoBehaviour
 
     public void LoadLevel()
     {
+      
         SceneManager.LoadSceneAsync("Tutorial");
         AudioControllerClass.setSelected(0);
         AudioControllerClass.selected.Play();

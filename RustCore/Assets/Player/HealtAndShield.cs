@@ -30,7 +30,7 @@ public class HealtAndShield : MonoBehaviour
     public static event PlayerDeath onPlayerDeath;
     public delegate void PlayerHit(bool isOnHealth, bool isDead);
     public static event PlayerHit onPlayerHit;
-
+    public static int healthPublic=100;
     private bool shieldRegenerating = false;
 
     AudioSource[] aSource; 
@@ -47,6 +47,7 @@ public class HealtAndShield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (health == 0) killPlayer();
         if (Time.time > nextPossibleRegen && shield < maxShield && !shieldRegenerating && !IsDead)
         {
@@ -91,6 +92,7 @@ public class HealtAndShield : MonoBehaviour
 
         health -= damageDone;
         onPlayerHit(true, IsDead);
+        healthPublic = health;
         UpdateShieldAndHealtText();
     }
 

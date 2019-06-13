@@ -26,8 +26,18 @@ public class Pickup_HP : MonoBehaviour
     {
         if(other.gameObject.tag == targetTag)
         {
-            other.gameObject.GetComponent<HealtAndShield>().Heal(healAmmount);
-            Destroy(this.gameObject);
+            if (HealtAndShield.healthPublic < 100)
+            {
+                StartCoroutine(sound());
+                other.gameObject.GetComponent<HealtAndShield>().Heal(healAmmount);
+           
+            }
         }
+    }
+    IEnumerator sound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.7f);
+        Destroy(this.gameObject);
     }
 }

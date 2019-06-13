@@ -7,4 +7,5 @@ public class Savestate
     public int TotalKills;
     public int MaxKills;
     public int timesPlayed;
+    public int timesPlayedPublic;
 }

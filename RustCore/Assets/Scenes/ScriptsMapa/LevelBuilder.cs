@@ -407,7 +407,9 @@ public class LevelBuilder : MonoBehaviour
 
         if (!save.Equals(null))
         {
+          
             Savestate state = JsonUtility.FromJson<Savestate>(save);
+            state.timesPlayedPublic++;
             state.timesPlayed++;
             SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
         }

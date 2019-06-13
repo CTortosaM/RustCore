@@ -15,7 +15,7 @@ public class Triggered : MonoBehaviour
         }
     }
     IEnumerator openDoor(){
-
+        PlayerLook.puertaAbrir.Play();
         for(int i=0; i<10; i++)
         {
             this.transform.parent.transform.position = Vector3.MoveTowards(transform.position, transform.right * 2, (float)1);
