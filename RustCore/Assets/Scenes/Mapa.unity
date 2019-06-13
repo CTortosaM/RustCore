@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.094309874, g: 0.09544773, b: 0.08641911, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1889,7 +1889,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bossPrefab
       value: 
-      objectReference: {fileID: 6895098628497518615, guid: e82784a6152bc7b498359e2edb4113d9,
+      objectReference: {fileID: 6895098628497518615, guid: 5db1021e205554849b664c6f50bd1ad9,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a7776f7c28b514a9c5f4a8fd1e16eb, type: 3}
@@ -3229,7 +3229,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 2b5f8c79aa78ae746a9b6f1684ca39ae, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.778
+  m_Volume: 0.474
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3344,7 +3344,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 65e316f7bd4b29d4aac1f6de56fbd3cc, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.814
+  m_Volume: 0.422
   m_Pitch: 1
   Loop: 1
   Mute: 0

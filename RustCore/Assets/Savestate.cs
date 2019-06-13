@@ -8,4 +8,5 @@ public class Savestate
     public int MaxKills;
     public int timesPlayed;
     public int timesPlayedPublic;
+    public bool isOnGame;
 }
