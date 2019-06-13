@@ -42,7 +42,7 @@ public class menuManager: MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadSceneAsync("SalaHub");
+        SceneManager.LoadSceneAsync("Tutorial");
         AudioControllerClass.setSelected(0);
         AudioControllerClass.selected.Play();
         Cursor.visible = false;
