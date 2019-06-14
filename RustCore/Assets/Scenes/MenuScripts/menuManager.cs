@@ -45,10 +45,9 @@ public class menuManager: MonoBehaviour
         if (!save.Equals(null))
         {
             Savestate state = JsonUtility.FromJson<Savestate>(save);
-            if (!state.isOnGame)
-            {
+          
                 state.isOnGame = false;
-            }
+            
             SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
         }
         Application.Quit();
@@ -74,7 +73,7 @@ public class menuManager: MonoBehaviour
     private void resetTimesPlayed()
     {
         getSaveState();
-        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
+        string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "savestate.txt");
 
         if (!save.Equals(null))
         {
@@ -85,7 +84,7 @@ public class menuManager: MonoBehaviour
                 state.isOnGame = true;
             }
          
-            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt", JsonUtility.ToJson(state));
+            SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "savestate.txt", JsonUtility.ToJson(state));
         }
     }
     private Savestate getSaveState()
@@ -103,12 +102,16 @@ public class menuManager: MonoBehaviour
                 MaxKills = 0,
                 timesPlayed = 1,
                 timesPlayedPublic = 0,
-                isOnGame = false
+                isOnGame = true
 
             };
 
 
             SaveSettings.Save(SaveSettings.SAVE_FOLDER_Savestate + "savestate.txt", JsonUtility.ToJson(savestate));
+        }
+        else
+        {
+            savestate.isOnGame = true;
         }
 
         return savestate;

@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     }
     public void enemyKill()
     {
-     
+        ticktock = 0;
         string save = SaveSettings.Load(SaveSettings.SAVE_FOLDER_Savestate + "saveState.txt");
         if (!save.Equals(null))
         {
